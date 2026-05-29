@@ -43,7 +43,7 @@
 
   /* drifting ambient leaves live here, behind content */
   #drift{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-  .driftleaf{position:absolute;top:-10vh;opacity:0;will-change:transform;}
+  .driftleaf{position:absolute;top:-12vh;opacity:0;will-change:transform;}
   .driftleaf path{fill:none;stroke:var(--leaf-dim);stroke-width:2;opacity:.5;}
 
   .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 22px 14vh;}
@@ -54,22 +54,28 @@
     font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.46em;
     text-transform:uppercase;font-size:.72rem;color:var(--gold);margin:0 0 1.6em;padding-left:.46em;
   }
-  .leafstage{width:min(78vw,420px);height:min(78vw,420px);position:relative;}
+  .leafstage{width:min(84vw,470px);height:min(84vw,470px);position:relative;will-change:transform;}
   .leafstage svg{width:100%;height:100%;display:block;overflow:visible;}
-  #ghost path{fill:none;stroke:var(--leaf-dim);stroke-width:1.4;opacity:.22;}
-  #blade{fill:rgba(216,230,198,.045);stroke:var(--leaf);stroke-width:2.4;stroke-linejoin:round;
+  #ghost path{fill:none;stroke:var(--leaf-dim);stroke-width:1.4;opacity:.18;}
+  #blade{fill:rgba(216,230,198,.05);stroke:var(--leaf);stroke-width:2.4;stroke-linejoin:round;
          filter:url(#glow);}
   #veins path,#petiole{fill:none;stroke:var(--leaf);stroke-width:1.5;stroke-linecap:round;opacity:.6;}
   #petiole{stroke-width:2.4;opacity:.8;}
 
-  .names{height:1.6em;margin:1.4em 0 .2em;position:relative;width:100%;}
+  /* current-form caption that updates as the leaf morphs */
+  .form-label{
+    height:1.5em;margin:1.1em 0 .2em;
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--mist);
+    letter-spacing:.02em;transition:opacity .5s ease;
+  }
+  .names{height:1.5em;margin:.1em 0 .2em;position:relative;width:100%;}
   .names span{
     position:absolute;left:0;right:0;opacity:0;
-    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.15rem;
-    color:var(--mist);letter-spacing:.04em;transition:opacity 1.1s ease;
+    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.34em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-dim);transition:opacity 1.1s ease;padding-left:.34em;
   }
   .names span.on{opacity:1;}
-  .scrollcue{margin-top:5vh;color:var(--gold-dim);font-size:.78rem;letter-spacing:.34em;
+  .scrollcue{margin-top:4vh;color:var(--gold-dim);font-size:.78rem;letter-spacing:.34em;
     text-transform:uppercase;font-family:"Cormorant SC","Cormorant Garamond",serif;
     animation:bob 2.4s ease-in-out infinite;}
   @keyframes bob{0%,100%{transform:translateY(0);opacity:.55;}50%{transform:translateY(6px);opacity:.95;}}
@@ -85,11 +91,19 @@
     text-align:center;color:var(--mist);font-style:italic;font-size:1rem;margin:0 0 2.4em;
   }
   .stanza{
-    margin:0 0 2.2em;text-align:center;line-height:1.95;
+    margin:0 0 2.4em;text-align:center;line-height:1.95;
     opacity:0;transform:translateY(20px);transition:opacity 1.1s ease, transform 1.1s ease;
   }
   .stanza.in{opacity:1;transform:none;}
   .stanza p{margin:0;}
+
+  /* small drawn leaf that illuminates each verse */
+  .glyph{display:block;width:50px;height:58px;margin:0 auto 1em;overflow:visible;}
+  .glyph path.gout{fill:rgba(216,230,198,.05);stroke:var(--leaf-dim);stroke-width:2.4;stroke-linejoin:round;}
+  .glyph path.gmid{fill:none;stroke:var(--leaf-dim);stroke-width:1.4;stroke-linecap:round;opacity:.75;}
+  .glyph path.gdraw{stroke-dasharray:1;stroke-dashoffset:1;}
+  .stanza.in .glyph path.gdraw{stroke-dashoffset:0;transition:stroke-dashoffset 1.8s ease .2s;}
+
   /* the granny-charm aside, set apart */
   .charm{
     font-style:italic;color:var(--mist);
@@ -104,9 +118,12 @@
   .rule path{fill:none;stroke:var(--gold-dim);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
 
   /* ---------- CLOSE ---------- */
-  .close{max-width:28em;margin:2vh auto 0;text-align:center;
+  .close{max-width:30em;margin:2vh auto 0;text-align:center;
     opacity:0;transform:translateY(18px);transition:opacity 1.1s ease, transform 1.1s ease;}
   .close.in{opacity:1;transform:none;}
+  #closeleaf{width:min(62vw,300px);height:min(62vw,300px);display:block;margin:0 auto 1vh;overflow:visible;will-change:transform;}
+  #closeleaf path.cout{fill:rgba(216,230,198,.05);stroke:var(--leaf);stroke-width:2.4;stroke-linejoin:round;filter:url(#glow);}
+  #closeleaf path.cmid{fill:none;stroke:var(--leaf);stroke-width:1.5;stroke-linecap:round;opacity:.6;}
   .close .ded{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.3rem;color:var(--sap);margin:0 0 .4em;}
   .close p{color:var(--bone-dim);margin:.2em 0;}
   .close .new{
@@ -116,12 +133,12 @@
   }
 
   footer{margin-top:9vh;text-align:center;color:var(--gold-dim);font-size:.8rem;}
-  footer a{color:var(--mist);text-decoration:none;border-bottom:1px solid var(--gold-dim);}
   .note{max-width:34em;margin:3vh auto 0;font-size:.8rem;line-height:1.7;color:#6f7d68;text-align:center;font-style:italic;}
 
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important;animation:none !important;}
     .stanza,.close{opacity:1;transform:none;}
+    .glyph path.gdraw{stroke-dashoffset:0;}
   }
 </style>
 </head>
@@ -131,19 +148,19 @@
 
 <div class="wrap">
 
-  <!-- ============ HERO: the growing leaf ============ -->
+  <!-- ============ HERO: the changing leaf ============ -->
   <section class="hero">
     <p class="eyebrow">A charm for becoming</p>
 
-    <div class="leafstage">
-      <svg id="leafsvg" viewBox="0 0 400 460" aria-label="A single leaf slowly changing from a plain blade into a deeply cut, many-pointed shape">
+    <div class="leafstage" id="leafstage">
+      <svg id="leafsvg" viewBox="0 0 400 460" aria-label="A single leaf endlessly changing shape — from a plain blade to a deeply cut, many-pointed hand and back">
         <defs>
           <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="3.2" result="b"/>
             <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
         </defs>
-        <!-- faint echo of the first, plain leaf -->
+        <!-- faint echo of the plain first leaf -->
         <g id="ghost"><path d=""/></g>
         <line id="petiole" x1="200" y1="360" x2="200" y2="448"/>
         <path id="blade" d=""/>
@@ -151,11 +168,10 @@
       </svg>
     </div>
 
-    <div class="names" id="names" aria-hidden="true">
-      <!-- folk names cross-fade here -->
-    </div>
+    <div class="form-label" id="formlabel" aria-hidden="true"></div>
+    <div class="names" id="names" aria-hidden="true"></div>
 
-    <div class="scrollcue">scroll &middot; let it grow</div>
+    <div class="scrollcue">scroll &middot; watch it change</div>
   </section>
 
   <!-- ============ THE POEM ============ -->
@@ -163,49 +179,49 @@
     <h1>Snakeroot</h1>
     <p class="sub">gall-of-the-earth &middot; white lettuce &middot; lion's-foot &mdash; a charm</p>
 
-    <div class="stanza"><p>
+    <div class="stanza" data-t="0"><p>
       Down where the holler keeps its shade<br/>
       and the spring forgets its name,<br/>
       a green thing works the oldest trade:<br/>
       to never twice the same.
     </p></div>
 
-    <div class="stanza"><p>
+    <div class="stanza" data-t="0.32"><p>
       It starts a leaf as plain as water,<br/>
       round as a given word &mdash;<br/>
       then comes the slow knife of the summer,<br/>
       and the plain shape is cut, and cut, and stirred,
     </p></div>
 
-    <div class="stanza"><p>
+    <div class="stanza" data-t="1"><p>
       till it opens a hand of restless fingers,<br/>
       more points than it can name,<br/>
       and no two leaves along one stalk<br/>
       will swear they are the same.
     </p></div>
 
-    <div class="stanza"><p>
+    <div class="stanza" data-t="0.58"><p>
       They called it snakeroot &mdash; for the bite,<br/>
       they said; it draws the poison clean.<br/>
       They called it gall, they called it milk,<br/>
       they called it things between.
     </p></div>
 
-    <div class="stanza"><p class="charm">
+    <div class="stanza" data-t="0.14"><p class="charm">
       <em>Carry it,</em> the old ones said,<br/>
       <em>the year the snake comes through.</em><br/>
       <em>What sheds its skin and lives,</em> they said,<br/>
       <em>is only growing true.</em>
     </p></div>
 
-    <div class="stanza shed"><p>
+    <div class="stanza shed" data-t="0.78"><p>
       So let them keep the borrowed name<br/>
       <span class="gone binom">Prenanthes</span>, hung on you at birth.<br/>
       A truer word comes working up<br/>
       like green through winter earth &mdash;
     </p></div>
 
-    <div class="stanza"><p>
+    <div class="stanza" data-t="1"><p>
       and you will wear it like a charm,<br/>
       and you will not stay small.<br/>
       Many-leaved, many-named, and here:<br/>
@@ -220,6 +236,10 @@
 
   <!-- ============ CLOSE ============ -->
   <section class="close">
+    <svg id="closeleaf" viewBox="0 0 400 460" aria-hidden="true">
+      <path class="cout" d=""/>
+      <path class="cmid" d=""/>
+    </svg>
     <p class="ded">For your twenty-first year.</p>
     <p>You came up plain and round and whole,<br/>and the seasons have been cutting you<br/>into something with more edges, more reach,<br/>and more of its own true shape ever since.</p>
     <p>Say the new name like you mean to stay:</p>
@@ -227,8 +247,7 @@
   </section>
 
   <footer>
-    <p>Nabalus &middot; once Prenanthes &middot; rattlesnake-root<br/>
-    <a href="index.html">&larr; see the other card</a></p>
+    <p>Nabalus &middot; once Prenanthes &middot; rattlesnake-root</p>
     <p class="note">A note: rattlesnake-root was carried and brewed as a folk remedy against snakebite in the southern Appalachians; its leaves change shape as the plant matures, and its North American species were moved from the genus <em>Prenanthes</em> to <em>Nabalus</em> by Henri Cassini in 1825. The charm above is invention in that old key, not herbal advice.</p>
   </footer>
 
@@ -248,37 +267,29 @@
     [0, .40, .22, .52, .22, .46, .20, .16, 0],   // III deeper lobes
     [0, .50, .10, .62, .09, .54, .10, .20, 0]    // IV deep palmate hand
   ];
-  var TIP_IDX = [1,3,5,7]; // which margin points are lobe tips (for palmate veins)
+  var TIP_IDX = [1,3,5,7]; // margin points that are lobe tips (palmate veins reach these)
 
   var BASE_X = 200, BASE_Y = 360, APEX_Y = 40, H = BASE_Y - APEX_Y, WSCALE = 300;
 
   function lerp(a,b,t){return a+(b-a)*t;}
   function easeInOut(t){return t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;}
 
-  // half-widths for a given maturity t in [0,1]
   function widthsAt(t){
-    var u = Math.max(0,Math.min(1,t))*(STAGES.length-1);
+    t = Math.max(0,Math.min(1,t));
+    var u = t*(STAGES.length-1);
     var seg = Math.min(STAGES.length-2, Math.floor(u));
     var f = easeInOut(u-seg);
     var out=[];
     for(var i=0;i<9;i++) out.push(lerp(STAGES[seg][i],STAGES[seg+1][i],f));
     return out;
   }
-
-  function pointFor(i, halfW, side){ // side: +1 right, -1 left
-    var s = YF[i];
-    return [BASE_X + side*halfW[i]*WSCALE, BASE_Y - s*H];
+  function pointFor(i, w, side){ return [BASE_X + side*w[i]*WSCALE, BASE_Y - YF[i]*H]; }
+  function loopPoints(w){
+    var p=[]; var i,j;
+    for(i=0;i<9;i++) p.push(pointFor(i,w,+1));
+    for(j=7;j>=1;j--) p.push(pointFor(j,w,-1));
+    return p;
   }
-
-  // full closed margin loop: up right side, down left side
-  function loopPoints(halfW){
-    var pts=[];
-    for(var i=0;i<9;i++) pts.push(pointFor(i,halfW,+1));
-    for(var j=7;j>=1;j--) pts.push(pointFor(j,halfW,-1));
-    return pts;
-  }
-
-  // closed Catmull-Rom -> cubic bezier path
   function smoothClosed(pts){
     var n=pts.length, d="M"+pts[0][0].toFixed(1)+" "+pts[0][1].toFixed(1);
     for(var i=0;i<n;i++){
@@ -289,58 +300,87 @@
     }
     return d+"Z";
   }
-
-  function veinsFor(halfW){
-    var d="";
-    // midrib
-    d+="M"+BASE_X+" "+BASE_Y+" L"+BASE_X+" "+APEX_Y+" ";
-    // palmate laterals to each tip (both sides), pulled slightly inside the margin
+  function veinsFor(w){
+    var d="M"+BASE_X+" "+BASE_Y+" L"+BASE_X+" "+APEX_Y+" ";
     for(var k=0;k<TIP_IDX.length;k++){
       var i=TIP_IDX[k];
       [+1,-1].forEach(function(side){
-        var p=pointFor(i,halfW,side);
+        var p=pointFor(i,w,side);
         var ex=BASE_X+(p[0]-BASE_X)*0.86, ey=BASE_Y+(p[1]-BASE_Y)*0.86;
         d+="M"+BASE_X+" "+BASE_Y+" L"+ex.toFixed(1)+" "+ey.toFixed(1)+" ";
       });
     }
     return d;
   }
+  function outlineAt(t){ return smoothClosed(loopPoints(widthsAt(t))); }
 
+  /* ---------- hero leaf ---------- */
   var blade=document.getElementById('blade');
   var veins=document.getElementById('veins');
   var ghost=document.querySelector('#ghost path');
+  var stage=document.getElementById('leafstage');
+  ghost.setAttribute('d', outlineAt(0)); // faint plain-leaf echo
 
-  // static ghost = the plain first leaf
-  ghost.setAttribute('d', smoothClosed(loopPoints(STAGES[0])));
-
-  // build vein sub-paths once (one <path> reused, multi-subpath)
-  function render(t){
+  function setHero(t){
     var w=widthsAt(t);
     blade.setAttribute('d', smoothClosed(loopPoints(w)));
     veins.innerHTML='<path d="'+veinsFor(w)+'"/>';
   }
 
+  /* ---------- close leaf ---------- */
+  var cOut=document.querySelector('#closeleaf .cout');
+  var cMid=document.querySelector('#closeleaf .cmid');
+  function setClose(t){
+    var w=widthsAt(t);
+    cOut.setAttribute('d', smoothClosed(loopPoints(w)));
+    cMid.setAttribute('d', veinsFor(w));
+  }
+
+  /* ---------- form label that names the current shape ---------- */
+  var FORMS=[
+    {to:0.12, txt:"a plain, undivided leaf"},
+    {to:0.45, txt:"the first edges, answering"},
+    {to:0.80, txt:"cutting inward, lobe by lobe"},
+    {to:1.01, txt:"a hand of many points"}
+  ];
+  var formLabel=document.getElementById('formlabel'), lastForm=-1;
+  function updateForm(t){
+    var idx=0; for(var i=0;i<FORMS.length;i++){ if(t<FORMS[i].to){ idx=i; break; } idx=FORMS.length-1; }
+    if(idx!==lastForm){ lastForm=idx; formLabel.style.opacity=0;
+      setTimeout(function(){ formLabel.textContent=FORMS[idx].txt; formLabel.style.opacity=1; },220); }
+  }
+
+  /* ---------- per-verse leaf glyphs (static, drawn at the verse's shape) ---------- */
+  document.querySelectorAll('.stanza[data-t]').forEach(function(st){
+    var t=parseFloat(st.getAttribute('data-t'))||0;
+    var w=widthsAt(t);
+    var svg='<svg class="glyph" viewBox="0 0 400 460" aria-hidden="true">'
+      +'<path class="gout gdraw" d="'+smoothClosed(loopPoints(w))+'"/>'
+      +'<path class="gmid gdraw" d="'+veinsFor(w)+'"/></svg>';
+    st.insertAdjacentHTML('afterbegin', svg);
+  });
+
+  /* ---------- animate: continuous shape-change ---------- */
   if(reduce){
-    render(1);
+    setHero(1); setClose(1); updateForm(1); formLabel.style.opacity=1;
   } else {
-    // grow on load (0 -> 1), then breathe gently forever
-    var t0=null, GROW=6500;
+    var HERO_PERIOD=14000;   // ms for a full entire->palmate->entire cycle
+    var CLOSE_PERIOD=18000;
+    var start=null;
     function frame(now){
-      if(t0===null) t0=now;
-      var e=now-t0;
-      var t;
-      if(e<GROW){ t=easeInOut(e/GROW); }
-      else {
-        // idle: subtle breathing around full maturity + a faint sway
-        var s=(e-GROW)/1000;
-        t=0.965+0.035*(0.5+0.5*Math.sin(s*0.6));
-        blade.parentNode.style.transform='rotate('+(Math.sin(s*0.4)*0.8)+'deg)';
-        blade.parentNode.style.transformOrigin='200px 360px';
-      }
-      render(t);
+      if(start===null) start=now;
+      var e=now-start;
+      // hero: smooth 0->1->0 via cosine; eases naturally at both ends
+      var ph=(e%HERO_PERIOD)/HERO_PERIOD;          // 0..1
+      var t=(1-Math.cos(ph*2*Math.PI))/2;           // 0..1..0
+      setHero(t); updateForm(t);
+      stage.style.transform='rotate('+(Math.sin(e/1000*0.35)*1.1).toFixed(2)+'deg)';
+      // close leaf: offset so it answers the hero (palmate when hero is plain)
+      var ph2=((e+CLOSE_PERIOD*0.5)%CLOSE_PERIOD)/CLOSE_PERIOD;
+      setClose((1-Math.cos(ph2*2*Math.PI))/2);
       requestAnimationFrame(frame);
     }
-    render(0);
+    setHero(0); setClose(1);
     requestAnimationFrame(frame);
   }
 
@@ -350,13 +390,7 @@
   NAMES.forEach(function(nm){var s=document.createElement('span');s.textContent=nm;box.appendChild(s);});
   var spans=box.querySelectorAll('span'), ni=0;
   spans[0].classList.add('on');
-  if(!reduce){
-    setInterval(function(){
-      spans[ni].classList.remove('on');
-      ni=(ni+1)%spans.length;
-      spans[ni].classList.add('on');
-    },2600);
-  }
+  if(!reduce){ setInterval(function(){ spans[ni].classList.remove('on'); ni=(ni+1)%spans.length; spans[ni].classList.add('on'); },2800); }
 
   /* ---------- reveal poem stanzas + close ---------- */
   var io=new IntersectionObserver(function(es){
@@ -366,32 +400,28 @@
 
   /* ---------- ambient drifting leaves ---------- */
   if(!reduce){
-    var drift=document.getElementById('drift');
-    var NS='http://www.w3.org/2000/svg';
+    var drift=document.getElementById('drift'), NS='http://www.w3.org/2000/svg';
     function spawn(){
-      var size=20+Math.random()*46;
+      var size=20+Math.random()*48;
       var svg=document.createElementNS(NS,'svg');
       svg.setAttribute('viewBox','0 0 400 460');
       svg.setAttribute('width',size); svg.setAttribute('height',size*1.15);
       svg.setAttribute('class','driftleaf');
-      var stageW=STAGES[Math.floor(Math.random()*STAGES.length)];
       var p=document.createElementNS(NS,'path');
-      p.setAttribute('d', smoothClosed(loopPoints(stageW)));
+      p.setAttribute('d', outlineAt(Math.random())); // a random life-stage
       svg.appendChild(p);
-      var startX=Math.random()*100;
-      svg.style.left=startX+'vw';
-      var dur=14+Math.random()*16, dr19=(Math.random()*60-30);
+      svg.style.left=(Math.random()*100)+'vw';
+      var dur=15+Math.random()*16, dx=(Math.random()*60-30);
       svg.animate([
-        {transform:'translate(0,-10vh) rotate(0deg)',opacity:0},
-        {opacity:.5,offset:.1},
-        {opacity:.5,offset:.85},
-        {transform:'translate('+dr19+'vw,112vh) rotate('+(Math.random()*540-270)+'deg)',opacity:0}
+        {transform:'translate(0,-12vh) rotate(0deg)',opacity:0},
+        {opacity:.5,offset:.1},{opacity:.5,offset:.85},
+        {transform:'translate('+dx+'vw,114vh) rotate('+(Math.random()*540-270)+'deg)',opacity:0}
       ],{duration:dur*1000,easing:'linear'});
       drift.appendChild(svg);
       setTimeout(function(){svg.remove();}, dur*1000+200);
     }
-    for(var i=0;i<4;i++) setTimeout(spawn, i*2200);
-    setInterval(spawn, 3400);
+    for(var i=0;i<6;i++) setTimeout(spawn, i*1600);
+    setInterval(spawn, 2600);
   }
 })();
 </script>
