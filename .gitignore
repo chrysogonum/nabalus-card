@@ -1,0 +1,9 @@
+# Full-resolution original photographs — kept locally, not committed (large)
+IMG_*.jpeg
+IMG_*.jpg
+
+# Working thumbnails
+.thumbs/
+
+# macOS
+.DS_Store

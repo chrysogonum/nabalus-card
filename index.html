@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>On Becoming Nabalus — a birthday card</title>
+<meta name="description" content="A birthday card for a twenty-first, told through the changing leaves and the changing name of Nabalus, the plant once called Prenanthes." />
+<meta property="og:title" content="On Becoming Nabalus" />
+<meta property="og:description" content="A coming-of-age card, told through the leaves and the names of a woodland plant." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="images/og-image.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3ecdb;
+    --paper-2:#ece1c9;
+    --paper-edge:#e4d7ba;
+    --ink:#2b3729;
+    --ink-soft:#4f5b48;
+    --ink-faint:#7c8470;
+    --sage:#8a9a78;
+    --gold:#a9854f;
+    --gold-soft:#c2a274;
+    --rule:#cabd9d;
+    --shadow:rgba(40,46,33,.22);
+    --maxw:880px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, #efe7d2 0%, rgba(239,231,210,0) 60%),
+      linear-gradient(180deg, #3e4736 0%, #2f3829 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:"EB Garamond", Garamond, "Hoefler Text", Georgia, serif;
+    font-size:clamp(17px,1.05rem + .25vw,20px);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ---- the specimen sheet ---- */
+  .sheet{
+    position:relative;
+    max-width:var(--maxw);
+    margin:clamp(18px,5vw,64px) auto;
+    padding:clamp(26px,5vw,68px) clamp(22px,5vw,72px) clamp(40px,6vw,80px);
+    background:
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    box-shadow:0 30px 70px -20px var(--shadow), 0 4px 14px rgba(0,0,0,.18);
+    border:1px solid var(--paper-edge);
+    overflow:hidden;
+  }
+  /* subtle paper grain + foxing */
+  .sheet::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(150,120,70,.06) 0 2px, transparent 3px),
+      radial-gradient(circle at 82% 72%, rgba(150,120,70,.05) 0 2px, transparent 3px),
+      radial-gradient(circle at 68% 28%, rgba(120,100,60,.04) 0 1.5px, transparent 2px);
+    background-size:240px 240px,300px 300px,180px 180px;
+  }
+  /* engraved inner border frame */
+  .sheet > .frame{
+    position:absolute;inset:clamp(10px,2.2vw,22px);
+    border:1px solid var(--rule);
+    pointer-events:none;
+  }
+  .sheet > .frame::after{
+    content:"";position:absolute;inset:5px;border:1px solid rgba(202,189,157,.45);
+  }
+  .inner{position:relative;z-index:2;}
+
+  /* ---- header / herbarium label ---- */
+  .eyebrow{
+    font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    font-size:.74rem;
+    color:var(--gold);
+    text-align:center;
+    margin:0 0 1.4em;
+    padding-left:.42em;
+  }
+  .genus{
+    font-family:"Cormorant Garamond",serif;
+    text-align:center;
+    font-weight:500;
+    font-size:clamp(3.1rem,12vw,5.6rem);
+    line-height:.92;
+    margin:0;
+    color:var(--ink);
+    font-style:italic;
+  }
+  .namechange{
+    text-align:center;
+    margin:.6em 0 0;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(1rem,3.6vw,1.35rem);
+    color:var(--ink-soft);
+  }
+  .namechange .old{
+    font-style:italic;
+    color:var(--ink-faint);
+    position:relative;
+    white-space:nowrap;
+  }
+  .namechange .old .strike{
+    position:absolute;left:-2%;right:-2%;top:54%;height:1.5px;
+    background:var(--gold);
+    transform:scaleX(0);transform-origin:left center;
+  }
+  .reveal .namechange .old .strike{transform:scaleX(1);transition:transform 1.1s ease .5s;}
+  .namechange .arrow{color:var(--gold);margin:0 .55em;font-style:normal;}
+  .occasion{
+    text-align:center;
+    font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--ink-faint);
+    margin:1.5em 0 0;
+    padding-left:.3em;
+  }
+
+  /* ---- divider ornament ---- */
+  .divider{display:block;margin:clamp(26px,5vw,46px) auto;width:clamp(150px,40%,260px);height:42px;}
+  .divider path,.divider line{
+    fill:none;stroke:var(--sage);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .draw{stroke-dasharray:1;stroke-dashoffset:1;}
+  .reveal .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s ease;}
+
+  /* ---- intro line ---- */
+  .intro{
+    max-width:34em;margin:0 auto;text-align:center;color:var(--ink-soft);
+    font-size:1.06em;font-style:italic;
+  }
+
+  /* ---- the leaf series ---- */
+  .series-head{
+    text-align:center;margin:clamp(30px,6vw,56px) 0 .4em;
+    font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.3em;text-transform:uppercase;font-size:.74rem;color:var(--gold);
+    padding-left:.3em;
+  }
+  .series-sub{text-align:center;color:var(--ink-faint);font-style:italic;margin:.1em auto 2.2em;max-width:30em;font-size:.98em;}
+
+  .series{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:clamp(12px,2.2vw,22px);
+    align-items:start;
+  }
+  .stage{
+    position:relative;
+    opacity:0;transform:translateY(22px);
+    transition:opacity .9s ease, transform .9s ease;
+  }
+  .stage.in{opacity:1;transform:none;}
+  .stage figure{margin:0;}
+  .plate{
+    position:relative;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:#dfd4b8;
+    border:1px solid var(--paper-edge);
+    box-shadow:0 10px 22px -12px var(--shadow);
+  }
+  .plate img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:saturate(.92) contrast(1.02);
+  }
+  /* aged photo-corner mounts */
+  .plate::before,.plate::after{
+    content:"";position:absolute;width:18px;height:18px;z-index:3;
+    background:linear-gradient(135deg, rgba(60,55,35,.28), rgba(60,55,35,.05));
+  }
+  .plate::before{top:0;left:0;clip-path:polygon(0 0,100% 0,0 100%);}
+  .plate::after{bottom:0;right:0;clip-path:polygon(100% 100%,100% 0,0 100%);}
+  .roman{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;color:var(--gold);font-size:1.15rem;
+    text-align:center;margin:.7em 0 .1em;letter-spacing:.05em;
+  }
+  .stage figcaption{
+    text-align:center;color:var(--ink-soft);
+    font-family:"Cormorant Garamond",serif;font-size:1.02rem;line-height:1.3;
+  }
+  .stage .latin{display:block;font-style:italic;color:var(--ink-faint);font-size:.86em;margin-top:.15em;}
+
+  /* growth thread under the series */
+  .thread{display:block;width:100%;height:26px;margin-top:6px;}
+  .thread path{fill:none;stroke:var(--sage);stroke-width:1.3;stroke-linecap:round;opacity:.8;}
+  .thread circle{fill:var(--gold-soft);}
+
+  /* ---- the poem ---- */
+  .poem{
+    max-width:33em;margin:clamp(40px,8vw,84px) auto clamp(26px,5vw,48px);
+  }
+  .poem .title{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;
+    text-align:center;font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.1;
+    margin:0 0 1.5em;color:var(--ink);
+  }
+  .stanza{
+    margin:0 0 1.9em;
+    opacity:0;transform:translateY(18px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+  .stanza.in{opacity:1;transform:none;}
+  .stanza .num{
+    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);
+    font-size:1.05rem;display:block;text-align:center;margin-bottom:.5em;letter-spacing:.15em;
+  }
+  .stanza p{margin:0;text-align:center;line-height:1.85;}
+  .stanza .lead::first-letter{
+    /* gentle, not a heavy drop cap */
+    font-family:"Cormorant Garamond",serif;font-size:1.15em;color:var(--ink);
+  }
+  .binom{font-style:italic;}
+
+  /* ---- heteroblasty interlude image ---- */
+  .interlude{
+    margin:clamp(36px,7vw,72px) auto;max-width:760px;
+    opacity:0;transform:translateY(22px);transition:opacity 1s ease, transform 1s ease;
+  }
+  .interlude.in{opacity:1;transform:none;}
+  .interlude .plate{aspect-ratio:16/10;}
+  .interlude .cap{
+    text-align:center;color:var(--ink-faint);font-style:italic;margin-top:.9em;font-size:.98em;
+    max-width:32em;margin-left:auto;margin-right:auto;
+  }
+
+  /* ---- birthday message ---- */
+  .message{
+    max-width:34em;margin:clamp(34px,6vw,60px) auto 0;text-align:center;
+    opacity:0;transform:translateY(18px);transition:opacity 1s ease, transform 1s ease;
+  }
+  .message.in{opacity:1;transform:none;}
+  .message .hb{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(1.5rem,5vw,2rem);
+    color:var(--ink);margin:0 0 .5em;
+  }
+  .message p{margin:.2em 0;color:var(--ink-soft);}
+  .signoff{
+    margin-top:1.8em;font-family:"Cormorant Garamond",serif;font-style:italic;
+    color:var(--ink-soft);font-size:1.15rem;
+  }
+
+  /* ---- botanical footnote ---- */
+  .footnote{
+    margin:clamp(40px,7vw,72px) auto 0;max-width:38em;
+    border-top:1px solid var(--rule);padding-top:1.6em;
+    font-size:.86rem;line-height:1.7;color:var(--ink-faint);
+  }
+  .footnote .label{
+    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gold);font-size:.74rem;display:block;
+    text-align:center;margin-bottom:1em;padding-left:.28em;
+  }
+  .footnote em{color:var(--ink-soft);}
+
+  @media (max-width:640px){
+    .series{grid-template-columns:repeat(2,1fr);gap:18px 14px;}
+    .thread{display:none;}
+    .stanza p{line-height:1.8;}
+  }
+
+  /* respect reduced motion */
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+    .stage,.stanza,.interlude,.message{opacity:1;transform:none;}
+    .draw{stroke-dashoffset:0;}
+    .namechange .old .strike{transform:scaleX(1);}
+  }
+
+  /* ---- print / save-as-PDF ---- */
+  @media print{
+    body{background:#fff;}
+    .sheet{box-shadow:none;border:none;margin:0;max-width:100%;}
+    .stage,.stanza,.interlude,.message{opacity:1 !important;transform:none !important;}
+    .draw{stroke-dashoffset:0 !important;}
+    .interlude,.series{break-inside:avoid;}
+    .poem{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<main class="sheet" id="sheet">
+  <div class="frame"></div>
+  <div class="inner">
+
+    <!-- ============ HEADER ============ -->
+    <header>
+      <p class="eyebrow">Herbarium &middot; a birthday specimen</p>
+      <h1 class="genus">Nabalus</h1>
+      <p class="namechange">
+        <span class="old">Prenanthes<span class="strike"></span></span>
+        <span class="arrow">&rarr;</span>
+        <span class="binom" style="font-style:italic;">Nabalus</span>
+      </p>
+      <p class="occasion">For a twenty-first birthday</p>
+    </header>
+
+    <!-- divider: a single drawn leaf -->
+    <svg class="divider" viewBox="0 0 260 42" aria-hidden="true">
+      <line class="draw" x1="20" y1="21" x2="110" y2="21" />
+      <path class="draw" d="M110 21 C124 6 150 4 164 21 C150 38 124 36 110 21 Z" />
+      <line class="draw" x1="110" y1="21" x2="164" y2="21" />
+      <line class="draw" x1="164" y1="21" x2="240" y2="21" />
+    </svg>
+
+    <p class="intro reveal-block">
+      This plant changes its leaves as it grows up, and once changed its name.
+      Both, it turns out, are good ways to come of age.
+    </p>
+
+    <!-- ============ THE LEAF SERIES ============ -->
+    <p class="series-head">The same plant, four ages of one leaf</p>
+    <p class="series-sub">On a single Nabalus the lowest and highest leaves can look like different species &mdash; the form keeps re-cutting itself toward something truer.</p>
+
+    <div class="series" id="series">
+      <div class="stage">
+        <figure>
+          <div class="plate"><img src="images/01-entire.jpg" alt="A broad, undivided Nabalus leaf, soft-edged and whole" loading="lazy" /></div>
+          <p class="roman">I</p>
+          <figcaption>The undivided leaf<span class="latin">whole, unmarked, unbegun</span></figcaption>
+        </figure>
+      </div>
+      <div class="stage">
+        <figure>
+          <div class="plate"><img src="images/02-first-lobes.jpg" alt="Broad leaves with the first spear-like basal lobes appearing" loading="lazy" /></div>
+          <p class="roman">II</p>
+          <figcaption>The first edges<span class="latin">the margins begin to answer</span></figcaption>
+        </figure>
+      </div>
+      <div class="stage">
+        <figure>
+          <div class="plate"><img src="images/03-three-lobed.jpg" alt="A three-lobed, maple-like Nabalus leaf" loading="lazy" /></div>
+          <p class="roman">III</p>
+          <figcaption>Cutting inward<span class="latin">lobe by deliberate lobe</span></figcaption>
+        </figure>
+      </div>
+      <div class="stage">
+        <figure>
+          <div class="plate"><img src="images/04-palmate.jpg" alt="A deeply palmate, many-pointed Nabalus leaf, open like a hand" loading="lazy" /></div>
+          <p class="roman">IV</p>
+          <figcaption>The open hand<span class="latin">deep-cut, many-pointed, wide</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <svg class="thread" viewBox="0 0 800 26" preserveAspectRatio="none" aria-hidden="true">
+      <path class="draw" d="M40 13 C 240 2, 560 24, 760 13" />
+      <circle cx="40" cy="13" r="3.2"></circle>
+      <circle cx="760" cy="13" r="3.2"></circle>
+    </svg>
+
+    <!-- ============ THE POEM ============ -->
+    <section class="poem" id="poem">
+      <h2 class="title">On Becoming Nabalus</h2>
+
+      <div class="stanza"><span class="num">I</span>
+        <p class="lead">You began as one whole leaf,<br/>
+        round and unwritten,<br/>
+        a single soft intention of green &mdash;<br/>
+        the self before the self has edges,<br/>
+        the face the years have not yet cut.</p>
+      </div>
+
+      <div class="stanza"><span class="num">II</span>
+        <p>Then the margins learned to answer.<br/>
+        Lobe by lobe &mdash; a notch, a turning &mdash;<br/>
+        each new edge a question<br/>
+        you had carried quietly<br/>
+        and dared, at last, to keep.</p>
+      </div>
+
+      <div class="stanza"><span class="num">III</span>
+        <p>By the full height of summer<br/>
+        your hands were open:<br/>
+        deep-cut, many-pointed, wide,<br/>
+        no two leaves alike upon one stem &mdash;<br/>
+        as though you wore at once<br/>
+        every shape you had ever been,<br/>
+        and were not sorry for a single one.</p>
+      </div>
+
+      <div class="stanza"><span class="num">IV</span>
+        <p>And the old name loosened like a seed.<br/>
+        <span class="binom">Prenanthes</span> &mdash; the word that held you<br/>
+        when you were too new to hold yourself &mdash;<br/>
+        gave way to the truer sound:<br/>
+        <span class="binom">Nabalus</span>. The name you grew into,<br/>
+        not the name you were given.</p>
+      </div>
+
+      <div class="stanza"><span class="num">V</span>
+        <p>And so, at twenty-one:<br/>
+        not one fixed shape,<br/>
+        but the long, brave habit of becoming &mdash;<br/>
+        the same self the seasons keep re-cutting<br/>
+        into something truer,<br/>
+        unmistakably, and newly, you.</p>
+      </div>
+    </section>
+
+    <!-- ============ HETEROBLASTY IMAGE ============ -->
+    <figure class="interlude">
+      <div class="plate"><img src="images/05-many-forms.jpg" alt="A whole Nabalus plant carrying several different leaf shapes at once" loading="lazy" /></div>
+      <figcaption class="cap">One plant, every form at once &mdash; the broad young leaves and the deeply cut older ones sharing a single stem. Botanists call this heteroblasty; the rest of us call it growing up.</figcaption>
+    </figure>
+
+    <!-- ============ BIRTHDAY MESSAGE ============ -->
+    <section class="message">
+      <p class="hb">Happy 21<sup style="font-style:normal;font-size:.55em;">st</sup> Birthday</p>
+      <p>Like Nabalus, you have spent these years changing shape &mdash;<br/>
+      outgrowing old outlines, growing into a truer name.</p>
+      <p>May you keep doing both: always changing,<br/>
+      and always, unmistakably, yourself.</p>
+      <!-- Add your name on the next line if you like -->
+      <p class="signoff">with love</p>
+    </section>
+
+    <!-- ============ BOTANICAL FOOTNOTE ============ -->
+    <aside class="footnote">
+      <span class="label">A note on the specimen</span>
+      <p><em>Nabalus</em> (formerly <em>Prenanthes</em>) &mdash; a woodland member of the aster family, known by the folk names <em>rattlesnake-root</em>, <em>gall-of-the-earth</em>, and <em>white lettuce</em>. Its foliage is famously variable: a single plant carries broad, undivided lower leaves and deeply palmate upper ones, the shape changing as the plant matures &mdash; a habit botanists call heteroblasty.</p>
+      <p>Long classified within <em>Prenanthes</em>, the North American species were segregated into the genus <em>Nabalus</em> by the botanist Henri Cassini in 1825; later molecular work has confirmed the split. A plant, in other words, that changed both its leaves and its name on the way to becoming itself.</p>
+    </aside>
+
+  </div>
+</main>
+
+<script>
+  // Reveal-on-scroll, staggered for the leaf series and the poem stanzas.
+  (function(){
+    var sheet = document.getElementById('sheet');
+    // header strike + divider draw fire shortly after load
+    requestAnimationFrame(function(){
+      setTimeout(function(){ sheet.classList.add('reveal'); }, 250);
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.18, rootMargin:'0px 0px -8% 0px'});
+
+    // stagger leaf stages
+    document.querySelectorAll('#series .stage').forEach(function(el,i){
+      el.style.transitionDelay = (i*0.16)+'s';
+      io.observe(el);
+    });
+    // stagger poem stanzas
+    document.querySelectorAll('#poem .stanza').forEach(function(el,i){
+      el.style.transitionDelay = (i*0.06)+'s';
+      io.observe(el);
+    });
+    document.querySelectorAll('.interlude, .message').forEach(function(el){ io.observe(el); });
+
+    // also draw the divider/thread when they scroll in
+    document.querySelectorAll('.divider, .thread').forEach(function(svg){
+      var o2 = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ svg.closest('main').classList.add('reveal'); o2.unobserve(e.target);} });
+      },{threshold:0.4});
+      o2.observe(svg);
+    });
+  })();
+</script>
+</body>
+</html>
