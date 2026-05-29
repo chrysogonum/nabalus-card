@@ -62,19 +62,23 @@
   #veins path,#petiole{fill:none;stroke:var(--leaf);stroke-width:1.5;stroke-linecap:round;opacity:.6;}
   #petiole{stroke-width:2.4;opacity:.8;}
 
-  /* current-form caption that updates as the leaf morphs */
-  .form-label{
-    height:1.5em;margin:1.1em 0 .2em;
-    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--mist);
-    letter-spacing:.02em;transition:opacity .5s ease;
+  /* captions that update as the leaf morphs — two stacked layers per slot
+     so a fading-out string can never collide with the fading-in one */
+  .hud{width:100%;margin-top:1.3em;}
+  .slot{position:relative;height:1.7em;margin:.15em 0;}
+  .slot > span{
+    position:absolute;left:0;right:0;top:0;opacity:0;
+    transition:opacity .6s ease;will-change:opacity;
   }
-  .names{height:1.5em;margin:.1em 0 .2em;position:relative;width:100%;}
-  .names span{
-    position:absolute;left:0;right:0;opacity:0;
-    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.34em;text-transform:uppercase;
-    font-size:.74rem;color:var(--gold-dim);transition:opacity 1.1s ease;padding-left:.34em;
+  .slot > span.on{opacity:1;}
+  .slot.form > span{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;
+    color:var(--mist);letter-spacing:.02em;
   }
-  .names span.on{opacity:1;}
+  .slot.names > span{
+    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.34em;
+    text-transform:uppercase;font-size:.74rem;color:var(--gold-dim);padding-left:.34em;
+  }
   .scrollcue{margin-top:4vh;color:var(--gold-dim);font-size:.78rem;letter-spacing:.34em;
     text-transform:uppercase;font-family:"Cormorant SC","Cormorant Garamond",serif;
     animation:bob 2.4s ease-in-out infinite;}
@@ -168,8 +172,10 @@
       </svg>
     </div>
 
-    <div class="form-label" id="formlabel" aria-hidden="true"></div>
-    <div class="names" id="names" aria-hidden="true"></div>
+    <div class="hud" aria-hidden="true">
+      <div class="slot form" id="formlabel"><span></span><span></span></div>
+      <div class="slot names" id="names"><span></span><span></span></div>
+    </div>
 
     <div class="scrollcue">scroll &middot; watch it change</div>
   </section>
@@ -336,18 +342,30 @@
     cMid.setAttribute('d', veinsFor(w));
   }
 
-  /* ---------- form label that names the current shape ---------- */
+  /* ---------- two-layer cross-fader (no text ever overlaps) ---------- */
+  function makeFader(el){
+    var spans=el.children, idx=0, last=null;
+    return function(text){
+      if(text===last) return;
+      last=text;
+      var show=spans[idx^1], hide=spans[idx];
+      show.textContent=text; show.classList.add('on'); hide.classList.remove('on');
+      idx^=1;
+    };
+  }
+
+  /* ---------- label that names the current shape as it morphs ---------- */
   var FORMS=[
     {to:0.12, txt:"a plain, undivided leaf"},
     {to:0.45, txt:"the first edges, answering"},
     {to:0.80, txt:"cutting inward, lobe by lobe"},
     {to:1.01, txt:"a hand of many points"}
   ];
-  var formLabel=document.getElementById('formlabel'), lastForm=-1;
+  var formFader=makeFader(document.getElementById('formlabel'));
   function updateForm(t){
-    var idx=0; for(var i=0;i<FORMS.length;i++){ if(t<FORMS[i].to){ idx=i; break; } idx=FORMS.length-1; }
-    if(idx!==lastForm){ lastForm=idx; formLabel.style.opacity=0;
-      setTimeout(function(){ formLabel.textContent=FORMS[idx].txt; formLabel.style.opacity=1; },220); }
+    var idx=FORMS.length-1;
+    for(var i=0;i<FORMS.length;i++){ if(t<FORMS[i].to){ idx=i; break; } }
+    formFader(FORMS[idx].txt);
   }
 
   /* ---------- per-verse leaf glyphs (static, drawn at the verse's shape) ---------- */
@@ -362,7 +380,7 @@
 
   /* ---------- animate: continuous shape-change ---------- */
   if(reduce){
-    setHero(1); setClose(1); updateForm(1); formLabel.style.opacity=1;
+    setHero(1); setClose(1); updateForm(1);
   } else {
     var HERO_PERIOD=14000;   // ms for a full entire->palmate->entire cycle
     var CLOSE_PERIOD=18000;
@@ -386,11 +404,9 @@
 
   /* ---------- cross-fading folk names ---------- */
   var NAMES=["rattlesnake-root","gall-of-the-earth","white lettuce","lion's-foot","cankerweed","Nabalus"];
-  var box=document.getElementById('names');
-  NAMES.forEach(function(nm){var s=document.createElement('span');s.textContent=nm;box.appendChild(s);});
-  var spans=box.querySelectorAll('span'), ni=0;
-  spans[0].classList.add('on');
-  if(!reduce){ setInterval(function(){ spans[ni].classList.remove('on'); ni=(ni+1)%spans.length; spans[ni].classList.add('on'); },2800); }
+  var nameFader=makeFader(document.getElementById('names'));
+  var ni=0; nameFader(NAMES[0]);
+  if(!reduce){ setInterval(function(){ ni=(ni+1)%NAMES.length; nameFader(NAMES[ni]); },2800); }
 
   /* ---------- reveal poem stanzas + close ---------- */
   var io=new IntersectionObserver(function(es){
