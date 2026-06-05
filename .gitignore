@@ -7,3 +7,8 @@ IMG_*.jpg
 
 # macOS
 .DS_Store
+
+# Local session-management files (keep the public card repo clean)
+PROJECT_STATE.md
+DECISIONS.md
+FACT_LOCK.md
