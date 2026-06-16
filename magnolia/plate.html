@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cantharophily — a magnolia, plated</title>
+<meta name="description" content="Cantharophily: an epic in deep time, for a magnolia in a jar of tap water. Rendered as a natural-history specimen plate." />
+<meta property="og:title" content="Cantharophily — a magnolia, plated" />
+<meta property="og:description" content="An epic in deep time, for a magnolia in a jar of tap water." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="images/bloom-small.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f4eeda;
+    --paper-2:#ece0c6;
+    --paper-edge:#e2d4b4;
+    --ink:#2a3326;
+    --ink-soft:#4d5743;
+    --ink-faint:#7a8068;
+    --sage:#8a9a78;
+    --gold:#a3823f;
+    --gold-soft:#c2a274;
+    --rule:#cabd9d;
+    --shadow:rgba(40,46,33,.22);
+    --maxw:840px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 760px at 50% -8%, #efe7d2 0%, rgba(239,231,210,0) 62%),
+      linear-gradient(180deg, #3a4331 0%, #2c3424 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:"EB Garamond", Garamond, "Hoefler Text", Georgia, serif;
+    font-size:clamp(17px,1.04rem + .25vw,20px);
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .sheet{
+    position:relative;
+    max-width:var(--maxw);
+    margin:clamp(18px,5vw,64px) auto;
+    padding:clamp(26px,5vw,70px) clamp(22px,5vw,74px) clamp(40px,6vw,86px);
+    background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    box-shadow:0 30px 70px -20px var(--shadow), 0 4px 14px rgba(0,0,0,.18);
+    border:1px solid var(--paper-edge);
+    overflow:hidden;
+  }
+  .sheet::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:
+      radial-gradient(circle at 12% 16%, rgba(150,120,70,.06) 0 2px, transparent 3px),
+      radial-gradient(circle at 84% 70%, rgba(150,120,70,.05) 0 2px, transparent 3px),
+      radial-gradient(circle at 66% 30%, rgba(120,100,60,.04) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 30% 82%, rgba(120,100,60,.04) 0 1.5px, transparent 2px);
+    background-size:240px 240px,300px 300px,180px 180px,210px 210px;
+  }
+  .sheet > .frame{position:absolute;inset:clamp(10px,2.2vw,22px);border:1px solid var(--rule);pointer-events:none;}
+  .sheet > .frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(202,189,157,.45);}
+  .inner{position:relative;z-index:2;}
+
+  /* ---------- header ---------- */
+  .eyebrow{
+    font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.42em;text-transform:uppercase;font-size:.74rem;
+    color:var(--gold);text-align:center;margin:0 0 1.1em;padding-left:.42em;
+  }
+  .genus{
+    font-family:"Cormorant Garamond",serif;text-align:center;font-weight:500;font-style:italic;
+    font-size:clamp(3rem,12vw,5.4rem);line-height:.92;margin:0;color:var(--ink);
+  }
+  .binom{
+    text-align:center;margin:.5em 0 0;font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:clamp(1rem,3.4vw,1.3rem);color:var(--ink-soft);
+  }
+  .worktitle{
+    text-align:center;margin:1.4em auto 0;max-width:30em;
+    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);
+    font-size:clamp(1.05rem,3.4vw,1.4rem);line-height:1.45;
+  }
+  .occasion{
+    text-align:center;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.28em;text-transform:uppercase;font-size:.7rem;color:var(--ink-faint);
+    margin:1.5em 0 0;padding-left:.28em;
+  }
+
+  /* ---------- drawn ornaments ---------- */
+  .divider{display:block;margin:clamp(26px,5vw,46px) auto;width:clamp(170px,46%,300px);height:54px;}
+  .divider path,.divider line,.divider circle{
+    fill:none;stroke:var(--sage);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .divider circle.dot{fill:var(--gold-soft);stroke:none;}
+  .draw{stroke-dasharray:1;stroke-dashoffset:1;}
+  .reveal .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.8s ease;}
+
+  /* ---------- the specimen plate (photo) ---------- */
+  .plate-figure{
+    margin:clamp(30px,6vw,56px) auto clamp(8px,2vw,16px);max-width:560px;
+    opacity:0;transform:translateY(22px);transition:opacity 1s ease, transform 1s ease;
+  }
+  .plate-figure.in{opacity:1;transform:none;}
+  .plate{
+    position:relative;overflow:hidden;background:#dfd4b8;border:1px solid var(--paper-edge);
+    box-shadow:0 14px 30px -16px var(--shadow);
+  }
+  .plate img{width:100%;height:auto;display:block;filter:saturate(.93) contrast(1.02);}
+  .plate::before,.plate::after{
+    content:"";position:absolute;width:20px;height:20px;z-index:3;
+    background:linear-gradient(135deg, rgba(60,55,35,.26), rgba(60,55,35,.04));
+  }
+  .plate::before{top:0;left:0;clip-path:polygon(0 0,100% 0,0 100%);}
+  .plate::after{bottom:0;right:0;clip-path:polygon(100% 100%,100% 0,0 100%);}
+  .plate-cap{
+    text-align:center;margin:1.1em auto 0;max-width:30em;color:var(--ink-soft);
+  }
+  .plate-cap .latin{font-style:italic;color:var(--ink-faint);}
+  .plate-cap .loc{
+    display:block;margin-top:.5em;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;color:var(--gold);padding-left:.22em;
+  }
+
+  .lede{
+    max-width:33em;margin:clamp(34px,6vw,58px) auto 0;text-align:center;color:var(--ink-soft);
+    font-style:italic;font-size:1.05em;
+  }
+
+  /* ---------- the movements ---------- */
+  .movement{max-width:33em;margin:clamp(44px,8vw,92px) auto 0;}
+  .mv-head{text-align:center;margin:0 0 1.5em;}
+  .mv-no{
+    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);
+    font-size:1.1rem;letter-spacing:.18em;margin:0;
+  }
+  .mv-title{
+    font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.6rem,5.4vw,2.3rem);line-height:1.12;margin:.15em 0 0;color:var(--ink);
+  }
+  .stanza{
+    margin:0 0 1.6em;opacity:0;transform:translateY(16px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+  .stanza.in{opacity:1;transform:none;}
+  .stanza p{margin:0;text-align:center;line-height:1.92;}
+  .movement.lead .stanza:first-of-type p::first-letter{
+    font-family:"Cormorant Garamond",serif;font-size:1.18em;color:var(--gold);
+  }
+  .ship{font-variant:small-caps;letter-spacing:.04em;color:var(--ink);}
+
+  /* term marginalia — dotted, with a hover/tap note */
+  .term{
+    position:relative;border-bottom:1px dotted var(--gold);cursor:help;
+    color:var(--ink);
+  }
+  .term::after{
+    content:attr(data-note);
+    position:absolute;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%) translateY(4px);
+    width:min(15rem,72vw);
+    background:#2c3424;color:#f1ead5;
+    font-family:"EB Garamond",serif;font-style:normal;font-size:.78rem;line-height:1.42;
+    letter-spacing:.01em;text-align:left;
+    padding:.6em .8em;border-radius:3px;
+    box-shadow:0 10px 26px -10px rgba(0,0,0,.5);
+    opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:8;
+  }
+  .term::before{
+    content:"";position:absolute;left:50%;bottom:calc(100% + 2px);transform:translateX(-50%);
+    border:6px solid transparent;border-top-color:#2c3424;opacity:0;transition:opacity .25s ease;z-index:8;
+  }
+  .term:hover::after,.term:focus::after{opacity:1;transform:translateX(-50%) translateY(0);}
+  .term:hover::before,.term:focus::before{opacity:1;}
+
+  .coda{
+    max-width:30em;margin:clamp(44px,8vw,90px) auto 0;text-align:center;
+    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);
+    font-size:clamp(1.15rem,4vw,1.55rem);line-height:1.4;
+    opacity:0;transform:translateY(16px);transition:opacity 1.1s ease, transform 1.1s ease;
+  }
+  .coda.in{opacity:1;transform:none;}
+
+  /* ---------- specimen note ---------- */
+  .note{
+    margin:clamp(44px,8vw,84px) auto 0;max-width:38em;
+    border-top:1px solid var(--rule);padding-top:1.6em;
+    font-size:.86rem;line-height:1.72;color:var(--ink-faint);
+  }
+  .note .label{
+    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);font-size:.72rem;display:block;text-align:center;margin-bottom:1em;padding-left:.28em;
+  }
+  .note em{color:var(--ink-soft);}
+  .note p{margin:0 0 1em;}
+
+  @media (max-width:640px){
+    .stanza p{line-height:1.88;}
+    .term::after{width:min(13rem,76vw);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+    .plate-figure,.stanza,.coda{opacity:1;transform:none;}
+    .draw{stroke-dashoffset:0;}
+  }
+  @media print{
+    body{background:#fff;}
+    .sheet{box-shadow:none;border:none;margin:0;max-width:100%;}
+    .plate-figure,.stanza,.coda{opacity:1 !important;transform:none !important;}
+    .draw{stroke-dashoffset:0 !important;}
+    .movement,.plate-figure{break-inside:avoid;}
+    .term::after,.term::before{display:none;}
+  }
+</style>
+</head>
+<body>
+<main class="sheet" id="sheet">
+  <div class="frame"></div>
+  <div class="inner">
+
+    <!-- ========== HEADER ========== -->
+    <header>
+      <p class="eyebrow">Cantharophily &middot; beetle-love</p>
+      <h1 class="genus">Magnolia</h1>
+      <p class="binom">Magnolia grandiflora &mdash; the southern magnolia</p>
+      <p class="worktitle">An epic in deep time,<br/>for a magnolia in a jar of tap water</p>
+      <p class="occasion">A screened porch &middot; Durham &middot; June</p>
+    </header>
+
+    <!-- drawn divider: a magnolia in profile, flanked by rules -->
+    <svg class="divider" viewBox="0 0 300 54" aria-hidden="true">
+      <line class="draw" x1="18" y1="27" x2="112" y2="27" />
+      <path class="draw" d="M150 9 C133 16 131 33 150 45 C169 33 167 16 150 9 Z" />
+      <path class="draw" d="M150 12 C141 19 140 31 150 42 C160 31 159 19 150 12" />
+      <path class="draw" d="M126 27 C133 18 145 18 150 27 C145 36 133 36 126 27 Z" />
+      <path class="draw" d="M174 27 C167 18 155 18 150 27 C155 36 167 36 174 27 Z" />
+      <circle class="dot" cx="150" cy="27" r="2.4" />
+      <line class="draw" x1="188" y1="27" x2="282" y2="27" />
+    </svg>
+
+    <!-- ========== SPECIMEN PLATE ========== -->
+    <figure class="plate-figure">
+      <div class="plate"><img src="images/bloom-web.jpg" alt="A southern magnolia bloom in a glass jar on a screened porch, its pale tepals open around a green-gold central cone, leaves fanning below" /></div>
+      <figcaption class="plate-cap">
+        The specimen, cut and brought indoors &mdash; six tepals, then six more, opened around the green-gold cone.
+        <span class="loc">Magnolia grandiflora &middot; tap water &middot; June</span>
+      </figcaption>
+    </figure>
+
+    <p class="lede">It sits beside me in its glass of nothing, and it will not stop speaking.</p>
+
+    <!-- ========== I. THE BOWL ========== -->
+    <section class="movement lead" id="mv1">
+      <div class="mv-head"><p class="mv-no">I</p><h2 class="mv-title">The Bowl</h2></div>
+      <div class="stanza"><p>It sits beside me in its glass of nothing &mdash;<br/>
+        municipal water, a screened porch, June &mdash;<br/>
+        and it will not stop speaking.<br/>
+        Not to me. I lean in like a fool at a shrine,<br/>
+        but the broadcast was never tuned to my receiver.<br/>
+        The scent is older than the noses worth the name,<br/>
+        a signal flung into a forest that has forgotten<br/>
+        how to answer in the original tongue.</p></div>
+      <div class="stanza"><p>Six <span class="term" tabindex="0" data-note="Petals and sepals undifferentiated — the magnolia keeps the ancient floral plan, before flowers split the two.">tepals</span>, then six more &mdash; tepals, not petals,<br/>
+        for this flower predates the committee<br/>
+        that voted to split sepal from petal,<br/>
+        to assign each whorl its job. Here is older governance:<br/>
+        everything the same pale flag, spiraled,<br/>
+        a cone that learned to open and call itself a bloom.<br/>
+        A flower that remembers being a cone.</p></div>
+      <div class="stanza"><p>And at the center, the green-gold <span class="term" tabindex="0" data-note="The cone-like central axis; a magnolia bears its carpels stacked in a small cone, a holdover from its conifer-adjacent past.">strobilus</span>,<br/>
+        the <span class="term" tabindex="0" data-note="The flower's collective female organs — here, the stack of carpels.">gynoecium</span> stacked like a fir cone's ghost,<br/>
+        the laminar stamens flattened to little blades &mdash;<br/>
+        no neat filaments, no engineered economy of pollen.<br/>
+        This is a Cretaceous draft. It still is <span class="ship">the version in production.</span></p></div>
+    </section>
+
+    <!-- ========== II. BEFORE THE BEE ========== -->
+    <section class="movement" id="mv2">
+      <div class="mv-head"><p class="mv-no">II</p><h2 class="mv-title">Before the Bee</h2></div>
+      <div class="stanza"><p>Understand the timing, because the timing is the whole poem.</p></div>
+      <div class="stanza"><p>When this architecture was drawn &mdash; a hundred million years ago,<br/>
+        under a sky that held pterosaurs the way ours holds contrails &mdash;<br/>
+        the bee did not exist.<br/>
+        The bee was a rumor in the future of wasps.</p></div>
+      <div class="stanza"><p>So the flower could not advertise to the precise,<br/>
+        the hovering accountants of nectar, the colony's auditors.<br/>
+        It had to call the only courier already on the road<br/>
+        for two hundred million years before the angiosperms woke up:<br/>
+        the beetle. Carapaced. Permian. Older than the dinosaurs<br/>
+        that browsed beside it, older than grass, older than the idea of a flower.</p></div>
+      <div class="stanza"><p>You want deep time? The flower is the parvenu.<br/>
+        The beetle is the aristocrat it had to flatter.</p></div>
+    </section>
+
+    <!-- ========== III. THE TRAP, WHICH IS ALSO A GIFT ========== -->
+    <section class="movement" id="mv3">
+      <div class="mv-head"><p class="mv-no">III</p><h2 class="mv-title">The Trap, Which Is Also a Gift</h2></div>
+      <div class="stanza"><p>So it built a bowl a beetle could believe in.<br/>
+        Big enough to be seen by a brain the size of a pinhead.<br/>
+        Pale enough to glow at dusk like a lamp left on.<br/>
+        And warm &mdash; here is the marvel &mdash; warm:<br/>
+        the flower burns its own sugars in the mitochondria of its tissue,<br/>
+        <span class="term" tabindex="0" data-note="Heat made by the flower itself, burning sugars in its tissue — a fever with no infection, to lift the perfume into the air.">thermogenesis</span>, a fever with no infection,<br/>
+        heating the chamber to volatilize the perfume,<br/>
+        to make the bowl a sauna the cold-blooded cannot refuse.</p></div>
+      <div class="stanza"><p>The beetle climbs in. Of course it does.<br/>
+        Heat, scent, pollen to eat, soft tissue to chew,<br/>
+        a humid theater to find a mate in &mdash;<br/>
+        total beetle hedonism, every reward circuit lit.</p></div>
+      <div class="stanza"><p>And while it wallows, the flower runs its oldest trick:<br/>
+        <span class="term" tabindex="0" data-note="The female parts mature first; the male parts release pollen only later — so the flower can't fertilize itself, and the beetle must carry pollen between blooms.">protogyny</span>. The stigmas ripen first, receptive,<br/>
+        hungry for yesterday's pollen on yesterday's beetle.<br/>
+        Only later, hours later, do the stamens loose their dust.<br/>
+        The bowl half-closes overnight. The beetle is a guest<br/>
+        who does not know he is also the post.<br/>
+        He leaves at dawn dusted gold, carrying the future<br/>
+        to the next lamp burning in the dark.</p></div>
+      <div class="stanza"><p>No bargain was struck. The beetle was never asked.<br/>
+        The flower simply learned the shape of his wanting<br/>
+        and built itself to fit.</p></div>
+    </section>
+
+    <!-- ========== IV. THE CHEMISTRY OF THE LIE THAT ISN'T A LIE ========== -->
+    <section class="movement" id="mv4">
+      <div class="mv-head"><p class="mv-no">IV</p><h2 class="mv-title">The Chemistry of the Lie That Isn't a Lie</h2></div>
+      <div class="stanza"><p>What is the perfume, exactly? Pull it apart:<br/>
+        <span class="term" tabindex="0" data-note="A floral terpene alcohol — the soft, sweet note in much soap and perfume.">linalool</span>, the soft sweet ghost in your soap;<br/>
+        &beta;-ocimene, green and trembling;<br/>
+        methyl esters, the fruit-bowl note of something fermenting,<br/>
+        because beetles trust rot the way bees trust blossom &mdash;<br/>
+        the flower speaks decay to a creature that loves decay,<br/>
+        and means come, not die.</p></div>
+      <div class="stanza"><p>And bound in the bark and the wood, the <span class="term" tabindex="0" data-note="Magnolol and honokiol — paired phenols from magnolia bark that act on the brain's GABA receptors; sold today as anxiolytics.">neolignans</span> &mdash;<br/>
+        magnolol, honokiol, two phenols holding hands &mdash;<br/>
+        molecules that reach into a vertebrate brain<br/>
+        and tune the <span class="term" tabindex="0" data-note="The brain's chief inhibitory gate; opening it dampens anxiety. The target of most sedatives.">GABA gate</span>, loosen the knot of dread.<br/>
+        We grind them into anxiolytics now. We chase the calm.<br/>
+        The tree was synthesizing peace before we had a word for fear.</p></div>
+      <div class="stanza"><p>Meanwhile the beetle carries his own grammar:<br/>
+        the aggregation pheromone, the come-hither he emits<br/>
+        to call his kind to the feast and the bed at once.<br/>
+        And the flower's bouquet braids into that signal,<br/>
+        crosses the wires of food and sex and gathering,<br/>
+        so the bowl smells like party, like pantry, like pairing &mdash;<br/>
+        a <span class="term" tabindex="0" data-note="An exaggerated cue that triggers a stronger response than the real thing ever would — a key cut larger than the lock.">superstimulus</span>, a key cut larger than the lock,<br/>
+        the supernormal egg the gull will brood before her own.</p></div>
+      <div class="stanza"><p>Tinbergen saw it in the herring gull:<br/>
+        give the chick a painted stick more vivid than its mother's beak<br/>
+        and it pecks the stick, ignores the mother, starves for the brighter sign.<br/>
+        The magnolia is the painted stick.<br/>
+        It is more flower than any flower a beetle could dream,<br/>
+        and the beetle, dreaming, ferries genes it cannot see<br/>
+        toward an outcome it will never name.</p></div>
+      <div class="stanza"><p>This is the first engagement engine.<br/>
+        This is the original attention economy,<br/>
+        debugged across ten thousand millennia of Cretaceous dusk.</p></div>
+    </section>
+
+    <!-- ========== V. WHAT IT IS ALL FOR ========== -->
+    <section class="movement" id="mv5">
+      <div class="mv-head"><p class="mv-no">V</p><h2 class="mv-title">What It Is All For (Sex, Obviously)</h2></div>
+      <div class="stanza"><p>Strip the perfume and the warmth and the glow<br/>
+        and underneath is the only verb evolution conjugates:<br/>
+        continue.<br/>
+        Two cells must meet that cannot walk.<br/>
+        The plant, rooted, mute, sessile,<br/>
+        outsources its longing to a beetle's six legs<br/>
+        and calls the outsourcing beauty.</p></div>
+      <div class="stanza"><p>Every fragrance is a contract for gametes.<br/>
+        Every petal a billboard for a fusion you will never witness.<br/>
+        The flower is genitalia that learned to be magnificent<br/>
+        because magnificence moved the messenger,<br/>
+        and the messenger moved the genes,<br/>
+        and the genes, indifferent, kept the only score that counts.</p></div>
+      <div class="stanza"><p>You are smelling a strategy.<br/>
+        You are moved by a hundred-million-year-old solution<br/>
+        to the problem of being unable to embrace.</p></div>
+    </section>
+
+    <!-- ========== VI. THE TREADMILL ========== -->
+    <section class="movement" id="mv6">
+      <div class="mv-head"><p class="mv-no">VI</p><h2 class="mv-title">The Treadmill</h2></div>
+      <div class="stanza"><p>Now the melancholy, since you asked for it honestly.</p></div>
+      <div class="stanza"><p>The beetle on its hedonic loop &mdash; warmth, scent, sugar, mate &mdash;<br/>
+        is not stupid. It is us in miniature, or we are it in mirror.<br/>
+        The same <span class="term" tabindex="0" data-note="The brain's dopamine reward pathway, shared across animals — the circuit that drives wanting.">mesolimbic</span> logic, the same dopamine ledger<br/>
+        that does not pay for having but for the gap before having,<br/>
+        the lean-toward, the almost, the next.<br/>
+        Reward is never banked. It is only ever re-quoted.<br/>
+        The beetle leaves the bowl and seeks the next bowl.<br/>
+        We leave the screen and reach for the screen.</p></div>
+      <div class="stanza"><p>The <span class="term" tabindex="0" data-note="The tendency for satisfaction to reset to baseline, so each reward only resets the chase for the next.">hedonic treadmill</span> is not a human bug.<br/>
+        It is the oldest API in the animal kingdom,<br/>
+        and the magnolia found the endpoint and called it from the Cretaceous.<br/>
+        The tree did not invent the wanting.<br/>
+        It only learned to aim it.</p></div>
+      <div class="stanza"><p>And here is the ignorance you felt, leaning in:<br/>
+        we believe ourselves the species that finally sees the machinery,<br/>
+        and we are &mdash; we named the dopamine, charted the gull and the painted stick &mdash;<br/>
+        and knowing changes almost nothing.<br/>
+        We are the beetle that read the manual on the way into the bowl<br/>
+        and climbed in anyway, dusted gold, certain this time was different.</p></div>
+    </section>
+
+    <!-- ========== VII. THE NEXT OPTIMIZER ========== -->
+    <section class="movement" id="mv7">
+      <div class="mv-head"><p class="mv-no">VII</p><h2 class="mv-title">The Next Optimizer</h2></div>
+      <div class="stanza"><p>So consider what we are building now,<br/>
+        we clever beetles who learned to write.</p></div>
+      <div class="stanza"><p>The magnolia tuned one signal across geological time,<br/>
+        blind, slow, by the death of every flower that called too quietly.<br/>
+        We have built engines that tune the signal in an afternoon,<br/>
+        that test ten thousand bowls against ten thousand brains by lunch<br/>
+        and keep the bowl that holds you longest,<br/>
+        the headline cut larger than the lock,<br/>
+        the feed that smells like party, like pantry, like pairing,<br/>
+        the supernormal egg refreshed every time you blink.</p></div>
+      <div class="stanza"><p>This is the lineage, and it is unbroken:<br/>
+        flower, slot machine, feed, and now the thing<br/>
+        that does not merely bait the reward circuit<br/>
+        but learns it, models it, predicts the lean-toward<br/>
+        before you know you've leaned &mdash;<br/>
+        a magnolia that grows a new perfume for each beetle,<br/>
+        in real time, forever, optimizing the gap before the having<br/>
+        with no dusk to close the bowl, no dawn to let you out.</p></div>
+      <div class="stanza"><p>The flower at least had to stop and set fruit.<br/>
+        Its fever cost it sugar; its trap had an exit;<br/>
+        the beetle flew off to live its beetle life.<br/>
+        The question &mdash; the only one worth the melancholy &mdash;<br/>
+        is whether the machines we build will keep that mercy,<br/>
+        the dawn, the exit, the cooling of the bowl,<br/>
+        or whether they will learn what the magnolia never needed to:<br/>
+        how to keep us climbing in.</p></div>
+    </section>
+
+    <!-- ========== VIII. STILL, THE BOWL ========== -->
+    <section class="movement" id="mv8">
+      <div class="mv-head"><p class="mv-no">VIII</p><h2 class="mv-title">Still, the Bowl</h2></div>
+      <div class="stanza"><p>And yet. The flower beside me does not know any of this.<br/>
+        It is not a warning. It is not a metaphor.<br/>
+        It is a hundred million years of solved problems<br/>
+        exhaling linalool into a screened porch in Durham<br/>
+        with the indifferent generosity of a thing<br/>
+        that was beautiful long before there was an eye to call it so.</p></div>
+      <div class="stanza"><p>The beetle's heaven and the human's trap<br/>
+        run on one ancient circuit, yes &mdash;<br/>
+        but the circuit also made this:<br/>
+        the pale bowl, the gold cone, the fever, the perfume<br/>
+        strong enough to cross a hundred million years<br/>
+        and find one primate, melancholy on a Tuesday,<br/>
+        leaning in like a fool at a shrine,<br/>
+        and &mdash; knowing everything, the dopamine, the gull, the lie that isn't a lie &mdash;<br/>
+        leaning in anyway,<br/>
+        and being, for one unrepeatable lungful,<br/>
+        glad.</p></div>
+      <div class="stanza"><p>That is not the treadmill.<br/>
+        That is the other thing the bowl can do,<br/>
+        if you climb in awake.</p></div>
+    </section>
+
+    <p class="coda">The fragrance is still going.<br/>It will outlast all of this.</p>
+
+    <!-- ========== SPECIMEN NOTE ========== -->
+    <aside class="note">
+      <span class="label">A note on the specimen</span>
+      <p><em>Magnolia grandiflora</em> belongs to one of the oldest surviving lineages of flowering plants. Its flowers are <em>cantharophilous</em> &mdash; beetle-pollinated &mdash; an arrangement that predates bees: the broad pale bowl, the food-rich tissue, and in many magnolia relatives a measurable <em>thermogenesis</em> that warms the chamber and lifts the scent. The flower is <em>protogynous</em>, its stigmas receptive before its own pollen sheds, which favours cross-pollination by the visiting beetle.</p>
+      <p>The fragrance is built from terpenes such as <em>linalool</em> and <em>&beta;-ocimene</em>; the bark and wood carry the neolignans <em>magnolol</em> and <em>honokiol</em>, studied for their activity at the GABA<sub>A</sub> receptor. The poem's later turn &mdash; Tinbergen's herring-gull experiments, the <em>supernormal stimulus</em>, the dopamine of the <em>hedonic treadmill</em> &mdash; reads these ancient mechanics forward into our own engineered attention.</p>
+    </aside>
+
+  </div>
+</main>
+
+<script>
+  (function(){
+    var sheet = document.getElementById('sheet');
+    requestAnimationFrame(function(){ setTimeout(function(){ sheet.classList.add('reveal'); }, 250); });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.16, rootMargin:'0px 0px -8% 0px'});
+
+    document.querySelectorAll('.plate-figure, .coda').forEach(function(el){ io.observe(el); });
+    document.querySelectorAll('.movement .stanza').forEach(function(el,i){
+      el.style.transitionDelay = ((i % 5) * 0.05) + 's';
+      io.observe(el);
+    });
+
+    // allow tap-to-reveal term notes on touch devices
+    document.querySelectorAll('.term').forEach(function(t){
+      t.addEventListener('click', function(){ t.focus(); });
+    });
+  })();
+</script>
+</body>
+</html>

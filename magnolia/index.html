@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cantharophily — three renditions</title>
+<meta name="description" content="Three designed renditions of Cantharophily: an epic in deep time, for a magnolia in a jar of tap water." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=Cormorant+SC:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f4eeda;--ink:#2a3326;--ink-soft:#4d5743;--ink-faint:#7a8068;
+    --gold:#a3823f;--sage:#8a9a78;--rule:#cabd9d;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100vh;color:var(--ink);
+    background:
+      radial-gradient(1200px 760px at 50% -8%, #efe7d2 0%, rgba(239,231,210,0) 62%),
+      linear-gradient(180deg, #3a4331 0%, #2c3424 100%);
+    background-attachment:fixed;
+    font-family:"EB Garamond",Garamond,Georgia,serif;
+    font-size:clamp(17px,1.04rem + .25vw,20px);line-height:1.7;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    display:flex;align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);
+  }
+  main{
+    max-width:920px;width:100%;background:var(--paper);
+    border:1px solid #e2d4b4;box-shadow:0 30px 70px -20px rgba(40,46,33,.22);
+    padding:clamp(30px,5vw,66px);position:relative;
+  }
+  .frame{position:absolute;inset:clamp(10px,2vw,20px);border:1px solid var(--rule);pointer-events:none;}
+  .frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(202,189,157,.45);}
+  .in{position:relative;z-index:2;}
+  .eyebrow{
+    font-family:"Cormorant SC",serif;letter-spacing:.4em;text-transform:uppercase;font-size:.72rem;
+    color:var(--gold);text-align:center;margin:0 0 1em;padding-left:.4em;
+  }
+  h1{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;text-align:center;
+    font-size:clamp(2.6rem,9vw,4.2rem);line-height:.95;margin:0;
+  }
+  .sub{text-align:center;font-style:italic;color:var(--ink-soft);max-width:30em;margin:1em auto 0;
+    font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,3.4vw,1.35rem);}
+  .lead{text-align:center;color:var(--ink-faint);max-width:34em;margin:1.6em auto 2.6em;font-size:.98em;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px);}
+  a.card{
+    display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    background:linear-gradient(180deg,#fbf6e8,#f1e7cd);
+    border:1px solid #e2d4b4;box-shadow:0 12px 26px -16px rgba(40,46,33,.3);
+    transition:transform .35s ease, box-shadow .35s ease;overflow:hidden;
+  }
+  a.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -18px rgba(40,46,33,.42);}
+  .swatch{height:84px;border-bottom:1px solid #e2d4b4;}
+  .s-plate{background:linear-gradient(120deg,#f4eeda 0%, #ece0c6 60%, #c2a274 100%);}
+  .s-embodi{background:linear-gradient(120deg,#e7ece9 0%, #f4e6cd 55%, #b07a30 100%);}
+  .s-dusk{background:linear-gradient(120deg,#0e1512 0%, #1a241e 55%, #e9c98a 130%);}
+  .card .body{padding:1.1em 1.2em 1.3em;}
+  .num{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:.95rem;letter-spacing:.12em;}
+  .card h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.5rem;margin:.1em 0 .35em;line-height:1.1;}
+  .card p{margin:0;font-size:.92rem;line-height:1.5;color:var(--ink-soft);}
+  .card .open{margin-top:.9em;font-family:"Cormorant SC",serif;letter-spacing:.2em;text-transform:uppercase;
+    font-size:.66rem;color:var(--gold);}
+  .foot{margin:2.6em auto 0;max-width:36em;text-align:center;font-size:.84rem;color:var(--ink-faint);
+    border-top:1px solid var(--rule);padding-top:1.4em;}
+  @media (max-width:680px){ .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<main>
+  <div class="frame"></div>
+  <div class="in">
+    <p class="eyebrow">Cantharophily &middot; three renditions</p>
+    <h1>Cantharophily</h1>
+    <p class="sub">An epic in deep time, for a magnolia in a jar of tap water.</p>
+    <p class="lead">The same poem and the same photograph, designed three ways. Open each and see which one the magnolia wants to live inside.</p>
+
+    <div class="grid">
+      <a class="card" href="final.html">
+        <div class="swatch s-dusk"></div>
+        <div class="body">
+          <span class="num">the final &middot; alive</span>
+          <h2>Cretaceous Dusk</h2>
+          <p>The winner, brought to life: the bloom glowing in the dark, the page warming toward the fever and cooling to dawn, and beetles that coalesce out of line in the margins to wallow in pollen &mdash; frantic in the heat, sparse at the cool edges.</p>
+          <span class="open">Enter &rarr;</span>
+        </div>
+      </a>
+      <a class="card" href="dusk.html">
+        <div class="swatch s-dusk" style="filter:saturate(.7) brightness(.9);"></div>
+        <div class="body">
+          <span class="num">study &middot; the still dusk</span>
+          <h2>Dusk (plain)</h2>
+          <p>The earlier version 3 &mdash; the same immersive dark and glowing bloom, before the temperature arc and the beetles were added. Kept for comparison.</p>
+          <span class="open">Enter &rarr;</span>
+        </div>
+      </a>
+      <a class="card" href="embodiment.html">
+        <div class="swatch s-embodi"></div>
+        <div class="body">
+          <span class="num">study &middot; the temperature arc</span>
+          <h2>Climb In Awake</h2>
+          <p>The light-ground version 2, where the warming/cooling idea began &mdash; a page that refuses every engagement trick and gives a real ending that lets you out.</p>
+          <span class="open">Enter &rarr;</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="foot">Each rendition is a single self-contained page. The original photograph and full-resolution scan are kept beside them.</p>
+  </div>
+</main>
+</body>
+</html>
