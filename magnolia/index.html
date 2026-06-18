@@ -327,6 +327,7 @@
     <figcaption class="dt-cap">The order of deep time</figcaption>
     <p class="dt-sub">the gaps are time itself, roughly to scale</p>
     <ol class="dt-list">
+      <li class="dt-item" data-ma="1000"><span class="dt-when">~1,000 Ma</span><span class="dt-what">First green algae</span><span class="dt-note">Neoproterozoic&nbsp;&mdash; the first green, near a billion years deep.</span></li>
       <li class="dt-item" data-ma="390"><span class="dt-when">~390 Ma</span><span class="dt-what">First ferns</span><span class="dt-note">Devonian&nbsp;&mdash; green and spore-borne, long before any flower.</span></li>
       <li class="dt-item" data-ma="310"><span class="dt-when">~310 Ma</span><span class="dt-what">First conifers</span><span class="dt-note">Late Carboniferous&nbsp;&mdash; the cone the magnolia still remembers.</span></li>
       <li class="dt-item key" data-ma="300"><span class="dt-when">~300 Ma</span><span class="dt-what">First beetles</span><span class="dt-note">Carboniferous&ndash;Permian&nbsp;&mdash; the aristocrat, already ancient.</span></li>
@@ -363,10 +364,10 @@
     // deep-time chronology: space the rows in proportion to elapsed time
     (function(){
       var rows = Array.prototype.slice.call(document.querySelectorAll('.dt-item'));
-      var SCALE = 1.5, MIN = 36, prev = null;
+      var SCALE = 1.5, MIN = 36, MAX = 280, prev = null;
       rows.forEach(function(el){
         var ma = parseFloat(el.getAttribute('data-ma'));
-        if(prev !== null) el.style.marginTop = Math.max(MIN, (prev - ma) * SCALE) + 'px';
+        if(prev !== null) el.style.marginTop = Math.min(MAX, Math.max(MIN, (prev - ma) * SCALE)) + 'px';
         prev = ma;
       });
     })();
