@@ -190,13 +190,15 @@
     transition:opacity 1.1s ease, transform 1.1s ease;}
   .deep-time.in{opacity:1;transform:none;}
   .dt-cap{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.24em;
-    text-transform:uppercase;font-size:.62rem;color:var(--gold);text-align:center;margin:0 0 1.9em;}
+    text-transform:uppercase;font-size:.62rem;color:var(--gold);text-align:center;margin:0 0 .55em;}
+  .dt-sub{text-align:center;color:var(--ink-faint);font-style:italic;font-size:.74rem;line-height:1.4;margin:0 0 2.2em;}
   .dt-list{list-style:none;margin:0 auto;padding:0;position:relative;max-width:26em;}
   .dt-list::before{content:"";position:absolute;left:0;top:.5em;bottom:.7em;width:1px;
     background:linear-gradient(180deg, var(--gold-soft), rgba(216,164,78,.18));
     transform:scaleY(0);transform-origin:top center;transition:transform 1.6s ease .25s;}
   .deep-time.in .dt-list::before{transform:scaleY(1);}
-  .dt-item{position:relative;padding-left:1.7em;margin:0 0 1.45em;}
+  .dt-item{position:relative;padding-left:1.7em;margin:1.45em 0 0;}
+  .dt-item:first-child{margin-top:0;}
   .dt-item::before{content:"";position:absolute;left:-3px;top:.42em;width:7px;height:7px;
     border-radius:50%;border:1px solid var(--gold);background:var(--night-2);}
   .dt-when{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;
@@ -262,22 +264,6 @@
     <div class="stanza"><p><span class="vl">When this architecture was drawn&nbsp;&mdash; a hundred million years ago,</span><span class="vl">under a sky that held pterosaurs the way ours holds satellites&nbsp;&mdash;</span><span class="vl">the bee did not exist.</span><span class="vl">The bee was a rumor in the future of wasps.</span></p></div>
     <div class="stanza"><p><span class="vl">So the flower could not advertise to the precise,</span><span class="vl">the hovering accountants of nectar, the colony's auditors.</span><span class="vl">It had to call the only courier already on the road</span><span class="vl">for two hundred million years before the angiosperms woke up:</span><span class="vl">the beetle. Carapaced. Permian. Older than the dinosaurs</span><span class="vl">that browsed beside it, older than grass, older than the idea of a flower.</span></p></div>
     <div class="stanza"><p><span class="vl">You want deep time? The flower is the parvenu.</span><span class="vl">The beetle is the aristocrat it had to flatter.</span></p></div>
-
-    <figure class="deep-time" aria-label="A chronology of deep time">
-      <figcaption class="dt-cap">The order of deep time</figcaption>
-      <ol class="dt-list">
-        <li class="dt-item"><span class="dt-when">~390 Ma</span><span class="dt-what">First ferns</span><span class="dt-note">Devonian&nbsp;&mdash; green and spore-borne, long before any flower.</span></li>
-        <li class="dt-item key"><span class="dt-when">~300 Ma</span><span class="dt-what">First beetles</span><span class="dt-note">Carboniferous&ndash;Permian&nbsp;&mdash; the aristocrat, already ancient.</span></li>
-        <li class="dt-item"><span class="dt-when">252 Ma</span><span class="dt-what">The end-Permian extinction</span><span class="dt-note">&ldquo;The Great Dying.&rdquo; The beetles come through it.</span></li>
-        <li class="dt-item"><span class="dt-when">~230 Ma</span><span class="dt-what">First dinosaurs</span><span class="dt-note">Triassic&nbsp;&mdash; and the beetle is already old.</span></li>
-        <li class="dt-item key"><span class="dt-when">~130 Ma</span><span class="dt-what">First flowering plants</span><span class="dt-note">Early Cretaceous&nbsp;&mdash; the parvenu arrives.</span></li>
-        <li class="dt-item key"><span class="dt-when">~100 Ma</span><span class="dt-what">The magnolia&rsquo;s bowl</span><span class="dt-note">mid-Cretaceous&nbsp;&mdash; built for beetles; the bee not yet on the scene.</span></li>
-        <li class="dt-item"><span class="dt-when">~70 Ma</span><span class="dt-what">First grasses</span><span class="dt-note">Late Cretaceous&nbsp;&mdash; younger than the beetle, younger than the bloom.</span></li>
-        <li class="dt-item"><span class="dt-when">66 Ma</span><span class="dt-what">The K&ndash;Pg (K&ndash;T) extinction</span><span class="dt-note">the asteroid; the non-avian dinosaurs end, the magnolias do not.</span></li>
-        <li class="dt-item"><span class="dt-when">0.3 Ma</span><span class="dt-what">Homo sapiens</span><span class="dt-note">&asymp;300,000 years&nbsp;&mdash; a thin gold dusting at the edge of the line.</span></li>
-        <li class="dt-item now"><span class="dt-when">now</span><span class="dt-what">A magnolia in a jar of tap water</span><span class="dt-note">a screened porch in Durham. June.</span></li>
-      </ol>
-    </figure>
   </section>
 
   <!-- ========== III ========== -->
@@ -337,6 +323,24 @@
 
   <div class="closer" aria-hidden="true"></div>
 
+  <figure class="deep-time" aria-label="A chronology of deep time, spaced to scale">
+    <figcaption class="dt-cap">The order of deep time</figcaption>
+    <p class="dt-sub">the gaps are time itself, roughly to scale</p>
+    <ol class="dt-list">
+      <li class="dt-item" data-ma="390"><span class="dt-when">~390 Ma</span><span class="dt-what">First ferns</span><span class="dt-note">Devonian&nbsp;&mdash; green and spore-borne, long before any flower.</span></li>
+      <li class="dt-item" data-ma="310"><span class="dt-when">~310 Ma</span><span class="dt-what">First conifers</span><span class="dt-note">Late Carboniferous&nbsp;&mdash; the cone the magnolia still remembers.</span></li>
+      <li class="dt-item key" data-ma="300"><span class="dt-when">~300 Ma</span><span class="dt-what">First beetles</span><span class="dt-note">Carboniferous&ndash;Permian&nbsp;&mdash; the aristocrat, already ancient.</span></li>
+      <li class="dt-item" data-ma="252"><span class="dt-when">252 Ma</span><span class="dt-what">The end-Permian extinction</span><span class="dt-note">&ldquo;The Great Dying.&rdquo; The beetles come through it.</span></li>
+      <li class="dt-item" data-ma="230"><span class="dt-when">~230 Ma</span><span class="dt-what">First dinosaurs</span><span class="dt-note">Triassic&nbsp;&mdash; and the beetle is already old.</span></li>
+      <li class="dt-item key" data-ma="130"><span class="dt-when">~130 Ma</span><span class="dt-what">First flowering plants</span><span class="dt-note">Early Cretaceous&nbsp;&mdash; the parvenu arrives.</span></li>
+      <li class="dt-item key" data-ma="100"><span class="dt-when">~100 Ma</span><span class="dt-what">The magnolia&rsquo;s bowl</span><span class="dt-note">mid-Cretaceous&nbsp;&mdash; built for beetles; the bee not yet on the scene.</span></li>
+      <li class="dt-item" data-ma="70"><span class="dt-when">~70 Ma</span><span class="dt-what">First grasses</span><span class="dt-note">Late Cretaceous&nbsp;&mdash; younger than the beetle, younger than the bloom.</span></li>
+      <li class="dt-item" data-ma="66"><span class="dt-when">66 Ma</span><span class="dt-what">The K&ndash;Pg (K&ndash;T) extinction</span><span class="dt-note">the asteroid; the non-avian dinosaurs end, the magnolias do not.</span></li>
+      <li class="dt-item" data-ma="0.3"><span class="dt-when">0.3 Ma</span><span class="dt-what"><i>Homo sapiens</i> (e.g., Greg)</span><span class="dt-note">&asymp;300,000 years&nbsp;&mdash; a thin gold dusting at the edge of the line.</span></li>
+      <li class="dt-item now" data-ma="0"><span class="dt-when">now</span><span class="dt-what">A magnolia in a jar of tap water</span><span class="dt-note">a screened porch in Durham. June.</span></li>
+    </ol>
+  </figure>
+
   <aside class="botnote">
     <div class="rule"></div>
     <span class="lab">A note for the botanists</span>
@@ -355,6 +359,17 @@
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
     document.querySelectorAll('.coda, .deep-time').forEach(function(el){ io.observe(el); });
+
+    // deep-time chronology: space the rows in proportion to elapsed time
+    (function(){
+      var rows = Array.prototype.slice.call(document.querySelectorAll('.dt-item'));
+      var SCALE = 1.5, MIN = 36, prev = null;
+      rows.forEach(function(el){
+        var ma = parseFloat(el.getAttribute('data-ma'));
+        if(prev !== null) el.style.marginTop = Math.max(MIN, (prev - ma) * SCALE) + 'px';
+        prev = ma;
+      });
+    })();
     document.querySelectorAll('.movement .stanza').forEach(function(el,i){
       el.style.transitionDelay = ((i % 5) * 0.06) + 's'; io.observe(el);
     });
