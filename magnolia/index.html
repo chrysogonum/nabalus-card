@@ -149,6 +149,9 @@
   #mv3 .mv-title{color:#f3d39a;text-shadow:0 0 36px rgba(216,164,78,.32);}
 
   .term{color:var(--gold-soft);border-bottom:1px dotted rgba(216,164,78,.5);cursor:help;position:relative;}
+  /* literary (word) glosses — sage green, to distinguish from the gold science terms */
+  .term.lit{color:#8ecaa0;border-bottom-color:rgba(120,190,150,.6);}
+  .term.lit::after{border-color:rgba(120,190,150,.34);}
   .term::after{content:attr(data-note);position:absolute;left:50%;bottom:calc(100% + 9px);
     transform:translateX(-50%) translateY(4px);width:min(15rem,72vw);
     background:#1a241e;color:#e9e4d4;border:1px solid rgba(216,164,78,.25);
@@ -162,7 +165,7 @@
     opacity:0;transform:translateY(18px);transition:opacity 1.4s ease, transform 1.4s ease;
     text-shadow:0 0 30px rgba(243,234,208,.12);}
   .coda.in{opacity:1;transform:none;}
-  .closer{min-height:48vh;display:flex;align-items:center;justify-content:center;}
+  .closer{min-height:16vh;display:flex;align-items:center;justify-content:center;}
   .closer p{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.24em;
     text-transform:uppercase;font-size:.64rem;color:var(--ink-faint);text-align:center;}
 
@@ -275,7 +278,7 @@
     <div class="stanza"><p><span class="vl">Understand the timing, because the timing is the whole poem.</span></p></div>
     <div class="stanza"><p><span class="vl">When this architecture was drawn&nbsp;&mdash; a hundred million years ago,</span><span class="vl">under a sky that held pterosaurs the way ours holds satellites&nbsp;&mdash;</span><span class="vl">the bee did not exist.</span><span class="vl">The bee was a rumor in the future of wasps.</span></p></div>
     <div class="stanza"><p><span class="vl">So the flower could not advertise to the precise,</span><span class="vl">the hovering accountants of nectar, the colony's auditors.</span><span class="vl">It had to call the only courier already on the road</span><span class="vl">for two hundred million years before the angiosperms woke up:</span><span class="vl">the beetle. Carapaced. Permian. Older than the dinosaurs</span><span class="vl">that browsed beside it, older than grass, older than the idea of a flower.</span></p></div>
-    <div class="stanza"><p><span class="vl">You want deep time? The flower is the parvenu.</span><span class="vl">The beetle is the aristocrat it had to flatter.</span></p></div>
+    <div class="stanza"><p><span class="vl">You want deep time? The flower is the <span class="term lit" tabindex="0" data-note="A newcomer risen fast into high company but without the old pedigree — new money flattering old blood.">parvenu</span>.</span><span class="vl">The beetle is the aristocrat it had to flatter.</span></p></div>
   </section>
 
   <!-- ========== III ========== -->
@@ -327,7 +330,7 @@
   <section class="movement" data-temp="0.14" id="mv8">
     <div class="mv-head"><p class="mv-no">VIII</p><h2 class="mv-title">Still, the Bowl</h2></div>
     <div class="stanza"><p><span class="vl">And yet. The flower beside me does not know any of this.</span><span class="vl">It is not a warning. It is not a metaphor.</span><span class="vl">It is a hundred million years of solved problems</span><span class="vl">exhaling linalool into a screened porch in Durham</span><span class="vl">with the indifferent generosity of a thing</span><span class="vl">that was beautiful long before there was an eye to call it so.</span></p></div>
-    <div class="stanza"><p><span class="vl">The beetle's heaven and the human's trap</span><span class="vl">run on one ancient circuit, yes&nbsp;&mdash;</span><span class="vl">but the circuit also made this:</span><span class="vl">the pale bowl, the gold cone, the fever, the perfume</span><span class="vl">strong enough to cross a hundred million years</span><span class="vl">and find one primate, melancholy on a Tuesday,</span><span class="vl">leaning in like a fool at a shrine,</span><span class="vl">and&nbsp;&mdash; knowing everything, the dopamine, the gull, the lie that isn't a lie&nbsp;&mdash;</span><span class="vl">leaning in anyway,</span><span class="vl">and being, for one unrepeatable lungful,</span><span class="vl">glad.</span></p></div>
+    <div class="stanza"><p><span class="vl">The beetle's heaven and the human's trap</span><span class="vl">run on one ancient circuit, yes&nbsp;&mdash;</span><span class="vl">but the circuit also made this:</span><span class="vl">the pale bowl, the gold cone, the fever, the perfume</span><span class="vl">strong enough to cross a hundred million years</span><span class="vl">and find one primate, melancholy on a Tuesday,</span><span class="vl">leaning in like a fool at a shrine,</span><span class="vl">and&nbsp;&mdash; knowing everything&nbsp;&mdash;</span><span class="vl">leaning in anyway,</span><span class="vl">and being, for one unrepeatable lungful,</span><span class="vl">glad.</span></p></div>
     <div class="stanza"><p><span class="vl">That is not the treadmill.</span><span class="vl">That is the other thing the bowl can do,</span><span class="vl">if you climb in awake.</span></p></div>
   </section>
 
@@ -380,8 +383,8 @@
 
   <aside class="botnote">
     <div class="rule"></div>
-    <span class="lab">A note for the botanists</span>
-    <p>The bloom photographed here is <i>Magnolia grandiflora</i>&nbsp;&mdash; genuinely beetle-pollinated, protogynous, and fragrant, but not itself a notable furnace. The floral <i>fever</i> of Movement III is real in the family, only better measured in relatives: <i>Magnolia sprengeri</i>, whose heat pulses track the visits of its sap beetles, and the night-warming <i>M. ovata</i>; further afield, the sacred lotus and the philodendrons hold their chambers degrees above the air. The poem borrows the family's most theatrical trick and pins it on the flower that happened to be on the porch.</p>
+    <span class="lab">For the botanists &amp; the beetle-curious</span>
+    <p>The bloom photographed here is <i>Magnolia grandiflora</i>&nbsp;&mdash; genuinely beetle-pollinated, protogynous, and fragrant, but not itself a notable furnace. Its flowers are worked today chiefly by sap beetles (Nitidulidae)&nbsp;&mdash; small pollen-eaters such as <i>Carpophilus</i>&nbsp;&mdash; with rove beetles and weevils along for the warmth. The floral <i>fever</i> of Movement III is real in the family, only better measured in relatives: <i>Magnolia sprengeri</i>, whose heat pulses track the visits of its sap beetles, and the night-warming <i>M. ovata</i>; further afield, the sacred lotus and the philodendrons hold their chambers degrees above the air. The poem borrows the family's most theatrical trick and pins it on the flower that happened to be on the porch.</p>
     <p class="cite">On the family's fever: Wang &amp; Zhang, &ldquo;Floral thermogenesis: an adaptive strategy of pollination biology in Magnoliaceae,&rdquo; <i>Commun. Integr. Biol.</i> <b>8</b> (2015), e992746.</p>
   </aside>
 </main>
