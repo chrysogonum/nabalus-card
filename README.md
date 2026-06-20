@@ -1,4 +1,4 @@
-# Correspondences
+# Wild Correspondences
 
 A small, growing collection of **natural-history poems** — where a plant, or some quiet corner of the living world, hands over a connection worth keeping.
 
