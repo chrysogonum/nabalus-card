@@ -4,179 +4,210 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Wild Correspondences — natural-history poems</title>
-<meta name="description" content="A small, growing collection of natural-history poems — where a plant or some corner of the living world hands over a connection worth keeping." />
+<meta name="description" content="A small, growing collection of natural-history poems." />
 <meta property="og:title" content="Wild Correspondences — natural-history poems" />
-<meta property="og:description" content="A growing collection of natural-history poems — where the living world hands over a connection worth keeping." />
+<meta property="og:description" content="A small, growing collection of natural-history poems." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="magnolia/images/bloom-small.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+SC:wght@500;600&family=EB+Garamond:ital,wght@0,400;1,400&family=IM+Fell+DW+Pica:ital@0,1&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --paper:#f3ecdb;
-    --paper-2:#ece1c9;
-    --paper-edge:#e4d7ba;
-    --ink:#2b3729;
-    --ink-soft:#4f5b48;
-    --ink-faint:#7c8470;
-    --sage:#8a9a78;
-    --gold:#a9854f;
-    --gold-soft:#c2a274;
-    --rule:#cabd9d;
-    --shadow:rgba(40,46,33,.22);
-    --maxw:760px;
+    --g1:#36422f; --g2:#1b231a; --g-edge:#10160f;
+    --line:#bccfa9;        /* pale botanical line */
+    --bone:#efead7;        /* headings */
+    --bone-dim:#b3b8a3;    /* body */
+    --faint:#7f8b73;
+    --gold:#cbab6b;
+    --gold-dim:#8f7c50;
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box;margin:0;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;min-height:100vh;
+    min-height:100vh;color:var(--bone-dim);
     background:
-      radial-gradient(1200px 700px at 50% -10%, #efe7d2 0%, rgba(239,231,210,0) 60%),
-      linear-gradient(180deg, #3e4736 0%, #2f3829 100%);
+      radial-gradient(120% 80% at 75% 8%, rgba(150,170,120,.10) 0%, rgba(150,170,120,0) 55%),
+      radial-gradient(140% 120% at 50% 120%, var(--g-edge) 0%, rgba(16,22,15,0) 55%),
+      linear-gradient(165deg, var(--g1) 0%, var(--g2) 100%);
     background-attachment:fixed;
-    color:var(--ink);
-    font-family:"EB Garamond", Garamond, "Hoefler Text", Georgia, serif;
-    font-size:clamp(17px,1.05rem + .25vw,20px);
-    line-height:1.75;
+    font-family:"EB Garamond",Garamond,"Hoefler Text",Georgia,serif;
+    font-size:clamp(17px,1.04rem + .25vw,20px);line-height:1.7;
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-    display:flex;align-items:flex-start;justify-content:center;
-    padding:clamp(18px,5vw,64px) clamp(14px,4vw,32px);
   }
-  .sheet{
-    position:relative;max-width:var(--maxw);width:100%;
-    padding:clamp(30px,6vw,72px) clamp(24px,6vw,72px) clamp(40px,6vw,72px);
-    background:linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-    box-shadow:0 30px 70px -20px var(--shadow), 0 4px 14px rgba(0,0,0,.18);
-    border:1px solid var(--paper-edge);overflow:hidden;
+  /* faint engraving texture so the dark never reads flat */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+    background-image:radial-gradient(rgba(255,255,255,.5) .5px, transparent .6px);
+    background-size:3px 3px;mix-blend-mode:overlay;
   }
-  .sheet::before{
-    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
-    background-image:
-      radial-gradient(circle at 12% 16%, rgba(150,120,70,.06) 0 2px, transparent 3px),
-      radial-gradient(circle at 84% 70%, rgba(150,120,70,.05) 0 2px, transparent 3px),
-      radial-gradient(circle at 66% 30%, rgba(120,100,60,.04) 0 1.5px, transparent 2px),
-      radial-gradient(circle at 30% 82%, rgba(120,100,60,.04) 0 1.5px, transparent 2px);
-    background-size:240px 240px,300px 300px,180px 180px,210px 210px;
-  }
-  .frame{position:absolute;inset:clamp(10px,2.2vw,22px);border:1px solid var(--rule);pointer-events:none;}
-  .frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(202,189,157,.45);}
-  .inner{position:relative;z-index:2;}
 
-  .eyebrow{
-    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.4em;text-transform:uppercase;
-    font-size:.72rem;color:var(--gold);text-align:center;margin:0 0 1.2em;padding-left:.4em;
-  }
+  .plate{position:relative;max-width:1040px;margin:0 auto;
+    padding:clamp(36px,7vw,90px) clamp(22px,5vw,64px) clamp(40px,6vw,72px);
+    z-index:2;overflow:hidden;}
+
+  /* ---- big faint background specimens (the "engraving") ---- */
+  .bg-art{position:absolute;z-index:-1;color:var(--line);pointer-events:none;}
+  .bg-art svg{display:block;width:100%;height:auto;}
+  .bg-mag{top:-3%;right:-8%;width:min(56vw,520px);opacity:.13;}
+  .bg-snake{bottom:-4%;left:-9%;width:min(46vw,400px);opacity:.10;transform:scaleX(-1);}
+
+  /* ---- masthead ---- */
+  .masthead{position:relative;padding:6vh 0 9vh;max-width:20em;}
+  .eyebrow{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.42em;
+    text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:1.1em;}
   h1.title{
-    font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;text-align:center;
-    font-size:clamp(2.8rem,11vw,5rem);line-height:.95;margin:0;color:var(--ink);
+    font-family:"IM Fell DW Pica","Cormorant Garamond",serif;font-style:italic;font-weight:400;
+    font-size:clamp(3rem,12vw,6.4rem);line-height:.96;color:var(--bone);
+    text-shadow:0 0 40px rgba(0,0,0,.35);
   }
-  .intro{
-    max-width:32em;margin:1.5em auto 0;text-align:center;color:var(--ink-soft);
-    font-style:italic;font-size:1.05em;
-  }
+  .standfirst{margin-top:1.4em;font-style:italic;color:var(--bone-dim);max-width:26em;font-size:1.05em;}
 
-  .divider{display:block;margin:clamp(28px,5vw,48px) auto;width:clamp(150px,42%,260px);height:46px;}
-  .divider path,.divider line,.divider circle{
-    fill:none;stroke:var(--sage);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;
+  /* ---- the catalogue of poems ---- */
+  .plates{list-style:none;}
+  .entry{
+    display:grid;grid-template-columns:170px 1fr;gap:clamp(22px,4vw,52px);align-items:center;
+    padding:clamp(30px,5vw,52px) 0;position:relative;
   }
-  .divider circle.dot{fill:var(--gold-soft);stroke:none;}
+  .entry + .entry{border-top:1px solid rgba(188,207,169,.18);}
+  .entry.flip{grid-template-columns:1fr 170px;}
+  .entry.flip .specimen{order:2;}
+  .entry.flip .caption{order:1;text-align:right;}
+  .specimen{color:var(--line);}
+  .specimen svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.3));}
+  .caption{}
+  .plno{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.3em;
+    text-transform:uppercase;font-size:.66rem;color:var(--gold);display:block;margin-bottom:.5em;}
+  a.ptitle{text-decoration:none;color:var(--bone);display:inline-block;}
+  a.ptitle h2{
+    font-family:"IM Fell DW Pica","Cormorant Garamond",serif;font-style:italic;font-weight:400;
+    font-size:clamp(2rem,5.6vw,3rem);line-height:1.0;
+    transition:color .3s ease;
+  }
+  a.ptitle:hover h2{color:var(--gold);}
+  .platin{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold-dim);
+    font-size:1.05rem;margin:.25em 0 0;}
+  .pdesc{margin:.8em 0 0;color:var(--bone-dim);max-width:34em;}
+  .entry.flip .pdesc{margin-left:auto;}
+  .penter{display:inline-block;margin-top:1em;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;color:var(--gold-dim);transition:color .3s ease;}
+  a.ptitle:hover ~ .penter,.caption:hover .penter{color:var(--gold);}
+  .penter .arr{display:inline-block;transition:transform .3s ease;}
+  .entry:hover .penter .arr{transform:translateX(4px);}
 
-  .shelf-label{
-    text-align:center;font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.3em;
-    text-transform:uppercase;font-size:.7rem;color:var(--gold);margin:0 0 1.8em;padding-left:.3em;
-  }
+  footer{margin-top:clamp(36px,6vw,64px);border-top:1px solid rgba(188,207,169,.18);
+    padding-top:1.6em;text-align:center;color:var(--faint);font-size:.72rem;letter-spacing:.05em;}
 
-  .pieces{list-style:none;margin:0;padding:0;}
-  .piece{margin:0;}
-  .piece + .piece{border-top:1px solid var(--rule);}
-  a.entry{
-    display:block;text-decoration:none;color:inherit;position:relative;
-    padding:clamp(22px,3.4vw,30px) clamp(6px,2vw,18px);
-    transition:background .3s ease;
+  @media (max-width:640px){
+    .masthead{max-width:none;padding:4vh 0 6vh;}
+    .entry,.entry.flip{grid-template-columns:1fr;gap:14px;text-align:center;}
+    .entry.flip .caption{text-align:center;order:2;}
+    .entry.flip .specimen{order:1;}
+    .specimen{max-width:150px;margin:0 auto;}
+    .entry.flip .pdesc,.pdesc{margin-left:auto;margin-right:auto;}
+    .bg-mag{width:74vw;opacity:.1;}
+    .bg-snake{display:none;}
   }
-  a.entry:hover{background:rgba(169,133,79,.07);}
-  .pnum{
-    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);
-    font-size:1rem;letter-spacing:.16em;margin:0 0 .15em;
-  }
-  .ptitle{
-    font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;
-    font-size:clamp(1.7rem,5.4vw,2.4rem);line-height:1.05;margin:0;color:var(--ink);
-  }
-  .platin{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-faint);font-size:1.02rem;margin:.2em 0 0;}
-  .pdesc{margin:.7em 0 0;color:var(--ink-soft);max-width:34em;}
-  .penter{
-    display:inline-block;margin-top:1em;font-family:"Cormorant SC","Cormorant Garamond",serif;
-    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;color:var(--gold);
-  }
-  a.entry:hover .penter{color:var(--ink);}
-  .penter .arr{transition:transform .3s ease;display:inline-block;}
-  a.entry:hover .penter .arr{transform:translateX(4px);}
-
-  .tocome{
-    text-align:center;color:var(--ink-faint);font-style:italic;font-size:.96em;
-    margin:clamp(30px,5vw,48px) auto 0;max-width:30em;
-    border-top:1px solid var(--rule);padding-top:1.6em;
-  }
-
-  .colophon{
-    margin:clamp(30px,5vw,44px) auto 0;max-width:36em;text-align:center;
-    font-size:.82rem;line-height:1.7;color:var(--ink-faint);
-  }
-  .colophon .label{
-    font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.28em;text-transform:uppercase;
-    color:var(--gold);font-size:.7rem;display:block;margin-bottom:.9em;padding-left:.28em;
-  }
-  .colophon em{color:var(--ink-soft);}
-
   @media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
 </style>
 </head>
 <body>
-<main class="sheet">
-  <div class="frame"></div>
-  <div class="inner">
 
-    <header>
-      <p class="eyebrow">A herbarium of poems</p>
-      <h1 class="title">Wild Correspondences</h1>
-    </header>
+<!-- ===== botanical line-art, defined once, reused ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="tepal" d="M100,82 C86,64 88,40 100,27 C112,40 114,64 100,82 Z"/>
+    <symbol id="mag" viewBox="0 0 200 250">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+        <!-- branch -->
+        <path d="M100,120 C97,158 102,200 99,245"/>
+        <!-- left leaf -->
+        <path d="M99,150 C72,150 53,174 56,202 C82,198 97,172 99,150 Z"/>
+        <path d="M97,154 C80,164 67,180 60,198" stroke-width="1"/>
+        <!-- right leaf -->
+        <path d="M101,166 C128,164 148,186 147,214 C120,210 102,188 101,166 Z"/>
+        <path d="M103,170 C120,180 133,194 141,210" stroke-width="1"/>
+        <!-- tepals (front rosette) -->
+        <use href="#tepal" transform="rotate(0 100 82)"/>
+        <use href="#tepal" transform="rotate(40 100 82)"/>
+        <use href="#tepal" transform="rotate(80 100 82)"/>
+        <use href="#tepal" transform="rotate(120 100 82)"/>
+        <use href="#tepal" transform="rotate(160 100 82)"/>
+        <use href="#tepal" transform="rotate(200 100 82)"/>
+        <use href="#tepal" transform="rotate(240 100 82)"/>
+        <use href="#tepal" transform="rotate(280 100 82)"/>
+        <use href="#tepal" transform="rotate(320 100 82)"/>
+        <!-- centre cone + stamens -->
+        <ellipse cx="100" cy="82" rx="7" ry="11"/>
+        <path d="M100,72 v-6 M93,76 l-5,-4 M107,76 l5,-4 M91,84 l-7,-1 M109,84 l7,-1" stroke-width="1"/>
+        <circle cx="100" cy="80" r="1.1" fill="currentColor" stroke="none"/>
+        <circle cx="97" cy="84" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="103" cy="85" r="1" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+    <symbol id="snake" viewBox="0 0 200 270">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+        <!-- stem -->
+        <path d="M100,268 C99,215 101,160 100,108 C100,84 100,64 100,46"/>
+        <!-- deeply-lobed (palmate) leaf, lower -->
+        <path d="M100,196
+                 C84,196 78,182 66,184 C74,178 64,168 54,170 C66,164 58,150 50,150
+                 C66,150 74,160 86,166 C82,154 70,150 64,138 C78,146 90,158 100,170 Z"/>
+        <path d="M100,196 C92,184 86,172 86,166 M84,182 C76,176 70,172 66,170 M92,176 C84,166 76,160 64,138" stroke-width="0.9"/>
+        <!-- a second, simpler leaf, upper right -->
+        <path d="M101,150 C116,150 126,140 138,142 C130,134 138,124 146,126 C132,120 130,108 134,104 C120,116 108,132 101,150 Z"/>
+        <path d="M103,148 C116,140 126,132 134,126" stroke-width="0.9"/>
+        <!-- nodding flower spray at the top -->
+        <path d="M100,46 C92,40 84,40 80,34 M100,52 C108,46 116,46 122,40 M100,40 C96,33 90,30 90,24 M100,40 C104,33 110,30 112,24 M100,34 v-9"/>
+        <!-- little drooping flower heads -->
+        <path d="M80,34 c-3,4 -3,9 0,12 c3,-3 3,-8 0,-12 Z"/>
+        <path d="M122,40 c3,4 3,9 0,12 c-3,-3 -3,-8 0,-12 Z"/>
+        <path d="M90,24 c-3,4 -3,8 0,11 c3,-3 3,-7 0,-11 Z"/>
+        <path d="M112,24 c3,4 3,8 0,11 c-3,-3 -3,-7 0,-11 Z"/>
+        <path d="M100,15 c-3,4 -3,8 0,11 c3,-3 3,-7 0,-11 Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 
-    <svg class="divider" viewBox="0 0 260 46" aria-hidden="true">
-      <line x1="18" y1="23" x2="104" y2="23" />
-      <path d="M130 6 C116 14 116 32 130 40 C144 32 144 14 130 6 Z" />
-      <path d="M130 9 C121 16 121 30 130 37 C139 30 139 16 130 9" />
-      <path d="M108 23 C116 14 126 14 130 23 C126 32 116 32 108 23 Z" />
-      <path d="M152 23 C144 14 134 14 130 23 C134 32 144 32 152 23 Z" />
-      <circle class="dot" cx="130" cy="23" r="2.4" />
-      <line x1="156" y1="23" x2="242" y2="23" />
-    </svg>
+<main class="plate">
 
-    <p class="shelf-label">The specimens, so far</p>
+  <div class="bg-art bg-mag"><svg viewBox="0 0 200 250"><use href="#mag"/></svg></div>
+  <div class="bg-art bg-snake"><svg viewBox="0 0 200 270"><use href="#snake"/></svg></div>
 
-    <ul class="pieces">
-      <li class="piece">
-        <a class="entry" href="v2.html">
-          <p class="pnum">I</p>
-          <h2 class="ptitle">Snakeroot</h2>
-          <p class="platin">Nabalus &mdash; once Prenanthes</p>
-          <p class="pdesc">A charm for becoming, after Appalachian folklore &mdash; a woodland plant that changes the shape of its leaves as it grows up, and once shed its own name. A coming-of-age, told in rattlesnake-root and gall-of-the-earth.</p>
-          <span class="penter">Enter <span class="arr">&rarr;</span></span>
-        </a>
-      </li>
-      <li class="piece">
-        <a class="entry" href="magnolia/">
-          <p class="pnum">II</p>
-          <h2 class="ptitle">Cantharophily</h2>
-          <p class="platin">Magnolia grandiflora</p>
-          <p class="pdesc">An epic in deep time, for a magnolia in a jar of tap water &mdash; the flower as the first engagement engine, the beetle it had to flatter, and the long line that runs from a Cretaceous bowl to the feed in your hand.</p>
-          <span class="penter">Enter <span class="arr">&rarr;</span></span>
-        </a>
-      </li>
-    </ul>
+  <header class="masthead">
+    <p class="eyebrow">A herbarium of poems</p>
+    <h1 class="title">Wild Correspondences</h1>
+  </header>
 
-  </div>
+  <ol class="plates">
+
+    <li class="entry">
+      <div class="specimen"><svg viewBox="0 0 200 270" role="img" aria-label="Line drawing of a snakeroot plant"><use href="#snake"/></svg></div>
+      <div class="caption">
+        <span class="plno">Plate I</span>
+        <a class="ptitle" href="v2.html"><h2>Snakeroot</h2></a>
+        <p class="platin">Nabalus &mdash; once Prenanthes</p>
+        <p class="pdesc">A charm for becoming, after Appalachian folklore &mdash; a woodland plant that re-cuts the shape of its leaves as it grows up, and once shed its own name.</p>
+        <a class="ptitle" href="v2.html"><span class="penter">Enter <span class="arr">&rarr;</span></span></a>
+      </div>
+    </li>
+
+    <li class="entry flip">
+      <div class="specimen"><svg viewBox="0 0 200 250" role="img" aria-label="Line drawing of a magnolia bough"><use href="#mag"/></svg></div>
+      <div class="caption">
+        <span class="plno">Plate II</span>
+        <a class="ptitle" href="magnolia/"><h2>Cantharophily</h2></a>
+        <p class="platin">Magnolia grandiflora</p>
+        <p class="pdesc">An epic in deep time, for a magnolia in a jar of tap water &mdash; the flower as the first engagement engine, the beetle it had to flatter, and the long line that runs from a Cretaceous bowl to the feed in your hand.</p>
+        <a class="ptitle" href="magnolia/"><span class="penter">Enter <span class="arr">&rarr;</span></span></a>
+      </div>
+    </li>
+
+  </ol>
+
+  <footer>&copy; 2026 chrysogonum &middot; All rights reserved</footer>
+
 </main>
 </body>
 </html>
