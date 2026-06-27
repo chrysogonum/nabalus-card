@@ -26,7 +26,7 @@
     --maxw:36em;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
   body{
     margin:0;position:relative;overflow-x:hidden;
     background:
@@ -69,14 +69,14 @@
   /* big faint doilies behind the page */
   .bg-art{position:absolute;z-index:0;color:var(--cream);pointer-events:none;}
   .bg-art svg{display:block;width:100%;height:auto;}
-  .bg-doily-1{top:3vh;right:-14vw;width:min(78vw,640px);opacity:.5;animation:turn 280s linear infinite;}
-  .bg-doily-2{bottom:8vh;left:-18vw;width:min(70vw,560px);opacity:.4;animation:turn 360s linear infinite reverse;}
+  .bg-doily-1{top:3vh;right:-12vw;width:min(82vw,680px);opacity:.78;animation:turn 280s linear infinite;}
+  .bg-doily-2{bottom:8vh;left:-16vw;width:min(74vw,580px);opacity:.66;animation:turn 360s linear infinite reverse;}
   @keyframes turn{to{transform:rotate(360deg);}}
 
   .wrap{position:relative;z-index:3;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,6vw,30px);}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
     align-items:center;justify-content:center;text-align:center;padding:12vh 0 8vh;}
   .hero-doily{position:relative;width:min(70vw,340px);margin:0 auto 7vh;color:var(--cream);}
   .hero-doily::before{content:"";position:absolute;inset:-16%;border-radius:50%;z-index:-1;
@@ -99,7 +99,7 @@
   /* ---------- movements ---------- */
   .movement{margin:15vh 0;position:relative;}
   .mv-head{text-align:center;margin:0 0 2.2em;position:relative;}
-  .mv-mark{width:min(40vw,120px);margin:0 auto 1em;color:var(--rose-dim);opacity:.85;}
+  .mv-mark{width:min(46vw,142px);margin:0 auto 1em;color:var(--rose);opacity:.95;}
   .mv-mark svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 16px rgba(110,29,51,.12));}
   .mv-no{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--rose);
     font-size:1.1rem;letter-spacing:.3em;margin:0;}
@@ -119,9 +119,9 @@
   /* ---------- the question, lifted out: the hinge of the poem ---------- */
   #mv3{margin-bottom:9vh;}
   .ask-section{margin:9vh 0 15vh;text-align:center;}
-  .ask-flourish{width:min(30vw,108px);margin:0 auto 4vh;color:var(--rose-dim);
+  .ask-flourish{width:min(33vw,120px);margin:0 auto 4vh;color:var(--rose);
     opacity:0;transition:opacity 1.7s ease .15s;}
-  .ask-section.in .ask-flourish{opacity:.7;}
+  .ask-section.in .ask-flourish{opacity:.82;}
   .ask-flourish svg{display:block;width:100%;height:auto;animation:turn 200s linear infinite;}
   .ask-line{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
     font-size:clamp(2rem,7.6vw,3.4rem);line-height:1.18;color:var(--rose);
@@ -132,7 +132,7 @@
 
   /* ---------- the coda — Queen Anne's Lace ---------- */
   .coda{margin:16vh 0 0;}
-  .coda .qal{width:min(64vw,300px);margin:0 auto 2.4em;
+  .coda .qal{width:min(66vw,320px);margin:0 auto 2.4em;color:var(--ink-deep);
     opacity:0;transform:translateY(18px) scale(.97);transition:opacity 1.4s ease, transform 1.4s ease;}
   .coda.in .qal{opacity:1;transform:none;}
   .coda .qal svg{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(110,29,51,.16));}
@@ -158,7 +158,23 @@
     .wrap{padding:0 18px;}
     .stanza p{text-align:left;font-size:.97em;line-height:1.74;}
     .stanza .vl{padding-left:1.15em;text-indent:-1.15em;}
+    /* tighten the tall vh rhythm so phones aren't mostly empty scroll */
+    .hero{padding:9vh 0 7vh;}
+    .frame{margin:5vh 0 2vh;}
+    .movement{margin:9vh 0;}
+    #mv3{margin-bottom:7vh;}
+    .mv-head{margin-bottom:1.6em;}
+    .ask-section{margin:7vh 0 10vh;}
+    .coda{margin:10vh 0 0;}
+    .closer{min-height:8vh;}
+    .copyr{padding-bottom:7vh;}
+    /* title/eyebrow were overflowing the phone width — rein them in */
+    h1.title{font-size:clamp(1.7rem,9vw,2.7rem);line-height:1.05;}
+    .eyebrow{letter-spacing:.22em;font-size:.62rem;padding-left:0;}
+    .ask-line{font-size:clamp(1.8rem,8.4vw,2.6rem);}
+    /* keep the boosted doily lacing the corner without crowding the title */
     .bg-doily-2{display:none;}
+    .bg-doily-1{opacity:.5;top:-3vh;right:auto;left:-34vw;}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important;animation:none !important;}
@@ -441,8 +457,8 @@
         var ray = document.createElementNS(NS,'path');
         ray.setAttribute('d','M'+cx+','+cy+' Q'+((cx+ex)/2)+','+((cy+ey)/2-3)+' '+ex+','+ey);
         ray.setAttribute('fill','none'); ray.setAttribute('stroke','currentColor');
-        ray.setAttribute('stroke-width','0.8'); ray.setAttribute('stroke-linecap','round');
-        ray.setAttribute('opacity','0.85');
+        ray.setAttribute('stroke-width','1.0'); ray.setAttribute('stroke-linecap','round');
+        ray.setAttribute('opacity','0.9');
         g.appendChild(ray);
         // umbellet: a little cluster of tiny circles at the ray tip
         for(var k=0;k<7;k++){
@@ -450,7 +466,7 @@
           var r = 3.6;
           var d = document.createElementNS(NS,'circle');
           d.setAttribute('cx', ex + Math.cos(a)*r); d.setAttribute('cy', ey + Math.sin(a)*r);
-          d.setAttribute('r','1.05'); d.setAttribute('fill','currentColor'); d.setAttribute('stroke','none');
+          d.setAttribute('r','1.2'); d.setAttribute('fill','currentColor'); d.setAttribute('stroke','none');
           g.appendChild(d);
         }
       }
