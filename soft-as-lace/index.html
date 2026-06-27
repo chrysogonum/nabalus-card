@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The World is as Soft as Lace</title>
+<meta name="description" content="The World is as Soft as Lace — a tribute to the velvet of certain leaves, and to the boy who was told softness was a weakness. Three downy plants prove the velvet is the armor." />
+<meta property="og:title" content="The World is as Soft as Lace" />
+<meta property="og:description" content="The velvet is the armor — three soft-leaved plants, and the boy they called soft." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@500;600&family=IM+Fell+DW+Pica:ital@0,1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blush:#f8e2e8;
+    --blush-2:#f1cdd8;
+    --blush-3:#e8bccb;
+    --cream:#fff8f4;        /* the lace */
+    --ink:#5d3a47;          /* body */
+    --ink-deep:#3e2230;     /* headings */
+    --ink-faint:#a07d8b;    /* labels, captions */
+    --rose:#bd5a76;         /* accent — eyebrows, terms */
+    --rose-dim:#cf90a3;
+    --wine:#6e1d33;         /* the shadow — the dark floret, used sparingly */
+    --maxw:36em;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;position:relative;overflow-x:hidden;
+    background:
+      radial-gradient(130% 90% at 50% -8%, #fdeaef 0%, rgba(253,234,239,0) 52%),
+      radial-gradient(120% 80% at 50% 112%, #e1a8bd 0%, rgba(225,168,189,0) 56%),
+      linear-gradient(170deg, var(--blush) 0%, var(--blush-2) 56%, var(--blush-3) 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:"EB Garamond", Garamond, "Hoefler Text", Georgia, serif;
+    font-size:clamp(18px,1.06rem + .3vw,21px);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  /* fine felt speckle, so the pink never reads flat — a faint nap */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;mix-blend-mode:multiply;
+    background-image:radial-gradient(rgba(120,70,90,.13) .5px, transparent .6px);
+    background-size:3px 3px;
+  }
+  /* soft velvet sheen, breathing */
+  .nap{position:fixed;inset:0;z-index:0;pointer-events:none;mix-blend-mode:soft-light;
+    background:radial-gradient(58% 48% at 50% 36%, rgba(255,255,255,.6), rgba(255,255,255,0) 70%);
+    animation:breathe 9s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}}
+
+  /* the brush — a soft highlight that follows the cursor, the petting reflex */
+  .brush{position:fixed;width:46vmax;height:46vmax;left:0;top:0;z-index:0;pointer-events:none;
+    transform:translate(-50%,-50%);mix-blend-mode:soft-light;opacity:0;transition:opacity 1.2s ease;
+    background:radial-gradient(circle, rgba(255,255,255,.55), rgba(255,255,255,0) 62%);}
+
+  /* drifting down — soft white tufts */
+  .down{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+  .tuft{position:absolute;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,250,248,.95), rgba(255,250,248,0) 68%);
+    opacity:0;will-change:transform,opacity;filter:blur(.4px);}
+  @keyframes float{0%{transform:translateY(16px) translateX(0);opacity:0;}14%{opacity:.7;}
+    86%{opacity:.5;}100%{transform:translateY(-120px) translateX(22px);opacity:0;}}
+
+  /* big faint doilies behind the page */
+  .bg-art{position:absolute;z-index:0;color:var(--cream);pointer-events:none;}
+  .bg-art svg{display:block;width:100%;height:auto;}
+  .bg-doily-1{top:3vh;right:-14vw;width:min(78vw,640px);opacity:.5;animation:turn 280s linear infinite;}
+  .bg-doily-2{bottom:8vh;left:-18vw;width:min(70vw,560px);opacity:.4;animation:turn 360s linear infinite reverse;}
+  @keyframes turn{to{transform:rotate(360deg);}}
+
+  .wrap{position:relative;z-index:3;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,6vw,30px);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:12vh 0 8vh;}
+  .hero-doily{position:relative;width:min(70vw,340px);margin:0 auto 7vh;color:var(--cream);}
+  .hero-doily::before{content:"";position:absolute;inset:-16%;border-radius:50%;z-index:-1;
+    background:radial-gradient(circle, rgba(255,255,255,.5), rgba(255,255,255,0) 70%);filter:blur(8px);
+    animation:breathe 8s ease-in-out infinite;}
+  .hero-doily svg{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 26px rgba(110,29,51,.14));
+    animation:turn 240s linear infinite;}
+  .eyebrow{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.7rem;color:var(--rose);margin:0 0 1.1em;padding-left:.4em;}
+  h1.title{font-family:"IM Fell DW Pica","Cormorant Garamond",serif;font-weight:400;font-style:italic;
+    font-size:clamp(2.7rem,11.5vw,5.6rem);line-height:1.0;margin:0;color:var(--ink-deep);
+    text-shadow:0 1px 0 rgba(255,255,255,.5);}
+  .sub{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink);
+    font-size:clamp(1.15rem,4.6vw,1.55rem);line-height:1.4;margin:1.1em auto 0;max-width:22em;}
+  .cue{margin-top:3em;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.24em;text-transform:uppercase;font-size:.62rem;color:var(--ink-faint);}
+
+  /* ---------- the frame (crochet) ---------- */
+  .frame{margin:6vh 0 2vh;}
+  .frame .stanza p{font-style:italic;color:var(--ink);}
+
+  /* ---------- movements ---------- */
+  .movement{margin:15vh 0;position:relative;}
+  .mv-head{text-align:center;margin:0 0 2.2em;position:relative;}
+  .mv-mark{width:min(40vw,120px);margin:0 auto 1em;color:var(--rose-dim);opacity:.85;}
+  .mv-mark svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 16px rgba(110,29,51,.12));}
+  .mv-no{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--rose);
+    font-size:1.1rem;letter-spacing:.3em;margin:0;}
+  .mv-title{font-family:"Cormorant Garamond",serif;font-weight:300;font-style:italic;
+    font-size:clamp(1.8rem,6.4vw,2.6rem);line-height:1.1;margin:.12em 0 0;color:var(--ink-deep);}
+
+  .stanza{margin:0 0 1.9em;opacity:0;transform:translateY(20px);filter:blur(3px);
+    transition:opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;}
+  .stanza.in{opacity:1;transform:none;filter:none;}
+  .stanza p{margin:0;text-align:center;line-height:1.98;color:var(--ink);}
+  .vl{display:block;}
+  .movement.lead .stanza:first-of-type .vl:first-child::first-letter{
+    font-family:"Cormorant Garamond",serif;font-size:1.3em;color:var(--rose);}
+  /* the surfaced question, near the end */
+  .ask{font-style:italic;color:var(--rose);}
+
+  /* ---------- the question, lifted out: the hinge of the poem ---------- */
+  #mv3{margin-bottom:9vh;}
+  .ask-section{margin:9vh 0 15vh;text-align:center;}
+  .ask-flourish{width:min(30vw,108px);margin:0 auto 4vh;color:var(--rose-dim);
+    opacity:0;transition:opacity 1.7s ease .15s;}
+  .ask-section.in .ask-flourish{opacity:.7;}
+  .ask-flourish svg{display:block;width:100%;height:auto;animation:turn 200s linear infinite;}
+  .ask-line{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;
+    font-size:clamp(2rem,7.6vw,3.4rem);line-height:1.18;color:var(--rose);
+    max-width:13em;margin:0 auto;text-shadow:0 1px 0 rgba(255,255,255,.45);
+    opacity:0;transform:translateY(22px);filter:blur(3px);
+    transition:opacity 1.4s ease,transform 1.4s ease,filter 1.4s ease;}
+  .ask-section.in .ask-line{opacity:1;transform:none;filter:none;}
+
+  /* ---------- the coda — Queen Anne's Lace ---------- */
+  .coda{margin:16vh 0 0;}
+  .coda .qal{width:min(64vw,300px);margin:0 auto 2.4em;
+    opacity:0;transform:translateY(18px) scale(.97);transition:opacity 1.4s ease, transform 1.4s ease;}
+  .coda.in .qal{opacity:1;transform:none;}
+  .coda .qal svg{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(110,29,51,.16));}
+  .coda .stanza p{color:var(--ink);}
+  .coda .last{font-style:italic;color:var(--ink-deep);}
+  .closer{min-height:14vh;display:flex;align-items:center;justify-content:center;}
+  .closer p{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.24em;
+    text-transform:uppercase;font-size:.64rem;color:var(--ink-faint);text-align:center;}
+
+  /* a small note for the literal-minded, well past the ending */
+  .botnote{max-width:30em;margin:0 auto;padding:0 0 6vh;color:var(--ink-faint);
+    font-size:.78rem;line-height:1.74;text-align:left;}
+  .botnote .rule{width:42px;height:1px;background:var(--ink-faint);opacity:.5;margin:0 auto 1.5em;}
+  .botnote .lab{font-family:"Cormorant SC","Cormorant Garamond",serif;letter-spacing:.22em;
+    text-transform:uppercase;font-size:.62rem;color:var(--rose);display:block;text-align:center;margin-bottom:1.1em;}
+  .botnote i{color:var(--ink);}
+  .botnote a{color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(189,90,118,.4);transition:color .25s ease,border-color .25s ease;}
+  .botnote a:hover{color:var(--wine);border-bottom-color:var(--wine);}
+  .botnote .songs{margin-top:1.3em;}
+  .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;padding-bottom:9vh;}
+
+  @media (max-width:640px){
+    .wrap{padding:0 18px;}
+    .stanza p{text-align:left;font-size:.97em;line-height:1.74;}
+    .stanza .vl{padding-left:1.15em;text-indent:-1.15em;}
+    .bg-doily-2{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important;}
+    .stanza,.coda .qal{opacity:1;transform:none;filter:none;}
+    .down{display:none;}
+    .brush{display:none;}
+  }
+  @media print{
+    body{background:#fff;color:#222;}
+    .nap,.down,.brush,.bg-art{display:none;}
+    h1.title,.mv-title,.coda .last{color:#222;text-shadow:none;}
+    .stanza,.coda .qal{opacity:1 !important;transform:none !important;filter:none !important;}
+    .movement{margin:2.5em 0;break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== reusable line-art, defined once ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- doily building blocks -->
+    <path id="d-pet" d="M100,100 C95.5,86 96.5,74 100,66 C103.5,74 104.5,86 100,100 Z"/>
+    <circle id="d-eye" cx="100" cy="47" r="4.6"/>
+    <circle id="d-eye2" cx="100" cy="25" r="3.2"/>
+    <path id="d-scal" d="M90.5,13 A11,11 0 0 1 109.5,13"/>
+
+    <symbol id="doily" viewBox="0 0 200 200">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <circle cx="100" cy="100" r="88"/>
+        <circle cx="100" cy="100" r="64"/>
+        <circle cx="100" cy="100" r="42"/>
+        <circle cx="100" cy="100" r="20"/>
+        <circle cx="100" cy="100" r="6.5"/>
+        <!-- centre rosette -->
+        <use href="#d-pet" transform="rotate(0 100 100)"/>
+        <use href="#d-pet" transform="rotate(45 100 100)"/>
+        <use href="#d-pet" transform="rotate(90 100 100)"/>
+        <use href="#d-pet" transform="rotate(135 100 100)"/>
+        <use href="#d-pet" transform="rotate(180 100 100)"/>
+        <use href="#d-pet" transform="rotate(225 100 100)"/>
+        <use href="#d-pet" transform="rotate(270 100 100)"/>
+        <use href="#d-pet" transform="rotate(315 100 100)"/>
+        <!-- inner eyelet ring (12) -->
+        <use href="#d-eye" transform="rotate(0 100 100)"/>
+        <use href="#d-eye" transform="rotate(30 100 100)"/>
+        <use href="#d-eye" transform="rotate(60 100 100)"/>
+        <use href="#d-eye" transform="rotate(90 100 100)"/>
+        <use href="#d-eye" transform="rotate(120 100 100)"/>
+        <use href="#d-eye" transform="rotate(150 100 100)"/>
+        <use href="#d-eye" transform="rotate(180 100 100)"/>
+        <use href="#d-eye" transform="rotate(210 100 100)"/>
+        <use href="#d-eye" transform="rotate(240 100 100)"/>
+        <use href="#d-eye" transform="rotate(270 100 100)"/>
+        <use href="#d-eye" transform="rotate(300 100 100)"/>
+        <use href="#d-eye" transform="rotate(330 100 100)"/>
+        <!-- outer eyelet ring (16) -->
+        <use href="#d-eye2" transform="rotate(0 100 100)"/>
+        <use href="#d-eye2" transform="rotate(22.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(45 100 100)"/>
+        <use href="#d-eye2" transform="rotate(67.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(90 100 100)"/>
+        <use href="#d-eye2" transform="rotate(112.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(135 100 100)"/>
+        <use href="#d-eye2" transform="rotate(157.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(180 100 100)"/>
+        <use href="#d-eye2" transform="rotate(202.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(225 100 100)"/>
+        <use href="#d-eye2" transform="rotate(247.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(270 100 100)"/>
+        <use href="#d-eye2" transform="rotate(292.5 100 100)"/>
+        <use href="#d-eye2" transform="rotate(315 100 100)"/>
+        <use href="#d-eye2" transform="rotate(337.5 100 100)"/>
+        <!-- scalloped edge (24) -->
+        <use href="#d-scal" transform="rotate(0 100 100)"/>
+        <use href="#d-scal" transform="rotate(15 100 100)"/>
+        <use href="#d-scal" transform="rotate(30 100 100)"/>
+        <use href="#d-scal" transform="rotate(45 100 100)"/>
+        <use href="#d-scal" transform="rotate(60 100 100)"/>
+        <use href="#d-scal" transform="rotate(75 100 100)"/>
+        <use href="#d-scal" transform="rotate(90 100 100)"/>
+        <use href="#d-scal" transform="rotate(105 100 100)"/>
+        <use href="#d-scal" transform="rotate(120 100 100)"/>
+        <use href="#d-scal" transform="rotate(135 100 100)"/>
+        <use href="#d-scal" transform="rotate(150 100 100)"/>
+        <use href="#d-scal" transform="rotate(165 100 100)"/>
+        <use href="#d-scal" transform="rotate(180 100 100)"/>
+        <use href="#d-scal" transform="rotate(195 100 100)"/>
+        <use href="#d-scal" transform="rotate(210 100 100)"/>
+        <use href="#d-scal" transform="rotate(225 100 100)"/>
+        <use href="#d-scal" transform="rotate(240 100 100)"/>
+        <use href="#d-scal" transform="rotate(255 100 100)"/>
+        <use href="#d-scal" transform="rotate(270 100 100)"/>
+        <use href="#d-scal" transform="rotate(285 100 100)"/>
+        <use href="#d-scal" transform="rotate(300 100 100)"/>
+        <use href="#d-scal" transform="rotate(315 100 100)"/>
+        <use href="#d-scal" transform="rotate(330 100 100)"/>
+        <use href="#d-scal" transform="rotate(345 100 100)"/>
+      </g>
+    </symbol>
+
+    <!-- hibiscus: 5 petals, long staminal column, a soft leaf -->
+    <path id="hib-petal" d="M100,74 C76,62 66,34 86,16 C98,5 102,5 114,16 C134,34 124,62 100,74 Z"/>
+    <symbol id="hibiscus" viewBox="0 0 200 230">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+        <use href="#hib-petal" transform="rotate(0 100 74)"/>
+        <use href="#hib-petal" transform="rotate(72 100 74)"/>
+        <use href="#hib-petal" transform="rotate(144 100 74)"/>
+        <use href="#hib-petal" transform="rotate(216 100 74)"/>
+        <use href="#hib-petal" transform="rotate(288 100 74)"/>
+        <!-- staminal column -->
+        <path d="M100,74 C100,98 100,122 100,142"/>
+        <path d="M96,86 l-8,2 M104,92 l8,2 M96,104 l-8,2 M104,112 l8,2 M96,124 l-8,2" stroke-width="1"/>
+        <circle cx="88" cy="88" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="112" cy="94" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="88" cy="106" r="1.5" fill="currentColor" stroke="none"/>
+        <circle cx="112" cy="114" r="1.5" fill="currentColor" stroke="none"/>
+        <!-- 5 stigma knobs at the tip -->
+        <path d="M100,142 l-7,8 M100,142 l-2,11 M100,142 l4,10 M100,142 l9,6" stroke-width="1"/>
+        <circle cx="92" cy="151" r="1.8" fill="currentColor" stroke="none"/>
+        <circle cx="98" cy="154" r="1.8" fill="currentColor" stroke="none"/>
+        <circle cx="104" cy="153" r="1.8" fill="currentColor" stroke="none"/>
+        <circle cx="109" cy="149" r="1.8" fill="currentColor" stroke="none"/>
+        <!-- stem + big soft leaf -->
+        <path d="M100,150 C99,178 101,200 100,224"/>
+        <path d="M100,182 C72,180 54,196 56,222 C84,220 99,200 100,182 Z"/>
+        <path d="M99,186 C82,196 70,206 62,218" stroke-width="0.9"/>
+      </g>
+    </symbol>
+
+    <!-- velvet panicum: arching culm, airy panicle, a blade -->
+    <symbol id="grass" viewBox="0 0 200 260">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M92,258 C88,202 92,150 108,112 C118,88 132,68 152,52"/>
+        <!-- panicle branches off the upper culm, each with an open spikelet -->
+        <path d="M138,66 C150,58 160,58 170,52 M138,66 C148,72 156,76 162,84 M120,86 C132,78 142,78 152,72 M120,86 C130,92 138,98 144,106 M108,108 C96,102 88,102 78,98 M108,108 C118,114 124,120 130,130 M100,134 C90,130 82,132 74,130"/>
+        <ellipse cx="172" cy="50" rx="4" ry="2.2" transform="rotate(-28 172 50)"/>
+        <ellipse cx="164" cy="86" rx="4" ry="2.2" transform="rotate(40 164 86)"/>
+        <ellipse cx="154" cy="70" rx="4" ry="2.2" transform="rotate(-26 154 70)"/>
+        <ellipse cx="146" cy="108" rx="4" ry="2.2" transform="rotate(46 146 108)"/>
+        <ellipse cx="76" cy="96" rx="4" ry="2.2" transform="rotate(20 76 96)"/>
+        <ellipse cx="132" cy="132" rx="4" ry="2.2" transform="rotate(52 132 132)"/>
+        <ellipse cx="72" cy="129" rx="4" ry="2.2" transform="rotate(8 72 129)"/>
+        <!-- a leaf blade -->
+        <path d="M94,196 C70,188 52,196 40,214 C66,214 84,210 96,200"/>
+      </g>
+    </symbol>
+
+    <!-- hazel: leaf, two catkins, a nut in a frilled husk -->
+    <symbol id="hazel" viewBox="0 0 200 230">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+        <!-- twig -->
+        <path d="M70,18 C78,52 84,92 92,150"/>
+        <!-- rounded doubly-serrate leaf -->
+        <path d="M92,70 C120,52 154,58 168,86 C156,120 120,134 96,120 C90,104 88,86 92,70 Z"/>
+        <path d="M96,92 C118,92 142,96 164,92" stroke-width="0.8"/>
+        <path d="M100,104 C118,108 134,114 150,118 M104,80 C120,76 136,74 152,72" stroke-width="0.8"/>
+        <!-- two pendulous catkins -->
+        <path d="M62,30 C58,52 60,76 56,98"/>
+        <path d="M76,34 C74,54 76,74 72,92"/>
+        <g stroke-width="0.9">
+          <path d="M58,40 l-5,2 M61,52 l-6,1 M59,64 l-6,2 M61,76 l-6,1 M57,88 l-6,2"/>
+          <path d="M75,44 l6,1 M73,56 l6,2 M75,68 l6,1 M73,80 l6,2"/>
+        </g>
+        <!-- nut cupped in a frilled husk -->
+        <path d="M96,150 C88,156 86,172 96,184 C108,196 124,194 132,182 C140,170 136,154 126,150"/>
+        <path d="M96,154 C100,148 108,146 112,150 M112,150 C118,144 126,144 130,150 M104,182 c-2,8 -8,12 -12,16 M120,186 c0,8 4,14 8,18 M112,188 v18" stroke-width="0.9"/>
+        <ellipse cx="111" cy="168" rx="12" ry="14"/>
+      </g>
+    </symbol>
+
+    <!-- Queen Anne's Lace: a compound umbel, mostly air, one dark floret at the centre -->
+    <symbol id="qal" viewBox="0 0 220 210">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <!-- stem + a few bracts -->
+        <path d="M110,206 C109,178 110,156 110,140" stroke-width="1.3"/>
+        <path d="M110,150 l-12,16 M110,150 l12,16 M110,150 l-4,18 M110,150 l5,18" stroke-width="0.9"/>
+        <!-- rays radiating up into a flat-topped dome -->
+        <g id="qal-rays"></g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="nap" aria-hidden="true"></div>
+<div class="brush" id="brush" aria-hidden="true"></div>
+<div class="bg-art bg-doily-1" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#doily"/></svg></div>
+<div class="bg-art bg-doily-2" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#doily"/></svg></div>
+<div class="down" id="down" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-doily" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#doily"/></svg></div>
+    <p class="eyebrow">Trichomes &middot; holes that hold</p>
+    <h1 class="title">The World is<br/>as Soft as Lace</h1>
+    <p class="sub">for the boy who loved the flowers.</p>
+  </header>
+
+  <!-- ========== FRAME ========== -->
+  <section class="frame">
+    <div class="stanza"><p><span class="vl">Mamma taught my hands to crochet:</span><span class="vl">how a row of almost-nothing, looped and pulled, holds&nbsp;&mdash;</span><span class="vl">the hook, the yarn, that deliberate hole the next stitch will hang from.</span><span class="vl">Lace is the pattern of the gaps.</span><span class="vl">And, a soft thing made of mostly missing can still hold its shape.</span></p></div>
+  </section>
+
+  <!-- ========== I ========== -->
+  <section class="movement lead" id="mv1">
+    <div class="mv-head">
+      <div class="mv-mark"><svg viewBox="0 0 200 230" role="img" aria-label="Line drawing of a swamp rose-mallow"><use href="#hibiscus"/></svg></div>
+      <p class="mv-no">I</p><h2 class="mv-title">Wide Open</h2>
+    </div>
+    <div class="stanza"><p><span class="vl">You wanted to be the loud flower in a field of grass.</span><span class="vl">Swamp rose-mallow: a blossom wider than a face,</span><span class="vl">pale pink, extravagant, flinging itself open</span><span class="vl">in a wet roadside ditch, or standing solitary out in a bog&nbsp;&mdash;</span><span class="vl">blooming in the open before you ever learned</span><span class="vl">that loving the flowers was a thing a boy could lose for.</span></p></div>
+    <div class="stanza"><p><span class="vl">Turn the big grey leaf over. Everywhere, it is velvet:</span><span class="vl">tomentose, the botanists say&nbsp;&mdash; felted,</span><span class="vl">a leaf with the stiff heft of card</span><span class="vl">and the softest surface your hand will meet,</span><span class="vl">save for the deep plush of a theatre curtain.</span><span class="vl">You can&rsquo;t resist bragging about the feel of it.</span><span class="vl">Everyone gasps at the voluptuousness.</span></p></div>
+    <div class="stanza"><p><span class="vl">But the down was never tenderness.</span><span class="vl">It baffles the small jaws, breaks the drying wind,</span><span class="vl">shades the hard sun. The softest face in the field</span><span class="vl">is the most defended. It only happens to feel like love.</span></p></div>
+  </section>
+
+  <!-- ========== II ========== -->
+  <section class="movement" id="mv2">
+    <div class="mv-head">
+      <div class="mv-mark"><svg viewBox="0 0 200 260" role="img" aria-label="Line drawing of a velvet panicum grass"><use href="#grass"/></svg></div>
+      <p class="mv-no">II</p><h2 class="mv-title">In Plain Sight</h2>
+    </div>
+    <div class="stanza"><p><span class="vl">So you tried the other thing. You tried to be grass.</span><span class="vl">Velvet witchgrass&nbsp;&mdash; green, upright, unremarkable,</span><span class="vl">one more blade among blades, nothing to see here,</span><span class="vl">practiced, plain, giving nothing away.</span></p></div>
+    <div class="stanza"><p><span class="vl">But slide a thumb up his stem and the secret spills.</span><span class="vl">The whole of it is hair, down to the root.</span><span class="vl">It hid what it was in the open and never lost it&nbsp;&mdash;</span><span class="vl">did not scorch the fuzz off to pass, only learned</span><span class="vl">to wear the same plain coat as all the rest</span><span class="vl">with velvet fur kept on underneath, intact.</span></p></div>
+  </section>
+
+  <!-- ========== III ========== -->
+  <section class="movement" id="mv3">
+    <div class="mv-head">
+      <div class="mv-mark"><svg viewBox="0 0 200 230" role="img" aria-label="Line drawing of a hazel twig with catkins and a nut"><use href="#hazel"/></svg></div>
+      <p class="mv-no">III</p><h2 class="mv-title">The Husk</h2>
+    </div>
+    <div class="stanza"><p><span class="vl">And then the hazel, which held nothing back.</span><span class="vl">Soft the whole way down: down on the unrolling leaf,</span><span class="vl">catkins hung out like little grey lambs in the cold,</span><span class="vl">and the nut&nbsp;&mdash; the one hard thing it ever made&nbsp;&mdash;</span><span class="vl">not hidden but cupped, swaddled, set in a deckled green husk,</span><span class="vl">a downy house raised around the seed.</span></p></div>
+    <div class="stanza"><p><span class="vl">The hazel does not choose the soft over the hard.</span><span class="vl">It folds the one inside the other, and makes the tender</span><span class="vl">the very thing that carries the hard part safely down.</span></p></div>
+    <div class="stanza"><p><span class="vl">The biology was trying to teach you</span><span class="vl">the verdict you could not reach alone:</span><span class="vl">the velvet is the armor.</span><span class="vl">You did not last in spite of the softness.</span><span class="vl">You lasted by it.</span></p></div>
+  </section>
+
+  <!-- ========== THE QUESTION — the hinge ========== -->
+  <section class="ask-section" id="ask">
+    <div class="ask-flourish" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#doily"/></svg></div>
+    <p class="ask-line">Do you want to be soft like me?</p>
+  </section>
+
+  <!-- ========== CODA — Queen Anne's Lace ========== -->
+  <section class="coda" id="coda">
+    <div class="qal" aria-hidden="true"><svg viewBox="0 0 220 210"><use href="#qal"/></svg></div>
+    <div class="stanza"><p><span class="vl">There is one flower I kept back for the end.</span><span class="vl">Not a soft one&nbsp;&mdash; its leaves are ferny, ordinary&nbsp;&mdash;</span><span class="vl">but it is the lace itself. Queen Anne&rsquo;s,</span><span class="vl">the white wheels along the highway shoulders</span><span class="vl">all those drives to your grandmother&rsquo;s farm,</span><span class="vl">common as gravel, everywhere, unregarded:</span><span class="vl">a flat white plate of nearly nothing,</span><span class="vl">mostly air, mostly the holes between the florets,</span><span class="vl">structured softness that still keeps its shape.</span></p></div>
+    <div class="stanza"><p><span class="vl">And at the dead center&nbsp;&mdash; look&nbsp;&mdash; a single dark floret,</span><span class="vl">the drop of blood where the queen pricked her finger making the lace.</span><span class="vl">The soft thing is not spared the dark; it carries it,</span><span class="vl">the way the velvet cannot feel the hand that strokes it.</span></p></div>
+    <div class="stanza"><p><span class="vl">But the holes are how it holds.</span><span class="vl">Make the holes, the loving hands had said.</span><span class="vl">And the grown hand, no longer afraid of what it is,</span><span class="vl">lies down flat on the velvet leaf&nbsp;&mdash;</span><span class="vl ask">yes&nbsp;&mdash; soft like me&nbsp;&mdash;</span><span class="vl last">and the leaf, open and defended, holds it.</span></p></div>
+  </section>
+
+  <div class="closer" aria-hidden="true"></div>
+
+  <aside class="botnote">
+    <div class="rule"></div>
+    <span class="lab">For the botanists, knitters &amp; anglo-music obsessives</span>
+    <p>The three velvet specimens are <i>Hibiscus grandiflorus</i> (swamp rose-mallow, its grey leaves felted beneath), <i>Dichanthelium scoparium</i> (velvet witchgrass / velvet panicum, hairy to the root), and the American hazelnut, <i>Corylus americana</i> (downy leaf, soft catkins, the nut in its frilled husk). What they share is <i>trichomes</i>&nbsp;&mdash; the fuzz, felt and down&nbsp;&mdash; which are genuinely the plant&rsquo;s defenses: they baffle small insects, slow water loss, and turn the sun, and only happen to feel like tenderness to a hand. Queen Anne&rsquo;s Lace (<i>Daucus carota</i>) is the exception kept for the coda: its foliage is ferny, not velvet&nbsp;&mdash; it earns its place not as a soft leaf but as the lace, the flat umbel that is mostly air, with the lone dark floret at its center.</p>
+    <p class="songs">Two songs are woven under the surface. The title is borrowed outright from Felt&rsquo;s <a href="https://www.youtube.com/watch?v=iXanBMPThzM&amp;list=RDiXanBMPThzM&amp;start_radio=1" target="_blank" rel="noopener"><i>The World Is As Soft As Lace</i></a> (Lawrence &amp; Maurice Deebank, 1984); the question the poem turns to answer&nbsp;&mdash; <i>soft like me?</i>&nbsp;&mdash; is Saint Etienne&rsquo;s, from <a href="https://www.youtube.com/watch?v=Z1rG5sfVUuY" target="_blank" rel="noopener"><i>Soft Like Me</i></a> (2002).</p>
+  </aside>
+
+  <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved</p>
+</main>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+    /* build the Queen Anne's Lace umbel: rays + airy umbellets, one dark floret at centre */
+    (function(){
+      var g = document.getElementById('qal-rays');
+      if(!g) return;
+      var cx = 110, cy = 140, NS = 'http://www.w3.org/2000/svg';
+      // rays fan from -150deg to -30deg (a flat-topped dome)
+      var N = 17;
+      for(var i=0;i<N;i++){
+        var t = i/(N-1);
+        var ang = (-150 + t*120) * Math.PI/180;
+        var len = 58 + Math.sin(t*Math.PI)*16;       // dome: longer in the middle
+        var ex = cx + Math.cos(ang)*len;
+        var ey = cy + Math.sin(ang)*len;
+        var ray = document.createElementNS(NS,'path');
+        ray.setAttribute('d','M'+cx+','+cy+' Q'+((cx+ex)/2)+','+((cy+ey)/2-3)+' '+ex+','+ey);
+        ray.setAttribute('fill','none'); ray.setAttribute('stroke','currentColor');
+        ray.setAttribute('stroke-width','0.8'); ray.setAttribute('stroke-linecap','round');
+        ray.setAttribute('opacity','0.85');
+        g.appendChild(ray);
+        // umbellet: a little cluster of tiny circles at the ray tip
+        for(var k=0;k<7;k++){
+          var a = (k/7)*Math.PI*2;
+          var r = 3.6;
+          var d = document.createElementNS(NS,'circle');
+          d.setAttribute('cx', ex + Math.cos(a)*r); d.setAttribute('cy', ey + Math.sin(a)*r);
+          d.setAttribute('r','1.05'); d.setAttribute('fill','currentColor'); d.setAttribute('stroke','none');
+          g.appendChild(d);
+        }
+      }
+      // the dark floret — the wound at the heart of all that white
+      var dome_cx = cx, dome_cy = cy - 64;
+      for(var j=0;j<5;j++){
+        var aa = (j/5)*Math.PI*2;
+        var dot = document.createElementNS(NS,'circle');
+        dot.setAttribute('cx', dome_cx + Math.cos(aa)*1.7); dot.setAttribute('cy', dome_cy + Math.sin(aa)*1.7);
+        dot.setAttribute('r','1.5'); dot.setAttribute('fill','var(--wine)'); dot.setAttribute('stroke','none');
+        g.appendChild(dot);
+      }
+      var c = document.createElementNS(NS,'circle');
+      c.setAttribute('cx',dome_cx); c.setAttribute('cy',dome_cy); c.setAttribute('r','1.8');
+      c.setAttribute('fill','var(--wine)'); c.setAttribute('stroke','none');
+      g.appendChild(c);
+    })();
+
+    /* reveal on scroll */
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.stanza, .coda, .ask-section').forEach(function(el,i){
+      el.style.transitionDelay = ((i % 5) * 0.06) + 's'; io.observe(el);
+    });
+
+    if(reduce) return;
+
+    /* the brush — soft highlight follows the cursor (pointer devices only) */
+    var brush = document.getElementById('brush'), bx=0, by=0, raf=0;
+    if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+      window.addEventListener('pointermove', function(ev){
+        bx = ev.clientX; by = ev.clientY; brush.style.opacity = 1;
+        if(!raf) raf = requestAnimationFrame(function(){
+          brush.style.transform = 'translate('+bx+'px,'+by+'px) translate(-50%,-50%)'; raf = 0;
+        });
+      }, {passive:true});
+      window.addEventListener('pointerleave', function(){ brush.style.opacity = 0; });
+    }
+
+    /* drifting down */
+    var host = document.getElementById('down');
+    var COUNT = window.innerWidth < 600 ? 12 : 22;
+    for(var i=0;i<COUNT;i++){
+      var m = document.createElement('span');
+      m.className = 'tuft';
+      var size = 3 + Math.random()*6;
+      m.style.width = size+'px'; m.style.height = size+'px';
+      m.style.left = (Math.random()*100)+'%';
+      m.style.top = (Math.random()*100)+'%';
+      var dur = 16 + Math.random()*16;
+      m.style.animation = 'float '+dur+'s linear infinite';
+      m.style.animationDelay = (-Math.random()*dur)+'s';
+      host.appendChild(m);
+    }
+  })();
+</script>
+</body>
+</html>
