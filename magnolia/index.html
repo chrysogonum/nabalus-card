@@ -179,7 +179,17 @@
   .botnote .beg{color:var(--ink-soft);font-style:italic;}
   .botnote .cite{margin-top:1.3em;font-size:.7rem;line-height:1.6;opacity:.72;}
   .botnote .cite b{font-weight:600;color:var(--ink-soft);}
-  .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;padding-bottom:9vh;}
+  .pfoot{text-align:center;padding-bottom:9vh;}
+  .pfoot .home{display:inline-block;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;text-decoration:none;
+    color:var(--ink-faint);transition:color .3s ease;}
+  .pfoot .home:hover{color:var(--gold);}
+  .pfoot .home .arr{display:inline-block;transition:transform .3s ease;}
+  .pfoot .home:hover .arr{transform:translateX(-4px);}
+  .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;margin:1.5em 0 0;}
+  .copyr a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(216,164,78,.3);
+    transition:color .3s ease,border-color .3s ease;}
+  .copyr a:hover{color:var(--gold);border-bottom-color:var(--gold);}
 
   @media (max-width:640px){
     .wrap{padding:0 18px;}
@@ -244,6 +254,7 @@
     .dt-list::before{transform:scaleY(1) !important;}
     .movement{margin:2.5em 0;break-inside:avoid;}
     .term::after{display:none;}
+    .pfoot .home{display:none;}
   }
 </style>
 </head>
@@ -395,7 +406,10 @@
     <p class="cite">On the family's fever: Wang &amp; Zhang, &ldquo;Floral thermogenesis: an adaptive strategy of pollination biology in Magnoliaceae,&rdquo; <i>Commun. Integr. Biol.</i> <b>8</b> (2015), e992746.</p>
   </aside>
 
-  <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved</p>
+  <footer class="pfoot">
+    <a class="home" href="../index.html"><span class="arr">&larr;</span>&ensp;Wild Correspondences</a>
+    <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved &middot; <a href="https://ppr3.com" target="_blank" rel="noopener">ppr3.com</a></p>
+  </footer>
 </main>
 
 <script>

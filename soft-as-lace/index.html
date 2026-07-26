@@ -152,7 +152,17 @@
   .botnote a{color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(189,90,118,.4);transition:color .25s ease,border-color .25s ease;}
   .botnote a:hover{color:var(--wine);border-bottom-color:var(--wine);}
   .botnote .songs{margin-top:1.3em;}
-  .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;padding-bottom:9vh;}
+  .pfoot{text-align:center;padding-bottom:9vh;}
+  .pfoot .home{display:inline-block;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;text-decoration:none;
+    color:var(--ink-faint);transition:color .3s ease;}
+  .pfoot .home:hover{color:var(--rose);}
+  .pfoot .home .arr{display:inline-block;transition:transform .3s ease;}
+  .pfoot .home:hover .arr{transform:translateX(-4px);}
+  .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;margin:1.5em 0 0;}
+  .copyr a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(189,90,118,.32);
+    transition:color .3s ease,border-color .3s ease;}
+  .copyr a:hover{color:var(--rose);border-bottom-color:var(--rose);}
 
   @media (max-width:640px){
     .wrap{padding:0 18px;}
@@ -167,7 +177,7 @@
     .ask-section{margin:7vh 0 10vh;}
     .coda{margin:10vh 0 0;}
     .closer{min-height:8vh;}
-    .copyr{padding-bottom:7vh;}
+    .pfoot{padding-bottom:7vh;}
     /* title/eyebrow were overflowing the phone width — rein them in */
     h1.title{font-size:clamp(1.7rem,9vw,2.7rem);line-height:1.05;}
     .eyebrow{letter-spacing:.22em;font-size:.62rem;padding-left:0;}
@@ -188,6 +198,7 @@
     h1.title,.mv-title,.coda .last{color:#222;text-shadow:none;}
     .stanza,.coda .qal{opacity:1 !important;transform:none !important;filter:none !important;}
     .movement{margin:2.5em 0;break-inside:avoid;}
+    .pfoot .home{display:none;}
   }
 </style>
 </head>
@@ -434,7 +445,10 @@
     <p class="songs">Two songs are woven under the surface. The title is borrowed outright from Felt&rsquo;s <a href="https://www.youtube.com/watch?v=iXanBMPThzM&amp;list=RDiXanBMPThzM&amp;start_radio=1" target="_blank" rel="noopener"><i>The World Is As Soft As Lace</i></a> (Lawrence &amp; Maurice Deebank, 1984); the question the poem turns to answer&nbsp;&mdash; <i>soft like me?</i>&nbsp;&mdash; is Saint Etienne&rsquo;s, from <a href="https://www.youtube.com/watch?v=Z1rG5sfVUuY" target="_blank" rel="noopener"><i>Soft Like Me</i></a> (2002).</p>
   </aside>
 
-  <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved</p>
+  <footer class="pfoot">
+    <a class="home" href="../index.html"><span class="arr">&larr;</span>&ensp;Wild Correspondences</a>
+    <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved &middot; <a href="https://ppr3.com" target="_blank" rel="noopener">ppr3.com</a></p>
+  </footer>
 </main>
 
 <script>

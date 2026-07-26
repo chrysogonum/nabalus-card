@@ -137,6 +137,17 @@
   }
 
   footer{margin-top:9vh;text-align:center;color:var(--gold-dim);font-size:.8rem;}
+  footer .taxa{margin:0;}
+  footer .home{display:inline-block;margin-top:1.6em;font-family:"Cormorant SC","Cormorant Garamond",serif;
+    letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;text-decoration:none;
+    color:var(--gold-dim);transition:color .3s ease;}
+  footer .home:hover{color:var(--gold);}
+  footer .home .arr{display:inline-block;transition:transform .3s ease;}
+  footer .home:hover .arr{transform:translateX(-4px);}
+  footer .copyr{margin:1.5em 0 0;font-size:.7rem;letter-spacing:.05em;}
+  footer .copyr a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(198,168,107,.3);
+    transition:color .3s ease,border-color .3s ease;}
+  footer .copyr a:hover{color:var(--gold);border-bottom-color:var(--gold);}
   .note{max-width:34em;margin:3vh auto 0;font-size:.8rem;line-height:1.7;color:#6f7d68;text-align:center;font-style:italic;}
 
   @media (prefers-reduced-motion:reduce){
@@ -253,8 +264,9 @@
   </section>
 
   <footer>
-    <p>Nabalus &middot; once Prenanthes &middot; rattlesnake-root</p>
-    <p>&copy; 2026 chrysogonum &middot; All rights reserved</p>
+    <p class="taxa">Nabalus &middot; once Prenanthes &middot; rattlesnake-root</p>
+    <a class="home" href="index.html"><span class="arr">&larr;</span>&ensp;Wild Correspondences</a>
+    <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved &middot; <a href="https://ppr3.com" target="_blank" rel="noopener">ppr3.com</a></p>
   </footer>
 
 </div>
