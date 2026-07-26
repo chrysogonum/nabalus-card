@@ -12,7 +12,11 @@ Live at **https://chrysogonum.github.io/nabalus-card/**
 ## Contents
 
 - `index.html` — the collection's front page
-- `magnolia/` — *Cantharophily* (`index.html` + optimized photo)
+- `magnolia/` — *Cantharophily* (`index.html` + optimized photo), plus a printable edition:
+  `print.html` and `cantharophily-print.pdf` (13pp US Letter — light ground, the hover glosses
+  moved into the margins, and the two chronologies set as facing strips with their notes as
+  endnotes), the line-drawn plate `images/bloom-line.svg`, and `build-print.py`, which
+  regenerates `print.html` from `index.html` so the verse cannot drift between the two
 - `v2.html` — *Snakeroot*
 
 Full-resolution original photographs are kept locally and excluded from the repository (see `.gitignore`) to keep it lightweight.

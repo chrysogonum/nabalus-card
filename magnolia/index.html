@@ -186,6 +186,12 @@
   .pfoot .home:hover{color:var(--gold);}
   .pfoot .home .arr{display:inline-block;transition:transform .3s ease;}
   .pfoot .home:hover .arr{transform:translateX(-4px);}
+  /* the paper version, offered quietly under the last of the science */
+  .pfoot .plink{margin:0 0 2.1em;font-size:.72rem;line-height:1.6;color:var(--ink-faint);}
+  .pfoot .plink a{color:var(--ink-soft);text-decoration:none;
+    border-bottom:1px solid rgba(216,164,78,.35);transition:color .3s ease,border-color .3s ease;}
+  .pfoot .plink a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+  .pfoot .plink .pmeta{display:block;font-size:.92em;opacity:.75;margin-top:.25em;}
   .copyr{text-align:center;color:var(--ink-faint);font-size:.7rem;letter-spacing:.05em;margin:1.5em 0 0;}
   .copyr a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(216,164,78,.3);
     transition:color .3s ease,border-color .3s ease;}
@@ -254,7 +260,7 @@
     .dt-list::before{transform:scaleY(1) !important;}
     .movement{margin:2.5em 0;break-inside:avoid;}
     .term::after{display:none;}
-    .pfoot .home{display:none;}
+    .pfoot .home,.pfoot .plink{display:none;}
   }
 </style>
 </head>
@@ -407,6 +413,7 @@
   </aside>
 
   <footer class="pfoot">
+    <p class="plink"><a href="cantharophily-print.pdf">A printable edition</a><span class="pmeta">PDF &middot; 13 pages &middot; the two chronologies set facing</span></p>
     <a class="home" href="../index.html"><span class="arr">&larr;</span>&ensp;Wild Correspondences</a>
     <p class="copyr">&copy; 2026 chrysogonum &middot; All rights reserved &middot; <a href="https://ppr3.com" target="_blank" rel="noopener">ppr3.com</a></p>
   </footer>
