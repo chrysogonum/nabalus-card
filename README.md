@@ -2,7 +2,8 @@
 
 A small, growing collection of **natural-history poems**.
 
-Live at **https://chrysogonum.github.io/nabalus-card/**
+Live at **https://wild.ppr3.com** (moved 2026-07-28 from
+`https://chrysogonum.github.io/nabalus-card/`, which now redirects here)
 
 ## The poems
 
