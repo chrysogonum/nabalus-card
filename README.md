@@ -23,3 +23,16 @@ Live at **https://wild.ppr3.com** (moved 2026-07-28 from
 Full-resolution original photographs are kept locally and excluded from the repository (see `.gitignore`) to keep it lightweight.
 
 > *(The repository is named `nabalus-card` for historical reasons — it began as a single birthday card. The collection has since outgrown the name.)*
+
+## Deploying
+
+**`git push` is the deploy.** GitHub Pages publishes from `main` at the repo root; the site is
+live at https://wild.ppr3.com about a minute after a push. No build step, no wrangler command.
+
+⚠ **Do not delete the `CNAME` file at the repo root.** It contains `wild.ppr3.com` and is what binds the
+subdomain — GitHub wrote it on 2026-07-28 when the custom domain was set, so it can read as stray.
+Deleting it unbinds the domain and the site falls back to `chrysogonum.github.io/nabalus-card/` (which
+currently 301-redirects here).
+
+*Note: `PROJECT_STATE.md` is gitignored in this repo, so this guard is repeated here to survive a
+fresh clone.*
