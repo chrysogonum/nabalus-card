@@ -1,0 +1,28 @@
+{
+  "name": "cantharophily-video",
+  "version": "1.0.0",
+  "description": "A video production of the poem Cantharophily",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render Cantharophily out/cantharophily.mp4 --codec h264 --crf 18",
+    "voiceover": "node scripts/generate-voiceover.mjs",
+    "backdrops": "node scripts/generate-backdrops.mjs",
+    "soundbed": "node scripts/generate-soundbed.mjs",
+    "srt": "node scripts/generate-srt.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.441",
+    "@remotion/google-fonts": "4.0.441",
+    "@remotion/media": "4.0.441",
+    "@remotion/transitions": "4.0.441",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.441"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}

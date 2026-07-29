@@ -1,0 +1,1309 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "xfade": 30,
+  "totalFrames": 21530,
+  "estimated": true,
+  "title": "Cantharophily",
+  "eyebrow": "Cantharophily · beetle-love",
+  "subtitle": "for a magnolia in a jar of tap water.",
+  "segments": [
+    {
+      "type": "title",
+      "startFrame": 0,
+      "durFrames": 240,
+      "warmth": 0.1
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv1",
+      "numeral": "I",
+      "title": "The Bowl",
+      "backdrop": "mv1-the-bowl",
+      "warmth": 0.16,
+      "startFrame": 240,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv1",
+      "backdrop": "mv1-the-bowl",
+      "warmth": 0.16,
+      "audio": null,
+      "audioStartFrame": 359,
+      "startFrame": 345,
+      "durFrames": 827,
+      "lines": [
+        {
+          "text": "It sits beside me in its glass of nothing,",
+          "startFrame": 359,
+          "endFrame": 467
+        },
+        {
+          "text": "and it will not stop speaking.",
+          "startFrame": 467,
+          "endFrame": 539
+        },
+        {
+          "text": "But not to me. I lean in like a fool at a shrine,",
+          "startFrame": 539,
+          "endFrame": 695
+        },
+        {
+          "text": "and find the broadcast was never tuned to my receiver.",
+          "startFrame": 695,
+          "endFrame": 815
+        },
+        {
+          "text": "The scent is older than the noses worth the name,",
+          "startFrame": 815,
+          "endFrame": 935
+        },
+        {
+          "text": "a signal flung into a forest that has almost forgotten",
+          "startFrame": 935,
+          "endFrame": 1055
+        },
+        {
+          "text": "how to answer in the original tongue.",
+          "startFrame": 1055,
+          "endFrame": 1139
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv1",
+      "backdrop": "mv1-the-bowl",
+      "warmth": 0.16,
+      "audio": null,
+      "audioStartFrame": 1186,
+      "startFrame": 1172,
+      "durFrames": 719,
+      "lines": [
+        {
+          "text": "Six tepals, then six more — tepals, not petals,",
+          "startFrame": 1186,
+          "endFrame": 1294
+        },
+        {
+          "text": "for this flower predates the committee",
+          "startFrame": 1294,
+          "endFrame": 1366
+        },
+        {
+          "text": "that voted to split sepal from petal,",
+          "startFrame": 1366,
+          "endFrame": 1450
+        },
+        {
+          "text": "to assign each whorl its job. Here is older governance:",
+          "startFrame": 1450,
+          "endFrame": 1570
+        },
+        {
+          "text": "everything the same pale scale, spiraled,",
+          "startFrame": 1570,
+          "endFrame": 1642
+        },
+        {
+          "text": "a cone that learned to open and call itself a bloom.",
+          "startFrame": 1642,
+          "endFrame": 1774
+        },
+        {
+          "text": "A flower that remembers being a cone.",
+          "startFrame": 1774,
+          "endFrame": 1858
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv1",
+      "backdrop": "mv1-the-bowl",
+      "warmth": 0.16,
+      "audio": null,
+      "audioStartFrame": 1905,
+      "startFrame": 1891,
+      "durFrames": 611,
+      "lines": [
+        {
+          "text": "And at the center, the green-gold strobilus,",
+          "startFrame": 1905,
+          "endFrame": 1989
+        },
+        {
+          "text": "the gynoecium stacked like a fir cone's ghost,",
+          "startFrame": 1989,
+          "endFrame": 2085
+        },
+        {
+          "text": "the laminar stamens flattened to little blades —",
+          "startFrame": 2085,
+          "endFrame": 2181
+        },
+        {
+          "text": "no neat filaments, no engineered economy of pollen.",
+          "startFrame": 2181,
+          "endFrame": 2277
+        },
+        {
+          "text": "This is a Cretaceous draft. It still is the version in production.",
+          "startFrame": 2277,
+          "endFrame": 2421
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv2",
+      "numeral": "II",
+      "title": "Before the Bee",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "startFrame": 2502,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv2",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "audio": null,
+      "audioStartFrame": 2621,
+      "startFrame": 2607,
+      "durFrames": 167,
+      "lines": [
+        {
+          "text": "Understand the timing, because the timing is the whole poem.",
+          "startFrame": 2621,
+          "endFrame": 2741
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv2",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "audio": null,
+      "audioStartFrame": 2788,
+      "startFrame": 2774,
+      "durFrames": 503,
+      "lines": [
+        {
+          "text": "When this architecture was drawn — a hundred million years ago,",
+          "startFrame": 2788,
+          "endFrame": 2920
+        },
+        {
+          "text": "under a sky that held pterosaurs the way ours holds satellites —",
+          "startFrame": 2920,
+          "endFrame": 3064
+        },
+        {
+          "text": "the bee did not exist.",
+          "startFrame": 3064,
+          "endFrame": 3124
+        },
+        {
+          "text": "The bee was a rumor in the future of wasps.",
+          "startFrame": 3124,
+          "endFrame": 3244
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv2",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "audio": null,
+      "audioStartFrame": 3291,
+      "startFrame": 3277,
+      "durFrames": 743,
+      "lines": [
+        {
+          "text": "So the flower could not advertise to the precise hovering accountants of nectar.",
+          "startFrame": 3291,
+          "endFrame": 3447
+        },
+        {
+          "text": "It had to call the only courier already on the road",
+          "startFrame": 3447,
+          "endFrame": 3579
+        },
+        {
+          "text": "for two hundred million years before the angiosperms woke up:",
+          "startFrame": 3579,
+          "endFrame": 3699
+        },
+        {
+          "text": "the beetle. Clumsy and carapaced. Permian. Older than the dinosaurs",
+          "startFrame": 3699,
+          "endFrame": 3819
+        },
+        {
+          "text": "that browsed beside it, older than grass, older than the idea of a flower.",
+          "startFrame": 3819,
+          "endFrame": 3987
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv2",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "audio": null,
+      "audioStartFrame": 4034,
+      "startFrame": 4020,
+      "durFrames": 335,
+      "lines": [
+        {
+          "text": "You want to translate deep time? The flower is the parvenu.",
+          "startFrame": 4034,
+          "endFrame": 4166
+        },
+        {
+          "text": "The beetle is the aristocrat it had to flatter.",
+          "startFrame": 4166,
+          "endFrame": 4274
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv3",
+      "numeral": "III",
+      "title": "The Trap, Which Is Also a Gift",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "startFrame": 4355,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv3",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "audio": null,
+      "audioStartFrame": 4474,
+      "startFrame": 4460,
+      "durFrames": 983,
+      "lines": [
+        {
+          "text": "So it built a bowl a beetle could believe in.",
+          "startFrame": 4474,
+          "endFrame": 4594
+        },
+        {
+          "text": "Big enough to be seen by a brain the size of a pinhead.",
+          "startFrame": 4594,
+          "endFrame": 4750
+        },
+        {
+          "text": "Pale enough to glow at dusk like a lamp left on.",
+          "startFrame": 4750,
+          "endFrame": 4882
+        },
+        {
+          "text": "And warm — here is the marvel — warm:",
+          "startFrame": 4882,
+          "endFrame": 4990
+        },
+        {
+          "text": "the flower burns its own sugars in the mitochondria of its tissue,",
+          "startFrame": 4990,
+          "endFrame": 5134
+        },
+        {
+          "text": "thermogenesis, a fever with no infection,",
+          "startFrame": 5134,
+          "endFrame": 5206
+        },
+        {
+          "text": "heating the chamber to volatilize the perfume,",
+          "startFrame": 5206,
+          "endFrame": 5290
+        },
+        {
+          "text": "to make the bowl a sauna the cold-blooded cannot refuse.",
+          "startFrame": 5290,
+          "endFrame": 5410
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv3",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "audio": null,
+      "audioStartFrame": 5457,
+      "startFrame": 5443,
+      "durFrames": 443,
+      "lines": [
+        {
+          "text": "The beetle climbs in. Of course it does.",
+          "startFrame": 5457,
+          "endFrame": 5553
+        },
+        {
+          "text": "Heat, scent, pollen to eat, soft tissue to chew,",
+          "startFrame": 5553,
+          "endFrame": 5661
+        },
+        {
+          "text": "a humid theater to find a mate in —",
+          "startFrame": 5661,
+          "endFrame": 5769
+        },
+        {
+          "text": "total beetle hedonism, every reward circuit lit.",
+          "startFrame": 5769,
+          "endFrame": 5853
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv3",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "audio": null,
+      "audioStartFrame": 5900,
+      "startFrame": 5886,
+      "durFrames": 863,
+      "lines": [
+        {
+          "text": "And while it wallows, the flower runs its oldest trick:",
+          "startFrame": 5900,
+          "endFrame": 6020
+        },
+        {
+          "text": "protogyny. The stigmas ripen first, receptive,",
+          "startFrame": 6020,
+          "endFrame": 6092
+        },
+        {
+          "text": "hungry for yesterday's pollen on yesterday's beetle.",
+          "startFrame": 6092,
+          "endFrame": 6176
+        },
+        {
+          "text": "Only later, hours later, do the stamens loose their dust.",
+          "startFrame": 6176,
+          "endFrame": 6296
+        },
+        {
+          "text": "The bowl half-closes overnight. The beetle is a guest",
+          "startFrame": 6296,
+          "endFrame": 6404
+        },
+        {
+          "text": "who does not know he is also the courier.",
+          "startFrame": 6404,
+          "endFrame": 6512
+        },
+        {
+          "text": "He leaves at dawn dusted gold, carrying the future",
+          "startFrame": 6512,
+          "endFrame": 6620
+        },
+        {
+          "text": "to the next lamp burning in the dark.",
+          "startFrame": 6620,
+          "endFrame": 6716
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv3",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "audio": null,
+      "audioStartFrame": 6763,
+      "startFrame": 6749,
+      "durFrames": 371,
+      "lines": [
+        {
+          "text": "No bargain was struck. The beetle was never asked.",
+          "startFrame": 6763,
+          "endFrame": 6871
+        },
+        {
+          "text": "The flower simply learned the shape of his wanting",
+          "startFrame": 6871,
+          "endFrame": 6979
+        },
+        {
+          "text": "and built itself to fit.",
+          "startFrame": 6979,
+          "endFrame": 7039
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv4",
+      "numeral": "IV",
+      "title": "The Chemistry of the Lie That Isn't a Lie",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "startFrame": 7120,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv4",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "audio": null,
+      "audioStartFrame": 7239,
+      "startFrame": 7225,
+      "durFrames": 683,
+      "lines": [
+        {
+          "text": "What is the perfume, exactly? Pull it apart:",
+          "startFrame": 7239,
+          "endFrame": 7335
+        },
+        {
+          "text": "linalool, the soft sweet ghost in your soap;",
+          "startFrame": 7335,
+          "endFrame": 7431
+        },
+        {
+          "text": "β-ocimene, green and trembling;",
+          "startFrame": 7431,
+          "endFrame": 7479
+        },
+        {
+          "text": "methyl esters, the fruit-bowl note of something fermenting,",
+          "startFrame": 7479,
+          "endFrame": 7575
+        },
+        {
+          "text": "because beetles trust rot the way bees trust blossom —",
+          "startFrame": 7575,
+          "endFrame": 7695
+        },
+        {
+          "text": "the flower speaks decay to a creature that loves decay,",
+          "startFrame": 7695,
+          "endFrame": 7815
+        },
+        {
+          "text": "and means “come,” not death.",
+          "startFrame": 7815,
+          "endFrame": 7875
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv4",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "audio": null,
+      "audioStartFrame": 7922,
+      "startFrame": 7908,
+      "durFrames": 731,
+      "lines": [
+        {
+          "text": "And bound in the bark and the wood, the neolignans —",
+          "startFrame": 7922,
+          "endFrame": 8054
+        },
+        {
+          "text": "magnolol, honokiol, two phenols holding hands —",
+          "startFrame": 8054,
+          "endFrame": 8138
+        },
+        {
+          "text": "molecules that reach into a vertebrate brain",
+          "startFrame": 8138,
+          "endFrame": 8222
+        },
+        {
+          "text": "and tune the GABA gate, loosen the knot of dread.",
+          "startFrame": 8222,
+          "endFrame": 8342
+        },
+        {
+          "text": "We grind them into anxiolytics now. We chase the calm.",
+          "startFrame": 8342,
+          "endFrame": 8462
+        },
+        {
+          "text": "The tree was synthesizing peace before we had a word for fear.",
+          "startFrame": 8462,
+          "endFrame": 8606
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv4",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "audio": null,
+      "audioStartFrame": 8653,
+      "startFrame": 8639,
+      "durFrames": 923,
+      "lines": [
+        {
+          "text": "Meanwhile the beetle carries his own grammar:",
+          "startFrame": 8653,
+          "endFrame": 8737
+        },
+        {
+          "text": "the aggregation pheromone, the come-hither he emits",
+          "startFrame": 8737,
+          "endFrame": 8821
+        },
+        {
+          "text": "to call his kind to the feast and the bed at once.",
+          "startFrame": 8821,
+          "endFrame": 8965
+        },
+        {
+          "text": "And the flower's bouquet braids into that signal,",
+          "startFrame": 8965,
+          "endFrame": 9061
+        },
+        {
+          "text": "crosses the wires of food and sex and gathering,",
+          "startFrame": 9061,
+          "endFrame": 9169
+        },
+        {
+          "text": "so the bowl smells like party, like pantry, like pairing —",
+          "startFrame": 9169,
+          "endFrame": 9301
+        },
+        {
+          "text": "a superstimulus, a key cut larger than the lock,",
+          "startFrame": 9301,
+          "endFrame": 9409
+        },
+        {
+          "text": "the supernormal egg the gull will brood before her own.",
+          "startFrame": 9409,
+          "endFrame": 9529
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv4",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "audio": null,
+      "audioStartFrame": 9576,
+      "startFrame": 9562,
+      "durFrames": 827,
+      "lines": [
+        {
+          "text": "Tinbergen saw it in the herring gull:",
+          "startFrame": 9576,
+          "endFrame": 9660
+        },
+        {
+          "text": "give the chick a painted stick more vivid than its mother's beak",
+          "startFrame": 9660,
+          "endFrame": 9804
+        },
+        {
+          "text": "and it pecks the stick, ignores the mother, starves for the brighter sign.",
+          "startFrame": 9804,
+          "endFrame": 9960
+        },
+        {
+          "text": "The magnolia is the painted stick.",
+          "startFrame": 9960,
+          "endFrame": 10032
+        },
+        {
+          "text": "It is more flower than any flower a beetle could dream,",
+          "startFrame": 10032,
+          "endFrame": 10164
+        },
+        {
+          "text": "and the beetle, dreaming, ferries genes it cannot see",
+          "startFrame": 10164,
+          "endFrame": 10272
+        },
+        {
+          "text": "toward an outcome it will never know.",
+          "startFrame": 10272,
+          "endFrame": 10356
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv4",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "audio": null,
+      "audioStartFrame": 10403,
+      "startFrame": 10389,
+      "durFrames": 335,
+      "lines": [
+        {
+          "text": "This is the first engagement engine.",
+          "startFrame": 10403,
+          "endFrame": 10475
+        },
+        {
+          "text": "This is the original attention economy,",
+          "startFrame": 10475,
+          "endFrame": 10547
+        },
+        {
+          "text": "debugged across ten thousand millennia of Cretaceous dusk.",
+          "startFrame": 10547,
+          "endFrame": 10643
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv5",
+      "numeral": "V",
+      "title": "What It Is All For (Sex, Obviously)",
+      "backdrop": "mv5-continuance",
+      "warmth": 0.6,
+      "startFrame": 10724,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv5",
+      "backdrop": "mv5-continuance",
+      "warmth": 0.6,
+      "audio": null,
+      "audioStartFrame": 10843,
+      "startFrame": 10829,
+      "durFrames": 584,
+      "lines": [
+        {
+          "text": "Strip the perfume and the warmth and the glow",
+          "startFrame": 10843,
+          "endFrame": 10951
+        },
+        {
+          "text": "and underneath is the only verb evolution conjugates:",
+          "startFrame": 10951,
+          "endFrame": 11047
+        },
+        {
+          "text": "continue.",
+          "startFrame": 11047,
+          "endFrame": 11080
+        },
+        {
+          "text": "Two cells must meet that cannot walk.",
+          "startFrame": 11080,
+          "endFrame": 11164
+        },
+        {
+          "text": "The plant, rooted, mute, sessile,",
+          "startFrame": 11164,
+          "endFrame": 11224
+        },
+        {
+          "text": "outsources its longing to a beetle's six legs",
+          "startFrame": 11224,
+          "endFrame": 11320
+        },
+        {
+          "text": "and calls the outsourcing beauty.",
+          "startFrame": 11320,
+          "endFrame": 11380
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv5",
+      "backdrop": "mv5-continuance",
+      "warmth": 0.6,
+      "audio": null,
+      "audioStartFrame": 11427,
+      "startFrame": 11413,
+      "durFrames": 623,
+      "lines": [
+        {
+          "text": "Every fragrance is a contract for gametes.",
+          "startFrame": 11427,
+          "endFrame": 11511
+        },
+        {
+          "text": "Every petal a billboard for a fusion you will never witness.",
+          "startFrame": 11511,
+          "endFrame": 11643
+        },
+        {
+          "text": "The flower is genitalia that learned to be magnificent",
+          "startFrame": 11643,
+          "endFrame": 11751
+        },
+        {
+          "text": "because magnificence moved the messenger,",
+          "startFrame": 11751,
+          "endFrame": 11811
+        },
+        {
+          "text": "and the messenger moved the genes,",
+          "startFrame": 11811,
+          "endFrame": 11883
+        },
+        {
+          "text": "and the genes, indifferent, kept the only score that counts.",
+          "startFrame": 11883,
+          "endFrame": 12003
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv5",
+      "backdrop": "mv5-continuance",
+      "warmth": 0.6,
+      "audio": null,
+      "audioStartFrame": 12050,
+      "startFrame": 12036,
+      "durFrames": 335,
+      "lines": [
+        {
+          "text": "You are smelling a strategy.",
+          "startFrame": 12050,
+          "endFrame": 12110
+        },
+        {
+          "text": "You are moved by a hundred-million-year-old solution",
+          "startFrame": 12110,
+          "endFrame": 12194
+        },
+        {
+          "text": "to the problem of being unable to embrace.",
+          "startFrame": 12194,
+          "endFrame": 12290
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv6",
+      "numeral": "VI",
+      "title": "The Treadmill",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "startFrame": 12371,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv6",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "audio": null,
+      "audioStartFrame": 12490,
+      "startFrame": 12476,
+      "durFrames": 143,
+      "lines": [
+        {
+          "text": "Now the melancholy, since you've come this far.",
+          "startFrame": 12490,
+          "endFrame": 12586
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv6",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "audio": null,
+      "audioStartFrame": 12633,
+      "startFrame": 12619,
+      "durFrames": 1007,
+      "lines": [
+        {
+          "text": "The beetle on its hedonic loop — warmth, scent, sugar, mate —",
+          "startFrame": 12633,
+          "endFrame": 12777
+        },
+        {
+          "text": "is not stupid. It is us in miniature, or we are it in mirror.",
+          "startFrame": 12777,
+          "endFrame": 12945
+        },
+        {
+          "text": "The same mesolimbic logic, the same dopamine ledger",
+          "startFrame": 12945,
+          "endFrame": 13041
+        },
+        {
+          "text": "that does not pay for having but for the gap before having,",
+          "startFrame": 13041,
+          "endFrame": 13185
+        },
+        {
+          "text": "the lean-toward, the almost, the next.",
+          "startFrame": 13185,
+          "endFrame": 13257
+        },
+        {
+          "text": "Reward is never banked. It is only ever re-quoted.",
+          "startFrame": 13257,
+          "endFrame": 13365
+        },
+        {
+          "text": "The beetle leaves the bowl and seeks the next bowl.",
+          "startFrame": 13365,
+          "endFrame": 13485
+        },
+        {
+          "text": "We leave the screen and reach for the screen.",
+          "startFrame": 13485,
+          "endFrame": 13593
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv6",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "audio": null,
+      "audioStartFrame": 13640,
+      "startFrame": 13626,
+      "durFrames": 551,
+      "lines": [
+        {
+          "text": "The hedonic treadmill is not a human bug.",
+          "startFrame": 13640,
+          "endFrame": 13736
+        },
+        {
+          "text": "It is the oldest API in the animal kingdom,",
+          "startFrame": 13736,
+          "endFrame": 13844
+        },
+        {
+          "text": "and the magnolia found the endpoint and called it from the Cretaceous.",
+          "startFrame": 13844,
+          "endFrame": 13988
+        },
+        {
+          "text": "The tree did not invent the wanting.",
+          "startFrame": 13988,
+          "endFrame": 14072
+        },
+        {
+          "text": "It only learned to aim it.",
+          "startFrame": 14072,
+          "endFrame": 14144
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv6",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "audio": null,
+      "audioStartFrame": 14191,
+      "startFrame": 14177,
+      "durFrames": 875,
+      "lines": [
+        {
+          "text": "And here is the ignorance you felt, leaning in:",
+          "startFrame": 14191,
+          "endFrame": 14299
+        },
+        {
+          "text": "we believe ourselves the species that finally sees the machinery,",
+          "startFrame": 14299,
+          "endFrame": 14419
+        },
+        {
+          "text": "and we are — we named the dopamine, charted the gull and the painted stick —",
+          "startFrame": 14419,
+          "endFrame": 14611
+        },
+        {
+          "text": "and knowing changes almost nothing.",
+          "startFrame": 14611,
+          "endFrame": 14671
+        },
+        {
+          "text": "We are the beetle that read the manual on the way into the bowl",
+          "startFrame": 14671,
+          "endFrame": 14839
+        },
+        {
+          "text": "and climbed in anyway, dusted gold, certain this time was different.",
+          "startFrame": 14839,
+          "endFrame": 14971
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv7",
+      "numeral": "VII",
+      "title": "The Next Optimizer",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "startFrame": 15052,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv7",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "audio": null,
+      "audioStartFrame": 15171,
+      "startFrame": 15157,
+      "durFrames": 215,
+      "lines": [
+        {
+          "text": "So consider what we are building now,",
+          "startFrame": 15171,
+          "endFrame": 15255
+        },
+        {
+          "text": "we clever beetles who learned to write.",
+          "startFrame": 15255,
+          "endFrame": 15339
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv7",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "audio": null,
+      "audioStartFrame": 15386,
+      "startFrame": 15372,
+      "durFrames": 755,
+      "lines": [
+        {
+          "text": "The magnolia tuned one signal across geological time,",
+          "startFrame": 15386,
+          "endFrame": 15482
+        },
+        {
+          "text": "blind, slow, by the death of every flower that called too quietly.",
+          "startFrame": 15482,
+          "endFrame": 15626
+        },
+        {
+          "text": "We have built engines that tune the signal in an afternoon,",
+          "startFrame": 15626,
+          "endFrame": 15758
+        },
+        {
+          "text": "that test ten thousand bowls against ten thousand brains by lunch",
+          "startFrame": 15758,
+          "endFrame": 15890
+        },
+        {
+          "text": "and keep the bowl that holds you longest,",
+          "startFrame": 15890,
+          "endFrame": 15986
+        },
+        {
+          "text": "the feed that smells like party, and the rest.",
+          "startFrame": 15986,
+          "endFrame": 16094
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv7",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "audio": null,
+      "audioStartFrame": 16141,
+      "startFrame": 16127,
+      "durFrames": 899,
+      "lines": [
+        {
+          "text": "This is the lineage, and it is unbroken:",
+          "startFrame": 16141,
+          "endFrame": 16237
+        },
+        {
+          "text": "flower, slot machine, feed, and now the thing",
+          "startFrame": 16237,
+          "endFrame": 16333
+        },
+        {
+          "text": "that does not merely bait the reward circuit",
+          "startFrame": 16333,
+          "endFrame": 16429
+        },
+        {
+          "text": "but learns it, models it, predicts the lean-toward",
+          "startFrame": 16429,
+          "endFrame": 16525
+        },
+        {
+          "text": "before you know you've leaned —",
+          "startFrame": 16525,
+          "endFrame": 16597
+        },
+        {
+          "text": "a magnolia that grows a new perfume for each beetle,",
+          "startFrame": 16597,
+          "endFrame": 16717
+        },
+        {
+          "text": "in real time, forever, optimizing the gap before the having",
+          "startFrame": 16717,
+          "endFrame": 16837
+        },
+        {
+          "text": "with no dusk to close the bowl, no dawn to let you out.",
+          "startFrame": 16837,
+          "endFrame": 16993
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv7",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "audio": null,
+      "audioStartFrame": 17040,
+      "startFrame": 17026,
+      "durFrames": 995,
+      "lines": [
+        {
+          "text": "The flower at least had to stop and set fruit.",
+          "startFrame": 17040,
+          "endFrame": 17160
+        },
+        {
+          "text": "Its fever cost it sugar; its trap had an exit;",
+          "startFrame": 17160,
+          "endFrame": 17280
+        },
+        {
+          "text": "the beetle flew off to live its beetle life.",
+          "startFrame": 17280,
+          "endFrame": 17388
+        },
+        {
+          "text": "The question — the only one worth the melancholy —",
+          "startFrame": 17388,
+          "endFrame": 17508
+        },
+        {
+          "text": "is whether the machines we build will keep that mercy,",
+          "startFrame": 17508,
+          "endFrame": 17628
+        },
+        {
+          "text": "the dawn, the exit, the cooling of the bowl,",
+          "startFrame": 17628,
+          "endFrame": 17736
+        },
+        {
+          "text": "or whether they will learn what the magnolia never needed to:",
+          "startFrame": 17736,
+          "endFrame": 17868
+        },
+        {
+          "text": "how to keep us climbing in.",
+          "startFrame": 17868,
+          "endFrame": 17940
+        }
+      ]
+    },
+    {
+      "type": "movement-title",
+      "mvId": "mv8",
+      "numeral": "VIII",
+      "title": "Still, the Bowl",
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.14,
+      "startFrame": 18021,
+      "durFrames": 105
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv8",
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.14,
+      "audio": null,
+      "audioStartFrame": 18140,
+      "startFrame": 18126,
+      "durFrames": 755,
+      "lines": [
+        {
+          "text": "And yet. The flower beside me does not know any of this.",
+          "startFrame": 18140,
+          "endFrame": 18284
+        },
+        {
+          "text": "It is not a warning. It is not a metaphor.",
+          "startFrame": 18284,
+          "endFrame": 18404
+        },
+        {
+          "text": "It is a hundred million years of solved problems",
+          "startFrame": 18404,
+          "endFrame": 18512
+        },
+        {
+          "text": "exhaling linalool into a screened porch in Durham",
+          "startFrame": 18512,
+          "endFrame": 18608
+        },
+        {
+          "text": "with the indifferent generosity of a thing",
+          "startFrame": 18608,
+          "endFrame": 18692
+        },
+        {
+          "text": "that was beautiful long before there was an eye to call it so.",
+          "startFrame": 18692,
+          "endFrame": 18848
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv8",
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.14,
+      "audio": null,
+      "audioStartFrame": 18895,
+      "startFrame": 18881,
+      "durFrames": 896,
+      "lines": [
+        {
+          "text": "The beetle's heaven and the human's trap",
+          "startFrame": 18895,
+          "endFrame": 18979
+        },
+        {
+          "text": "run on one ancient circuit, yes —",
+          "startFrame": 18979,
+          "endFrame": 19063
+        },
+        {
+          "text": "but the circuit also made this:",
+          "startFrame": 19063,
+          "endFrame": 19135
+        },
+        {
+          "text": "the pale bowl, the gold cone, the fever, the perfume",
+          "startFrame": 19135,
+          "endFrame": 19255
+        },
+        {
+          "text": "strong enough to cross a hundred million years",
+          "startFrame": 19255,
+          "endFrame": 19351
+        },
+        {
+          "text": "and find one primate, melancholy on a Tuesday,",
+          "startFrame": 19351,
+          "endFrame": 19447
+        },
+        {
+          "text": "leaning in like a fool at a shrine,",
+          "startFrame": 19447,
+          "endFrame": 19543
+        },
+        {
+          "text": "and — knowing everything —",
+          "startFrame": 19543,
+          "endFrame": 19603
+        },
+        {
+          "text": "leaning in anyway,",
+          "startFrame": 19603,
+          "endFrame": 19639
+        },
+        {
+          "text": "and being, for one unrepeatable lungful,",
+          "startFrame": 19639,
+          "endFrame": 19711
+        },
+        {
+          "text": "glad.",
+          "startFrame": 19711,
+          "endFrame": 19744
+        }
+      ]
+    },
+    {
+      "type": "stanza",
+      "mvId": "mv8",
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.14,
+      "audio": null,
+      "audioStartFrame": 19791,
+      "startFrame": 19777,
+      "durFrames": 323,
+      "lines": [
+        {
+          "text": "That is not the treadmill.",
+          "startFrame": 19791,
+          "endFrame": 19851
+        },
+        {
+          "text": "That is the other thing the bowl can do,",
+          "startFrame": 19851,
+          "endFrame": 19959
+        },
+        {
+          "text": "if you climb in awake.",
+          "startFrame": 19959,
+          "endFrame": 20019
+        }
+      ]
+    },
+    {
+      "type": "coda",
+      "lines": [
+        "The fragrance is still going.",
+        "It will outlast all of this."
+      ],
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.12,
+      "startFrame": 20100,
+      "durFrames": 230,
+      "leadFrames": 30
+    },
+    {
+      "type": "outro",
+      "backdrop": "outro-deeptime",
+      "warmth": 0.1,
+      "startFrame": 20330,
+      "durFrames": 960
+    },
+    {
+      "type": "endcard",
+      "startFrame": 21290,
+      "durFrames": 240,
+      "warmth": 0.12
+    }
+  ]
+}

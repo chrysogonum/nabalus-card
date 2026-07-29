@@ -1,0 +1,41 @@
+{
+  "id": "mv4-s1",
+  "duration": 23.499,
+  "lines": [
+    {
+      "text": "What is the perfume, exactly? Pull it apart:",
+      "start": 0,
+      "end": 3.17
+    },
+    {
+      "text": "linalool, the soft sweet ghost in your soap;",
+      "start": 3.611,
+      "end": 6.409
+    },
+    {
+      "text": "β-ocimene, green and trembling;",
+      "start": 6.92,
+      "end": 9.404
+    },
+    {
+      "text": "methyl esters, the fruit-bowl note of something fermenting,",
+      "start": 9.915,
+      "end": 13.317
+    },
+    {
+      "text": "because beetles trust rot the way bees trust blossom —",
+      "start": 13.92,
+      "end": 17.253
+    },
+    {
+      "text": "the flower speaks decay to a creature that loves decay,",
+      "start": 17.764,
+      "end": 20.933
+    },
+    {
+      "text": "and means “come,” not death.",
+      "start": 21.142,
+      "end": 23.499
+    }
+  ]
+}

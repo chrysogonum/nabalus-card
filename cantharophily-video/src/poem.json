@@ -1,0 +1,308 @@
+{
+  "title": "Cantharophily",
+  "eyebrow": "Cantharophily · beetle-love",
+  "subtitle": "for a magnolia in a jar of tap water.",
+  "movements": [
+    {
+      "id": "mv1",
+      "numeral": "I",
+      "title": "The Bowl",
+      "backdrop": "mv1-the-bowl",
+      "warmth": 0.16,
+      "stanzas": [
+        { "lines": [
+          { "t": "It sits beside me in its glass of nothing," },
+          { "t": "and it will not stop speaking." },
+          { "t": "But not to me. I lean in like a fool at a shrine," },
+          { "t": "and find the broadcast was never tuned to my receiver." },
+          { "t": "The scent is older than the noses worth the name," },
+          { "t": "a signal flung into a forest that has almost forgotten" },
+          { "t": "how to answer in the original tongue." }
+        ]},
+        { "lines": [
+          { "t": "Six tepals, then six more — tepals, not petals," },
+          { "t": "for this flower predates the committee" },
+          { "t": "that voted to split sepal from petal," },
+          { "t": "to assign each whorl its job. Here is older governance:" },
+          { "t": "everything the same pale scale, spiraled," },
+          { "t": "a cone that learned to open and call itself a bloom." },
+          { "t": "A flower that remembers being a cone." }
+        ]},
+        { "lines": [
+          { "t": "And at the center, the green-gold strobilus," },
+          { "t": "the gynoecium stacked like a fir cone's ghost," },
+          { "t": "the laminar stamens flattened to little blades —" },
+          { "t": "no neat filaments, no engineered economy of pollen." },
+          { "t": "This is a Cretaceous draft. It still is the version in production." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv2",
+      "numeral": "II",
+      "title": "Before the Bee",
+      "backdrop": "mv2-before-the-bee",
+      "warmth": 0.28,
+      "stanzas": [
+        { "lines": [
+          { "t": "Understand the timing, because the timing is the whole poem." }
+        ]},
+        { "lines": [
+          { "t": "When this architecture was drawn — a hundred million years ago," },
+          { "t": "under a sky that held pterosaurs the way ours holds satellites —" },
+          { "t": "the bee did not exist." },
+          { "t": "The bee was a rumor in the future of wasps." }
+        ]},
+        { "lines": [
+          { "t": "So the flower could not advertise to the precise hovering accountants of nectar." },
+          { "t": "It had to call the only courier already on the road" },
+          { "t": "for two hundred million years before the angiosperms woke up:" },
+          { "t": "the beetle. Clumsy and carapaced. Permian. Older than the dinosaurs" },
+          { "t": "that browsed beside it, older than grass, older than the idea of a flower." }
+        ]},
+        { "lines": [
+          { "t": "You want to translate deep time? The flower is the parvenu." },
+          { "t": "The beetle is the aristocrat it had to flatter." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv3",
+      "numeral": "III",
+      "title": "The Trap, Which Is Also a Gift",
+      "backdrop": "mv3-the-fever",
+      "warmth": 0.92,
+      "stanzas": [
+        { "lines": [
+          { "t": "So it built a bowl a beetle could believe in." },
+          { "t": "Big enough to be seen by a brain the size of a pinhead." },
+          { "t": "Pale enough to glow at dusk like a lamp left on." },
+          { "t": "And warm — here is the marvel — warm:" },
+          { "t": "the flower burns its own sugars in the mitochondria of its tissue," },
+          { "t": "thermogenesis, a fever with no infection," },
+          { "t": "heating the chamber to volatilize the perfume," },
+          { "t": "to make the bowl a sauna the cold-blooded cannot refuse." }
+        ]},
+        { "lines": [
+          { "t": "The beetle climbs in. Of course it does." },
+          { "t": "Heat, scent, pollen to eat, soft tissue to chew," },
+          { "t": "a humid theater to find a mate in —" },
+          { "t": "total beetle hedonism, every reward circuit lit." }
+        ]},
+        { "lines": [
+          { "t": "And while it wallows, the flower runs its oldest trick:" },
+          { "t": "protogyny. The stigmas ripen first, receptive," },
+          { "t": "hungry for yesterday's pollen on yesterday's beetle." },
+          { "t": "Only later, hours later, do the stamens loose their dust." },
+          { "t": "The bowl half-closes overnight. The beetle is a guest" },
+          { "t": "who does not know he is also the courier." },
+          { "t": "He leaves at dawn dusted gold, carrying the future" },
+          { "t": "to the next lamp burning in the dark." }
+        ]},
+        { "lines": [
+          { "t": "No bargain was struck. The beetle was never asked." },
+          { "t": "The flower simply learned the shape of his wanting" },
+          { "t": "and built itself to fit." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv4",
+      "numeral": "IV",
+      "title": "The Chemistry of the Lie That Isn't a Lie",
+      "backdrop": "mv4-the-chemistry",
+      "warmth": 0.84,
+      "stanzas": [
+        { "lines": [
+          { "t": "What is the perfume, exactly? Pull it apart:" },
+          { "t": "linalool, the soft sweet ghost in your soap;" },
+          { "t": "β-ocimene, green and trembling;", "s": "beta-ocimene, green and trembling;" },
+          { "t": "methyl esters, the fruit-bowl note of something fermenting," },
+          { "t": "because beetles trust rot the way bees trust blossom —" },
+          { "t": "the flower speaks decay to a creature that loves decay," },
+          { "t": "and means “come,” not death." }
+        ]},
+        { "lines": [
+          { "t": "And bound in the bark and the wood, the neolignans —" },
+          { "t": "magnolol, honokiol, two phenols holding hands —" },
+          { "t": "molecules that reach into a vertebrate brain" },
+          { "t": "and tune the GABA gate, loosen the knot of dread.", "s": "and tune the gabba gate, loosen the knot of dread." },
+          { "t": "We grind them into anxiolytics now. We chase the calm." },
+          { "t": "The tree was synthesizing peace before we had a word for fear." }
+        ]},
+        { "lines": [
+          { "t": "Meanwhile the beetle carries his own grammar:" },
+          { "t": "the aggregation pheromone, the come-hither he emits" },
+          { "t": "to call his kind to the feast and the bed at once." },
+          { "t": "And the flower's bouquet braids into that signal," },
+          { "t": "crosses the wires of food and sex and gathering," },
+          { "t": "so the bowl smells like party, like pantry, like pairing —" },
+          { "t": "a superstimulus, a key cut larger than the lock," },
+          { "t": "the supernormal egg the gull will brood before her own." }
+        ]},
+        { "lines": [
+          { "t": "Tinbergen saw it in the herring gull:" },
+          { "t": "give the chick a painted stick more vivid than its mother's beak" },
+          { "t": "and it pecks the stick, ignores the mother, starves for the brighter sign." },
+          { "t": "The magnolia is the painted stick." },
+          { "t": "It is more flower than any flower a beetle could dream," },
+          { "t": "and the beetle, dreaming, ferries genes it cannot see" },
+          { "t": "toward an outcome it will never know." }
+        ]},
+        { "lines": [
+          { "t": "This is the first engagement engine." },
+          { "t": "This is the original attention economy," },
+          { "t": "debugged across ten thousand millennia of Cretaceous dusk." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv5",
+      "numeral": "V",
+      "title": "What It Is All For (Sex, Obviously)",
+      "backdrop": "mv5-continuance",
+      "warmth": 0.6,
+      "stanzas": [
+        { "lines": [
+          { "t": "Strip the perfume and the warmth and the glow" },
+          { "t": "and underneath is the only verb evolution conjugates:" },
+          { "t": "continue." },
+          { "t": "Two cells must meet that cannot walk." },
+          { "t": "The plant, rooted, mute, sessile," },
+          { "t": "outsources its longing to a beetle's six legs" },
+          { "t": "and calls the outsourcing beauty." }
+        ]},
+        { "lines": [
+          { "t": "Every fragrance is a contract for gametes." },
+          { "t": "Every petal a billboard for a fusion you will never witness." },
+          { "t": "The flower is genitalia that learned to be magnificent" },
+          { "t": "because magnificence moved the messenger," },
+          { "t": "and the messenger moved the genes," },
+          { "t": "and the genes, indifferent, kept the only score that counts." }
+        ]},
+        { "lines": [
+          { "t": "You are smelling a strategy." },
+          { "t": "You are moved by a hundred-million-year-old solution" },
+          { "t": "to the problem of being unable to embrace." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv6",
+      "numeral": "VI",
+      "title": "The Treadmill",
+      "backdrop": "mv6-the-treadmill",
+      "warmth": 0.5,
+      "stanzas": [
+        { "lines": [
+          { "t": "Now the melancholy, since you've come this far." }
+        ]},
+        { "lines": [
+          { "t": "The beetle on its hedonic loop — warmth, scent, sugar, mate —" },
+          { "t": "is not stupid. It is us in miniature, or we are it in mirror." },
+          { "t": "The same mesolimbic logic, the same dopamine ledger" },
+          { "t": "that does not pay for having but for the gap before having," },
+          { "t": "the lean-toward, the almost, the next." },
+          { "t": "Reward is never banked. It is only ever re-quoted." },
+          { "t": "The beetle leaves the bowl and seeks the next bowl." },
+          { "t": "We leave the screen and reach for the screen." }
+        ]},
+        { "lines": [
+          { "t": "The hedonic treadmill is not a human bug." },
+          { "t": "It is the oldest API in the animal kingdom,", "s": "It is the oldest A.P.I. in the animal kingdom," },
+          { "t": "and the magnolia found the endpoint and called it from the Cretaceous." },
+          { "t": "The tree did not invent the wanting." },
+          { "t": "It only learned to aim it." }
+        ]},
+        { "lines": [
+          { "t": "And here is the ignorance you felt, leaning in:" },
+          { "t": "we believe ourselves the species that finally sees the machinery," },
+          { "t": "and we are — we named the dopamine, charted the gull and the painted stick —" },
+          { "t": "and knowing changes almost nothing." },
+          { "t": "We are the beetle that read the manual on the way into the bowl" },
+          { "t": "and climbed in anyway, dusted gold, certain this time was different." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv7",
+      "numeral": "VII",
+      "title": "The Next Optimizer",
+      "backdrop": "mv7-the-optimizer",
+      "warmth": 0.38,
+      "stanzas": [
+        { "lines": [
+          { "t": "So consider what we are building now," },
+          { "t": "we clever beetles who learned to write." }
+        ]},
+        { "lines": [
+          { "t": "The magnolia tuned one signal across geological time," },
+          { "t": "blind, slow, by the death of every flower that called too quietly." },
+          { "t": "We have built engines that tune the signal in an afternoon," },
+          { "t": "that test ten thousand bowls against ten thousand brains by lunch" },
+          { "t": "and keep the bowl that holds you longest," },
+          { "t": "the feed that smells like party, and the rest." }
+        ]},
+        { "lines": [
+          { "t": "This is the lineage, and it is unbroken:" },
+          { "t": "flower, slot machine, feed, and now the thing" },
+          { "t": "that does not merely bait the reward circuit" },
+          { "t": "but learns it, models it, predicts the lean-toward" },
+          { "t": "before you know you've leaned —" },
+          { "t": "a magnolia that grows a new perfume for each beetle," },
+          { "t": "in real time, forever, optimizing the gap before the having" },
+          { "t": "with no dusk to close the bowl, no dawn to let you out." }
+        ]},
+        { "lines": [
+          { "t": "The flower at least had to stop and set fruit." },
+          { "t": "Its fever cost it sugar; its trap had an exit;" },
+          { "t": "the beetle flew off to live its beetle life." },
+          { "t": "The question — the only one worth the melancholy —" },
+          { "t": "is whether the machines we build will keep that mercy," },
+          { "t": "the dawn, the exit, the cooling of the bowl," },
+          { "t": "or whether they will learn what the magnolia never needed to:" },
+          { "t": "how to keep us climbing in." }
+        ]}
+      ]
+    },
+    {
+      "id": "mv8",
+      "numeral": "VIII",
+      "title": "Still, the Bowl",
+      "backdrop": "mv8-still-the-bowl",
+      "warmth": 0.14,
+      "stanzas": [
+        { "lines": [
+          { "t": "And yet. The flower beside me does not know any of this." },
+          { "t": "It is not a warning. It is not a metaphor." },
+          { "t": "It is a hundred million years of solved problems" },
+          { "t": "exhaling linalool into a screened porch in Durham" },
+          { "t": "with the indifferent generosity of a thing" },
+          { "t": "that was beautiful long before there was an eye to call it so." }
+        ]},
+        { "lines": [
+          { "t": "The beetle's heaven and the human's trap" },
+          { "t": "run on one ancient circuit, yes —" },
+          { "t": "but the circuit also made this:" },
+          { "t": "the pale bowl, the gold cone, the fever, the perfume" },
+          { "t": "strong enough to cross a hundred million years" },
+          { "t": "and find one primate, melancholy on a Tuesday," },
+          { "t": "leaning in like a fool at a shrine," },
+          { "t": "and — knowing everything —" },
+          { "t": "leaning in anyway," },
+          { "t": "and being, for one unrepeatable lungful," },
+          { "t": "glad." }
+        ]},
+        { "lines": [
+          { "t": "That is not the treadmill." },
+          { "t": "That is the other thing the bowl can do," },
+          { "t": "if you climb in awake." }
+        ]}
+      ]
+    }
+  ],
+  "coda": [
+    "The fragrance is still going.",
+    "It will outlast all of this."
+  ]
+}
