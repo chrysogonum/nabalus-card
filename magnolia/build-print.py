@@ -72,7 +72,7 @@ def rows(selector):
 deep = rows(".deep-time:not(.exp-time) .dt-item")
 expo = rows(".exp-time .dt-item")
 
-botnote_paras = [inner(p) for p in soup.select("aside.botnote p")]
+botnote_paras = [(inner(p), "cite" in (p.get("class") or [])) for p in soup.select("aside.botnote p")]
 botnote_lab = soup.select_one(".botnote .lab").get_text()
 copyr = inner(soup.select_one("p.copyr"))
 
@@ -340,7 +340,7 @@ doc = f"""<!DOCTYPE html>
     <aside class="botnote">
       <div class="rule2"></div>
       <span class="lab">{botnote_lab}</span>
-      {chr(10).join(f'<p{" class=cite" if i else ""}>{p}</p>' for i, p in enumerate(botnote_paras))}
+      {chr(10).join(f'<p{" class=cite" if is_cite else ""}>{txt}</p>' for txt, is_cite in botnote_paras)}
     </aside>
     <p class="copyr">{copyr}</p>
   </section>
